@@ -55,8 +55,8 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public WordsModel(AppDbContext context, UserManager<ApplicationUser> userManager)
         {
-            _context = context;
-            _userManager = userManager;
+            _context = context; //"context" comes from DI
+            _userManager = userManager; //"userManager" comes from DI
         }
 
         public async Task<string> LookupLibreTranslate(string word)
