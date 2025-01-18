@@ -1,2 +1,62 @@
 ﻿body {
+    font-family: Nunito;
+    font-size: 1.3vw;
+    margin: 0;
+}
+
+.icon {
+    width: 2.5vw;
+}
+
+.div-top {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    background-color: white;
+    height: 80px;
+}
+
+.div-in-header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.div-level2 {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center
+}
+
+.h1-title{
+    margin:0;
+}
+
+.h2-please-enter {
+    margin-top: 0;
+}
+
+.form-control {
+    width: 20vw;
+    height: 3vw;
+    border-radius: 10px;
+    font-family: Nunito;
+    font-size: 1.3vw;
+}
+
+.div-navigation {
+    display: flex;
+    width: 13%;
+}
+
+.ul-side-menu {
+    list-style: none;
+    padding-left: 2vw;
+}
+
+.li-menu-item {
+    margin: 0 0 1.5vw 0;
 }
