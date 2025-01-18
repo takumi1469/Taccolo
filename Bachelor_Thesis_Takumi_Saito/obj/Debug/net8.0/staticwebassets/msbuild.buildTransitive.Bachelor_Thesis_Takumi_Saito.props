@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Bachelor_Thesis_Takumi_Saito.props" />
+</Project>

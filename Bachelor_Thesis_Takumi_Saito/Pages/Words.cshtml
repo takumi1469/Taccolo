@@ -1,0 +1,133 @@
+﻿@page
+@model Bachelor_Thesis_Takumi_Saito.Pages.WordsModel
+@{
+    ViewData["Title"] = "Words";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Words.css?v=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-div">
+        <header>
+            <h1>taccolo</h1>
+        </header>
+    </div>
+    <div class="main-div">
+        <div class="video-field">
+            <div class="h">
+                <h2>Got a Video to Learn From? (Not mandatory)</h2>
+            </div>
+            <div class="div-video">
+                <label for="video-url" class="label-video-url">Please paste the URL of the video</label>
+                <div "div-video-url">
+                    <input class="input-video-url" type="text" id="video-url" />
+                    <button class="button-use-video" onclick="embedVideo()">Use this video</button>
+                </div>
+                <div class="div-video-container">
+                    <iframe id="video-frame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none;"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="input-field">
+            <div class="h">
+                <h2>INPUT TEXT</h2>
+            </div>
+            <form method="post">
+                <div class="language-selection">
+                    <div class="choose-language">
+                        <label for="from-language">From this language:</label>
+                        <select id="from-language" asp-for="SourceChoice">
+                            <option value="">(select one)</option>
+                            @{
+                                for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                                {
+                                    <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="choose-language">
+                        <label for="to-language">To this language:</label>
+                        <select id="to-language" asp-for="TargetChoice">
+                            <option value="">(select one)</option>
+                            @{
+                                for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                                {
+                                    <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="title" class="title">Title</label>
+                    <input class="title" type="text" id="title" asp-for="Title" />
+                </div>
+                <div>
+                    <label for="input-text" class="input-text">Input Text</label>
+                    <textarea class="big-input input-text" type="text" id="input-text" asp-for="InputText" required></textarea>
+                </div>
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+        <div class="h">
+            <h2>Result:</h2>
+        </div>
+        <div class="output-field">
+            <div class="original-text">
+                <h4>Original Text</h4>
+                @if (Model.InputText != null)
+                {
+                    <p>@Html.Raw(Model.InputText.Replace("\n", "<br>"))</p>
+                    //replace \n with <br> because HTML can't read \n as line breaks
+                }
+            </div>
+            <div class="translated-text">
+                <h4>Translated Text</h4>
+                @if (Model.Result != null)
+                {
+                    <p>@Html.Raw(Model.Result.Replace("\n", "<br>"))</p>
+                    //replace \n with <br> because HTML can't read \n as line breaks
+                }
+            </div>
+            <div class="each-word">
+                <h4>List of Words</h4>
+                @if (Model.IndividualWords != null)
+                {
+                    foreach (WordsModel.WordMeaningPair pair in Model.IndividualWords)
+                    @* foreach (string pair in Model.IndividualWords) {
+                <p>@pair</p>
+                } *@
+                    {
+                        <p>
+                            @pair.word : @pair.MeaningPaired.translatedText<br />
+                            @if (pair.MeaningPaired.Alternatives is not null && pair.MeaningPaired.Alternatives.Count > 0)
+                            {
+                            <p>Alternatives:</p>
+                            <ul>
+                                    @foreach (string alternative in pair.MeaningPaired.Alternatives)
+                                    {
+                                    <li>@alternative</li>
+                                    }
+                            </ul>
+                            }
+                        </p>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

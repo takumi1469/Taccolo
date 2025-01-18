@@ -1,0 +1,74 @@
+body{
+    font-family:Nunito;
+    font-size: 1.5vw;
+    margin-left: 5vw;
+}
+
+.top-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color:white;
+    height:130px;
+}
+
+.main-div {
+    margin-top:130px;
+}
+
+h1{
+    font-size: 80px;
+    margin:0 0 0 5vw;
+}
+
+.div-video {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-video-url{
+    width:500px;
+}
+
+.big-input {
+    width: 600px;
+    height: 300px;
+    font-size: 20px;
+}
+
+h2 {
+    height:3vw;
+    margin:0 0 0 0;
+}
+
+.input-text{
+    display: block;
+}
+
+.language-selection {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+.choose-language {
+    display: flex;
+    flex-direction: column;
+}
+
+.output-field {
+    display: flex;
+    height: 0.1vw;
+}
+
+.output-field div {
+    width:33%;
+    height:10vw;
+    padding:0 2vw 0 0 ;
+}
+
+.output-field h4{
+    margin:0 0 0 0;
+}
