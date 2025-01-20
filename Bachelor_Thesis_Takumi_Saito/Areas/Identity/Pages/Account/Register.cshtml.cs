@@ -119,7 +119,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                        return LocalRedirect("/Identity/Account/RegistrationComplete");
                     }
                 }
                 foreach (var error in result.Errors)

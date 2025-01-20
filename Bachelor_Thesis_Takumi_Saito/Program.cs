@@ -14,10 +14,23 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 //builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
 
+//builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+//{
+//    options.User.RequireUniqueEmail = true; // Enforce unique email
+//});
+
+
 // Identity-related services
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.User.RequireUniqueEmail = true; // Enforce unique email
+}).AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
+//builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+//    .AddDefaultTokenProviders();
+
+
 
 // Configure Authentication middleware
 builder.Services.ConfigureApplicationCookie(options =>

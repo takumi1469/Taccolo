@@ -10,6 +10,11 @@ a {
     color: black;
 }
 
+.a-explicit-link{
+    text-decoration:underline;
+    color:blue;
+}
+
 .icon {
     width: 2.5vw;
 }
