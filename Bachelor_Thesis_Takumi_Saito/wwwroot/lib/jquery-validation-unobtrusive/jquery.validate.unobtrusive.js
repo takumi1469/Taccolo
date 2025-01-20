@@ -175,7 +175,7 @@
         adapters: [],
 
         parseElement: function (element, skipAttach) {
-            /// <summary>
+
             /// Parses a single HTML element for unobtrusive validation attributes.
             /// </summary>
             /// <param name="element" domElement="true">The HTML element to be parsed.</param>
@@ -226,7 +226,7 @@
         },
 
         parse: function (selector) {
-            /// <summary>
+
             /// Parses all the HTML elements in the specified selector. It looks for input elements decorated
             /// with the [data-val=true] attribute value and enables validation according to the data-val-*
             /// attribute values.

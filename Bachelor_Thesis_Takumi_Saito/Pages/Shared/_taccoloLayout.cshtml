@@ -18,18 +18,23 @@
     <header>
         <div class="div-top">
             <div class="div-logo div-in-header">
+                <a href="/">
                 <h1 class="h1-logo">taccolo</h1>
+                </a>
             </div>
             <div class="div-search div-in-header">
                 <form class="form-search" method="get" action="/search">
                     <input type="text" class="input-search" id="input-search" name="input-seach" placeholder=" Enter keyword" />
                     <input type="image" src="~/icons/search2.svg" class="input-search-button icon" alt="search" id="search" />
                 </form>
-            </div>
+            </div>            
             <div class="div-login div-in-header">
-                <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
-                <label class="label-login" for="login">Login</label>
+                <a class="a-login" href="/Identity/Account/Login">
+                    <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
+                        <label class="label-login" for="login">Login/Register</label>
+                </a>
             </div>
+
         </div>
     </header>
     <div class="div-level2">

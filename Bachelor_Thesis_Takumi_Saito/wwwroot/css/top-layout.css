@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none; /* Remove underline for the link */
+    cursor: pointer; /* Set pointer cursor for the link */
+    color:black;
+}
+
 .icon {
     width: 2.5vw;
 }
@@ -55,8 +61,18 @@
     justify-content: center;
 }
 
+.a-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Remove underline for the link */
+    cursor: pointer; /* Set pointer cursor for the link */
+}
+
 .label-login {
     font-size: 1vw;
+    cursor: pointer;
 }
 
 .div-level2 {

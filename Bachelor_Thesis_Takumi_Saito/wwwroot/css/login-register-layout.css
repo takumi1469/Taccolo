@@ -4,8 +4,19 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none; /* Remove underline for the link */
+    cursor: pointer; /* Set pointer cursor for the link */
+    color: black;
+}
+
 .icon {
     width: 2.5vw;
+}
+
+.p-password-guide{
+    font-size:1vw;
+    color:#3207bc;
 }
 
 .div-top {
@@ -35,7 +46,7 @@
     margin:0;
 }
 
-.h2-please-enter {
+h2 {
     margin-top: 0;
 }
 
@@ -59,4 +70,18 @@
 
 .li-menu-item {
     margin: 0 0 1.5vw 0;
+}
+
+.button-submit{
+    width:5vw;
+    height:2.5vw;
+    font-size:1.3vw;
+}
+
+.form-floating{
+    margin-bottom:1vw;
+}
+
+.text-danger{
+    color:red;
 }
