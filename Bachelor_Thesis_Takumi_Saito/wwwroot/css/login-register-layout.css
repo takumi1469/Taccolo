@@ -33,6 +33,15 @@ a {
     height: 80px;
 }
 
+.form-floating{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-label{
+    font-size:1vw;
+}
+
 .div-in-header {
     height: 90px;
     display: flex;

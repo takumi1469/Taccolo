@@ -55,7 +55,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-                        [Required]
+            [Required]
             public string UserName { get; set;}
 
             [Required]

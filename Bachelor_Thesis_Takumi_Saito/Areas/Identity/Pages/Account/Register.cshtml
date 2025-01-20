@@ -12,47 +12,47 @@
 <div class="row">
     <div class="col-md-4">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
-            <div class="div-password-guide">
-                <p class="p-password-guide">
-                    All fields are required.<br />
-                    Please use a password that contains the following:<br />
-                     - at least 6 and maximum 100 characters<br />
-                     - at least one non-alphanumeric character<br />
-                     - at least one lowercase ('a'-'z') alphabet<br />
-                     - at least one uppercase ('A'-'Z') alphabet<br />
-                </p>
-            </div>
+            <h2>Create a new account with username, email and password</h2>
             <div class="form-floating mb-3">
+                <label class="form-label" asp-for="Input.UserName">Username (can be changed later)</label>
                 <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="awesome-name" />
-                <label asp-for="Input.UserName">Username (can be changed later)</label>
                 <div class="div-confirm-error">
                     <span asp-validation-for="Input.UserName" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-floating mb-3">
+                <label class ="form-label" asp-for="Input.Email">Email</label>
                 <input asp-for="Input.Email" class="form-control" autocomplete="email" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
                 <div class="div-confirm-error">
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-floating mb-3">
+                <label class="form-label" asp-for="Input.Password">Password</label>
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
                 <div class="div-confirm-error">
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-floating mb-3">
+                <label class="form-label" asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <div class="div-confirm-error">
                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                 </div>
             </div>
                 <button id="registerSubmit" type="submit" class="button-register button-submit">Register</button>
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="div-password-guide">
+                <p class="p-password-guide">
+                    *All fields are required.<br />
+                    Please use a password that contains the following:<br />
+                    - at least 6 and maximum 100 characters<br />
+                    - at least one non-alphanumeric character<br />
+                    - at least one lowercase ('a'-'z') alphabet<br />
+                    - at least one uppercase ('A'-'Z') alphabet<br />
+                </p>
+            </div>
         </form>
     </div>
 </div>
