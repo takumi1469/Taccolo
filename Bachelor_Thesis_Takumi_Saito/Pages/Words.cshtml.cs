@@ -176,6 +176,5 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             };
             return CodePair;
         }
-
     }
 }
