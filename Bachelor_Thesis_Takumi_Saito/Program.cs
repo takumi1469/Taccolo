@@ -3,8 +3,6 @@ using Bachelor_Thesis_Takumi_Saito.Pages.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-//THIS IS FOR TESTING PUSHING TO GIT REPO FROM VISUAL STUDIO TAKE 2
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

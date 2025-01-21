@@ -49,7 +49,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
             public string Password { get; set; }
 
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Remember me")]
             public bool RememberMe { get; set; }
         }
 
