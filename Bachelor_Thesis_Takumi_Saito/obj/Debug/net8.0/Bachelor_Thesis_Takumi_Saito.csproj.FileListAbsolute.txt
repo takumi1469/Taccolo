@@ -589,3 +589,5 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.genruntimeconfig.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\ref\Bachelor_Thesis_Takumi_Saito.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.sourcelink.json
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\SendGrid.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\StarkbankEcdsa.dll

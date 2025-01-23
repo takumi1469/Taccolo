@@ -1,6 +1,7 @@
 using Bachelor_Thesis_Takumi_Saito;
 using Bachelor_Thesis_Takumi_Saito.Pages.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,13 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.User.RequireUniqueEmail = true; // Enforce unique email
 }).AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.SignIn.RequireConfirmedEmail = true; //require email verification for registration
+});
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();//Add EmailSender to DI
 
 
 // Configure Authentication middleware
