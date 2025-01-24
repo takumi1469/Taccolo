@@ -44,7 +44,7 @@
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <div class="div-logout div-in-header">
-                        <a class="a-logout" href="/Identity/Account/Logout">
+                    <a class="a-logout" href="@Url.Page("/Index", new { handler = "Logout" })">
                             <img class="icon img-login" src="~/icons/logout.svg" alt="logout" id="logout" />
                         <label class="label-icon label-logout" for="logout">Logout</label>
                         </a>

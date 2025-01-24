@@ -10,11 +10,13 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegistrationCompleteModel> _logger;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public RegistrationCompleteModel(UserManager<ApplicationUser> userManager, ILogger<RegistrationCompleteModel> logger)
+        public RegistrationCompleteModel(UserManager<ApplicationUser> userManager, ILogger<RegistrationCompleteModel> logger, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _logger = logger;
+            _signInManager = signInManager; 
         }
 
         public bool IsSuccess { get; set; }
@@ -40,6 +42,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
             if (result.Succeeded)
             {
                 IsSuccess = true;
+                await _signInManager.SignInAsync(user,true);//NOT TESTED YET!
             }
             else
             {

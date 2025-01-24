@@ -18,10 +18,10 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 }).AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.Configure<IdentityOptions>(options =>
-{
-    options.SignIn.RequireConfirmedEmail = true; //require email verification for registration
-});
+//builder.Services.Configure<IdentityOptions>(options =>
+//{
+//    options.SignIn.RequireConfirmedEmail = true; //require email verification for registration
+//});
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();//Add EmailSender to DI
 
