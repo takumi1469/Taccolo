@@ -29,15 +29,20 @@
                 </form>
             </div>
             <div class="div-login div-in-header">
-                <a class="a-login" href="/Identity/Account/Login">
-                    <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
+
                     @if (User.Identity?.IsAuthenticated == true)
                     {
-                        <label class="label-icon label-login" for="login">@User.Identity.Name</label>
+                    <a class="a-login" href="/Identity/Account/MyPage">
+                        <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
+                        <label class="label-icon label-login" for="login">@User.Identity.Name My Page</label>
+                        </a>
                     }
                     else
                     {
+                        <a class="a-login" href="/Identity/Account/Login">
+                            <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
                         <label class="label-icon label-login" for="login">Login/Register</label>
+                    </a>
                     }
                 </a>
             </div>
