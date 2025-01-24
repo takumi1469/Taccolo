@@ -19,7 +19,7 @@
         <div class="div-top">
             <div class="div-logo div-in-header">
                 <a href="/">
-                <h1 class="h1-logo">taccolo</h1>
+                    <h1 class="h1-logo">taccolo</h1>
                 </a>
             </div>
             <div class="div-search div-in-header">
@@ -27,13 +27,30 @@
                     <input type="text" class="input-search" id="input-search" name="input-seach" placeholder=" Enter keyword" />
                     <input type="image" src="~/icons/search2.svg" class="input-search-button icon" alt="search" id="search" />
                 </form>
-            </div>            
+            </div>
             <div class="div-login div-in-header">
                 <a class="a-login" href="/Identity/Account/Login">
                     <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
-                        <label class="label-login" for="login">Login/Register</label>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <label class="label-icon label-login" for="login">@User.Identity.Name</label>
+                    }
+                    else
+                    {
+                        <label class="label-icon label-login" for="login">Login/Register</label>
+                    }
                 </a>
             </div>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="div-logout div-in-header">
+                        <a class="a-logout" href="/Identity/Account/Logout">
+                            <img class="icon img-login" src="~/icons/logout.svg" alt="logout" id="logout" />
+                        <label class="label-icon label-logout" for="logout">Logout</label>
+                        </a>
+                    </div>
+                }
+
 
         </div>
     </header>

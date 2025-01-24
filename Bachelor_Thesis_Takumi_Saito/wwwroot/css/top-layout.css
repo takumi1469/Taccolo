@@ -61,7 +61,15 @@ a {
     justify-content: center;
 }
 
-.a-login {
+.div-logout {
+    flex: 1;
+    padding-top: 1vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+}
+
+.a-login,.a-logout{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,7 +78,7 @@ a {
     cursor: pointer; /* Set pointer cursor for the link */
 }
 
-.label-login {
+.label-icon {
     font-size: 1vw;
     cursor: pointer;
 }

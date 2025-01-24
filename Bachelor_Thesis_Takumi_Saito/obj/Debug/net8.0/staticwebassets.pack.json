@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\icons\\login.svg"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\logout.svg",
+      "PackagePath": "staticwebassets\\icons\\logout.svg"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\search2.svg",
       "PackagePath": "staticwebassets\\icons\\search2.svg"
     },

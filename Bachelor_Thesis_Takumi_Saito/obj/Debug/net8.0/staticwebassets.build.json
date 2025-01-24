@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5vne+NaiTFAg+VxAQDSBxfL4VUmPfXWb0SE+XCMGdZk=",
+  "Hash": "Nwcmu9p7CAoUc0etbWE55k+MEBMFpAvkSaE0d9Gj6jg=",
   "Source": "Bachelor_Thesis_Takumi_Saito",
   "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icons\\login.svg"
+    },
+    {
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\logout.svg",
+      "SourceId": "Bachelor_Thesis_Takumi_Saito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\",
+      "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
+      "RelativePath": "icons/logout.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icons\\logout.svg"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\search2.svg",

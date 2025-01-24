@@ -7,9 +7,26 @@
     Layout = "/Pages/Shared/_LoginRegisterLayout.cshtml";
 }
 
-<div class="div-complete-message">
+@* <div class="div-complete-message">
     <h2 class="h2-complete-message">Thank you, registration is complete :) </h2>
-    <p class="p-complete-message">You can add more details in your account from <a class="a-explicit-link" href="#">here</a>,<br />
+    <p class="p-complete-message">
+        You can add more details in your account from <a class="a-explicit-link" href="#">here</a>,<br />
         or you can go back to top and start using taccolo from <a class="a-explicit-link" href="/">here</a>
     </p>
+</div> *@
+
+<div class="div-complete-message">
+@if (Model.IsSuccess)
+{
+    <h2 class="h2-complete-message">Thank you, registration is complete :) </h2>
+    <p class="p-complete-message">
+        You can add more details in your account from <a class="a-explicit-link" href="#">here</a>,<br />
+        or you can go back to top and start using taccolo from <a class="a-explicit-link" href="/">here</a>
+    </p>
+}
+else
+{
+    <p style="color: red;">The confirmation link is invalid or has expired. Please request a new confirmation email.</p>
+    <p><a href="/Account/ResendEmailVerification">Resend Confirmation Email</a></p>
+}
 </div>

@@ -72,7 +72,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         }
         public async Task OnGetAsync()
         {
-            ApplicationUser? user = await _userManager.GetUserAsync(User);
+            ApplicationUser? user = await _userManager.GetUserAsync(User); //Gets user information from DI
         }
 
         public async Task<IActionResult> OnPostAsync()
