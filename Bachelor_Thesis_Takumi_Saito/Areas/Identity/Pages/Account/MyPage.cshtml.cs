@@ -8,6 +8,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<MyPageModel> _logger;
+        public ApplicationUser? CurrentUser { get; set; }   
 
         public MyPageModel(UserManager<ApplicationUser> userManager, ILogger<MyPageModel> logger)
         {
@@ -15,8 +16,9 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
             _logger = logger;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
+            CurrentUser = await _userManager.GetUserAsync(User); 
         }
     }
 }

@@ -6,8 +6,53 @@
 }
 
 <h2 class="h2">You can edit your information here</h2>
-<div class="row">
-    <div class="col-md-4">
-
+<div class="div-mypage-item">
+    <div class="div-mypage-key">
+        <p class="p-mypage-key">Username</p>
+    </div>
+    <div class="div-mypage-value">
+        <p class="p-mypage-value">
+            @Model.CurrentUser?.UserName
+        </p>
+    </div>
+</div>
+<div class="div-mypage-item">
+    <div class="div-mypage-key">
+        <p class="p-mypage-key">Email address</p>
+    </div>
+    <div class="div-mypage-value">
+        <p class="p-mypage-value">
+            @Model.CurrentUser?.Email
+        </p>
+    </div>
+</div>
+<div class="div-mypage-item">
+    <div class="div-mypage-key">
+        <p class="p-mypage-key">Languages you want to learn</p>
+    </div>
+    <div class="div-mypage-value">
+        <p class="p-mypage-value">
+            @Model.CurrentUser?.Email
+        </p>
+    </div>
+</div>
+<div class="div-mypage-item">
+    <div class="div-mypage-key">
+        <p class="p-mypage-key">Languages you know</p>
+    </div>
+    <div class="div-mypage-value">
+        <p class="p-mypage-value">
+            @Model.CurrentUser?.Email
+        </p>
+    </div>
+</div>
+<div class="div-mypage-item">
+    <div class="div-mypage-key">
+        <p class="p-mypage-key">Bio</p>
+    </div>
+    <div class="div-mypage-value">
+        <p class="p-mypage-value">
+            @Model.CurrentUser?.Email
+        </p>
     </div>
 </div>
