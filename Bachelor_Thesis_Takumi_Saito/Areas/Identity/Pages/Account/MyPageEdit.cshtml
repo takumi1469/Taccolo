@@ -1,0 +1,55 @@
+﻿@page
+@using Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
+@model MyPageEditModel
+@{
+    Layout = "/Pages/Shared/_LoginRegisterLayout.cshtml";
+}
+
+<h2 class="h2-instruction">Please edit your information here.<br />After editing, please click the SUBMIT button.</h2>
+<p class="p-note">*If you change the email, you will be required to verify the new email address</p>
+<form method="post" class="form-mypageedit">
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Username</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <input class="input-mypageedit" value="@Model.CurrentUser?.UserName" />
+        </div>
+    </div>
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Email address</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <input class="input-mypageedit" value="@Model.CurrentUser?.Email" />
+        </div>
+    </div>
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Languages you want to learn</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <p class="p-mypageedit-value">
+                @Model.CurrentUser?.Email
+            </p>
+        </div>
+    </div>
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Languages you know</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <p class="p-mypageedit-value">
+                @Model.CurrentUser?.Email
+            </p>
+        </div>
+    </div>
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Bio</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <textarea class="textarea-mypageedit" value="TEST">@Model.CurrentUser?.Email</textarea>
+        </div>
+    </div>
+</form>

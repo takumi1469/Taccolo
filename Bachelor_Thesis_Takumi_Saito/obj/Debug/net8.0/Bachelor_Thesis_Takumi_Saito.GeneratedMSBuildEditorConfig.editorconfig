@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Areas/Identity/Pages/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Areas/Identity/Pages/Account/MyPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNeVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Areas/Identity/Pages/Account/MyPageEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNeVBhZ2VFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Areas/Identity/Pages/Account/Register.cshtml]

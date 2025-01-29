@@ -9,9 +9,8 @@ namespace Bachelor_Thesis_Takumi_Saito
     {
         [NotMapped]
         public ICollection<LearningSet>? LearningSets { get; set; }
-        public ICollection<string>? DesiredLanguages { get; set; }
-        public ICollection<string>? KnownLanguages { get; set; }
+        public List<string>? DesiredLanguages { get; set; }
+        public List<string>? KnownLanguages { get; set; }
         public string? Bio { get; set; }
-
     }
 }

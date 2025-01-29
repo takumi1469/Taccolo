@@ -100,19 +100,49 @@ h2 {
     color:red;
 }
 
-/*for My Page*/
+/*for MyPage*/
+.h2-instruction {
+    margin: 0;
+}
 .div-mypage-item {
     display: flex;
     flex-direction: row;
     width: 40%;
-    min-height:5vw;
+    min-height:2.5vw;
+    margin-top:1.5vw;
 }
 
 .div-mypage-key{
-    margin-right:2vw;
+    margin-right:1vw;
     width:30%;
 }
 
 .p-mypage-value,.p-mypage-key{
     margin:0;
+}
+
+/*for MyPageEdit*/
+.p-note{
+    margin:0;
+}
+
+.form-mypageedit {
+    width: 40%;
+}
+
+.div-mypageedit-item {
+    margin-top: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 2.5vw;
+}
+
+.div-mypageedit-key {
+    margin-right: 1vw;
+    width: 30%;
+}
+
+.p-mypageedit-value, .p-mypageedit-key {
+    margin: 0;
 }
