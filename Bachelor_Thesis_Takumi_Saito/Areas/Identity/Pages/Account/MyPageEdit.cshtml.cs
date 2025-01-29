@@ -14,15 +14,19 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
     public class MyPageEditModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<MyPageEditModel> _logger;
         private readonly IEmailSender _emailSender;
+
         public MyPageEditModel(UserManager<ApplicationUser> userManager,
             ILogger<MyPageEditModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _logger = logger;
             _emailSender = emailSender;
+            _signInManager = signInManager;
         }
 
         public ApplicationUser? CurrentUser { get; set; }
@@ -33,6 +37,8 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
         public async Task OnGetAsync()
         {
             CurrentUser = await _userManager.GetUserAsync(User);
+            Input = new InputModel();//Need to explicitly instantiate. OnPost automatically instantiates Input when binding form to property
+            Input.Bio = CurrentUser?.Bio ?? "Default bio text here"; // Without this, textarea for Bio isn't prepopulated
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -43,10 +49,11 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
             {
                 string returnUrl = Url.Content("~/");
 
-                CurrentUser.UserName = Input.UserName; // or other properties
-                CurrentUser.Email = Input.Email; // Update other properties
+                CurrentUser.UserName = Input.UserName; 
+                CurrentUser.Email = Input.Email; 
                 CurrentUser.DesiredLanguages = Input.DesiredLanguages;
                 CurrentUser.KnownLanguages = Input.KnownLanguages;
+                CurrentUser.Bio = Input.Bio;
 
                 // If the user is changing email, verification is required
                 if (_userManager.Options.SignIn.RequireConfirmedEmail)
@@ -74,7 +81,8 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
                 if (updateResult.Succeeded)
                 {
                     // Redirect or show a success message
-                    return RedirectToPage("/MyPage");
+                    await _signInManager.RefreshSignInAsync(CurrentUser); //This is for updating authentication cookie, where @User.Identity.Name comes from
+                    return RedirectToPage("/List");
                 }
                 else
                 {
@@ -84,12 +92,12 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
 
-                    return Page();
+                    return RedirectToPage("/Words");
                 }
             }
 
             // If we got this far, something failed, redisplay form
-            return Page();
+            return RedirectToPage("/Privacy");
         }
 
 
@@ -105,8 +113,10 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            public List<string> DesiredLanguages { get; set; }
-            public List<string> KnownLanguages { get; set; }
+            public List<string>? DesiredLanguages { get; set; }
+            public List<string>? KnownLanguages { get; set; }
+
+            public string? Bio {  get; set; }
 
         }
     }

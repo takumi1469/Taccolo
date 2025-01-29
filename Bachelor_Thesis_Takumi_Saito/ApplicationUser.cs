@@ -8,9 +8,9 @@ namespace Bachelor_Thesis_Takumi_Saito
     public class ApplicationUser : IdentityUser
     {
         [NotMapped]
-        public ICollection<LearningSet>? LearningSets { get; set; }
-        public List<string>? DesiredLanguages { get; set; }
-        public List<string>? KnownLanguages { get; set; }
+        public ICollection<LearningSet>? LearningSets { get; set; } = new List<LearningSet>();
+        public List<string>? DesiredLanguages { get; set; } = new List<string>();
+        public List<string>? KnownLanguages { get; set; } = new List<string>();
         public string? Bio { get; set; }
     }
 }

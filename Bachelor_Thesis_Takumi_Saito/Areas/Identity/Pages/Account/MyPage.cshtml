@@ -33,9 +33,12 @@
         <p class="p-mypage-key">Languages you want to learn</p>
     </div>
     <div class="div-mypage-value">
-        <p class="p-mypage-value">
-            @Model.CurrentUser?.Email
-        </p>
+            @{
+                for(int i = 0; i < Model.CurrentUser?.DesiredLanguages?.Count(); i++)
+                {
+                <p>@Model.CurrentUser?.DesiredLanguages[i] </p>
+                }
+            }
     </div>
 </div>
 <div class="div-mypage-item">
@@ -43,9 +46,12 @@
         <p class="p-mypage-key">Languages you know</p>
     </div>
     <div class="div-mypage-value">
-        <p class="p-mypage-value">
-            @Model.CurrentUser?.Email
-        </p>
+        @{
+            for (int i = 0; i < Model.CurrentUser?.KnownLanguages?.Count(); i++)
+            {
+                <p>@Model.CurrentUser?.KnownLanguages[i] </p>
+            }
+        }
     </div>
 </div>
 <div class="div-mypage-item">
@@ -54,7 +60,7 @@
     </div>
     <div class="div-mypage-value">
         <p class="p-mypage-value">
-            @Model.CurrentUser?.Email
+            @Model.CurrentUser?.Bio
         </p>
     </div>
 </div>

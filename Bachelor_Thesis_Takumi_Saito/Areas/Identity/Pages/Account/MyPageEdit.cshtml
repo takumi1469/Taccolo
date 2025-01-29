@@ -29,25 +29,31 @@
             <p class="p-mypageedit-key">Languages you want to learn</p>
         </div>
         <div class="div-mypageedit-value">
-            <select class="select-multiple" id="select-desired-language" name="select-desired-language" multiple asp-for="Input.DesiredLanguages">
+            <select class="select-multiple" id="select-desired-language" multiple asp-for="Input.DesiredLanguages">
                 <option value="">(select)</option>
+                @{
+                    for (int i = 0; i < Model.CurrentUser?.DesiredLanguages?.Count(); i++)
+                    {
+                        <option selected value="@Model.CurrentUser?.DesiredLanguages[i]">@Model.CurrentUser?.DesiredLanguages[i]</option>
+                    }
+                }
                 @{
                     for (int i = 0; i < Languages.LanguageList.Count(); i++)
                     {
                         <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
                     }
                 }
-            </select>
-            <script>
-                $(document).ready(function () {
-                    $('#select-desired-language').select2({
-                        placeholder: "Select languages",
-                        allowClear: true,
-                        tags: true,
+                <script>
+                    $(document).ready(function () {
+                        $('#select-desired-language').select2({
+                            placeholder: "Select languages",
+                            allowClear: true,
+                            tags: true,
+                        });
+                        $('#select-desired-language').on('change', updateSelectedTags);
                     });
-                    $('#select-desired-language').on('change', updateSelectedTags);
-                });
-            </script>
+                </script>
+            </select>
         </div>
     </div>
 
@@ -56,25 +62,31 @@
             <p class="p-mypageedit-key">Languages you know</p>
         </div>
         <div class="div-mypageedit-value">
-            <select class="select-multiple" id="select-known-language" name="select-known-language" multiple asp-for="Input.KnownLanguages">
+            <select class="select-multiple" id="select-known-language" multiple asp-for="Input.KnownLanguages">
                 <option value="">(select)</option>
+                @{
+                    for (int i = 0; i < Model.CurrentUser?.KnownLanguages?.Count(); i++)
+                    {
+                        <option selected value="@Model.CurrentUser?.KnownLanguages[i]">@Model.CurrentUser?.KnownLanguages[i]</option>
+                    }
+                }
                 @{
                     for (int i = 0; i < Languages.LanguageList.Count(); i++)
                     {
                         <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
                     }
                 }
-            </select>
-            <script>
-                $(document).ready(function () {
-                    $('#select-known-language').select2({
-                        placeholder: "Select languages",
-                        allowClear: true,
-                        tags: true,
+                <script>
+                    $(document).ready(function () {
+                        $('#select-known-language').select2({
+                            placeholder: "Select languages",
+                            allowClear: true,
+                            tags: true,
+                        });
+                        $('#select-known-language').on('change', updateSelectedTags);
                     });
-                    $('#select-desired-language').on('change', updateSelectedTags);
-                });
-            </script>
+                </script>
+            </select>
         </div>
     </div>
     <div class="div-mypageedit-item">
@@ -82,7 +94,7 @@
             <p class="p-mypageedit-key">Bio</p>
         </div>
         <div class="div-mypageedit-value">
-            <textarea class="textarea-bio" value="TEST">@Model.CurrentUser?.Bio</textarea>
+            <textarea class="textarea-bio" asp-for="Input.Bio">@Model.CurrentUser?.Bio</textarea>
         </div>
     </div>
     <a class="a-cancel-button button" href="/Identity/Account/MyPage">cancel</a>
