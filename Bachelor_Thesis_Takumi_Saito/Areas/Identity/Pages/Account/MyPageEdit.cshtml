@@ -13,7 +13,7 @@
             <p class="p-mypageedit-key">Username</p>
         </div>
         <div class="div-mypageedit-value">
-            <input class="input-mypageedit" value="@Model.CurrentUser?.UserName" />
+            <input class="input-mypageedit" value="@Model.CurrentUser?.UserName" asp-for="Input.UserName"/>
         </div>
     </div>
     <div class="div-mypageedit-item">
@@ -21,7 +21,7 @@
             <p class="p-mypageedit-key">Email address</p>
         </div>
         <div class="div-mypageedit-value">
-            <input class="input-mypageedit" value="@Model.CurrentUser?.Email" />
+            <input class="input-mypageedit" type="email" value="@Model.CurrentUser?.Email" asp-for="Input.Email" />
         </div>
     </div>
     <div class="div-mypageedit-item">
@@ -29,19 +29,52 @@
             <p class="p-mypageedit-key">Languages you want to learn</p>
         </div>
         <div class="div-mypageedit-value">
-            <p class="p-mypageedit-value">
-                @Model.CurrentUser?.Email
-            </p>
+            <select class="select-multiple" id="select-desired-language" name="select-desired-language" multiple asp-for="Input.DesiredLanguages">
+                <option value="">(select)</option>
+                @{
+                    for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                    {
+                        <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                    }
+                }
+            </select>
+            <script>
+                $(document).ready(function () {
+                    $('#select-desired-language').select2({
+                        placeholder: "Select languages",
+                        allowClear: true,
+                        tags: true,
+                    });
+                    $('#select-desired-language').on('change', updateSelectedTags);
+                });
+            </script>
         </div>
     </div>
+
     <div class="div-mypageedit-item">
         <div class="div-mypageedit-key">
             <p class="p-mypageedit-key">Languages you know</p>
         </div>
         <div class="div-mypageedit-value">
-            <p class="p-mypageedit-value">
-                @Model.CurrentUser?.Email
-            </p>
+            <select class="select-multiple" id="select-known-language" name="select-known-language" multiple asp-for="Input.KnownLanguages">
+                <option value="">(select)</option>
+                @{
+                    for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                    {
+                        <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                    }
+                }
+            </select>
+            <script>
+                $(document).ready(function () {
+                    $('#select-known-language').select2({
+                        placeholder: "Select languages",
+                        allowClear: true,
+                        tags: true,
+                    });
+                    $('#select-desired-language').on('change', updateSelectedTags);
+                });
+            </script>
         </div>
     </div>
     <div class="div-mypageedit-item">
@@ -49,7 +82,9 @@
             <p class="p-mypageedit-key">Bio</p>
         </div>
         <div class="div-mypageedit-value">
-            <textarea class="textarea-mypageedit" value="TEST">@Model.CurrentUser?.Email</textarea>
+            <textarea class="textarea-bio" value="TEST">@Model.CurrentUser?.Bio</textarea>
         </div>
     </div>
+    <a class="a-cancel-button button" href="/Identity/Account/MyPage">cancel</a>
+    <button id="updateSubmit" type="submit" class="button button-submit">submit</button>
 </form>

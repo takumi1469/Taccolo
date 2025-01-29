@@ -146,3 +146,21 @@ h2 {
 .p-mypageedit-value, .p-mypageedit-key {
     margin: 0;
 }
+
+.select-multiple{
+    height:2vw;
+}
+
+.input-mypageedit {
+    height: 2vw;
+}
+
+.textarea-bio {
+    height: 20vw;
+}
+
+.select-multiple, .input-mypageedit, .textarea-bio {
+    font-size: 1.1vw;
+    border-radius: 5px;
+    width: 25vw;
+}

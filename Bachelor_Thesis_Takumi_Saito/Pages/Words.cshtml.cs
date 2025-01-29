@@ -101,15 +101,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                     IndividualWords.Add(NewWordMeaningPair);
                     //IndividualWords.Add(await LookupLibreTranslate(word));
                 }
-
-                //string toLookup = await MyLibreTranslate.TranslateAsync(new Translate()
-                //{
-                //    ApiKey = "",
-                //    Source = SourceLanguage.Item1,
-                //    Target = TargetLanguage.Item1,
-                //    Text = InputText
-                //});
-                //IndividualWords = toLookup;
             }
 
             string UserId = (await _userManager.GetUserAsync(User))?.Id;

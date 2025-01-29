@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
 {
@@ -20,5 +21,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
         {
             CurrentUser = await _userManager.GetUserAsync(User); 
         }
+
     }
 }
