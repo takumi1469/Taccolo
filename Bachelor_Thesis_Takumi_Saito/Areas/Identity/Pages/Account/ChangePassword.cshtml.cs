@@ -10,6 +10,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<ChangePasswordModel> _logger;
 
+        [BindProperty]
         public InputModel Input { get; set; }
 
         public ChangePasswordModel(UserManager<ApplicationUser> userManager, ILogger<ChangePasswordModel> logger)
@@ -23,10 +24,42 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
             var user = _userManager.GetUserAsync(User);
         }
 
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToPage("Identity/Account/Login");
+            }
+            bool isCurrentPasswordValid = await _userManager.CheckPasswordAsync(user, Input.CurrentPassword);
+            if (!isCurrentPasswordValid)
+            {
+                ModelState.AddModelError("Input.CurrentPassword", "Current password is incorrect.");
+                return Page();
+            }
+
+            var changePasswordResult = await _userManager.ChangePasswordAsync(user, Input.CurrentPassword, Input.NewPassword);
+            if (changePasswordResult.Succeeded)
+            {
+                return RedirectToPage("ChangePasswordComplete");
+            }
+            else
+            {
+                foreach (var error in changePasswordResult.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return Page();
+        }
+
 
         public class InputModel
         {
             [Required]
+            [DataType(DataType.Password)]
             public string CurrentPassword { get; set; }
 
             [Required]
@@ -38,7 +71,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Areas.Identity.Pages.Account
             [Required]
             [DataType(DataType.Password)]
             [Display(Name = "ConfirmNewPassword")]
-            [Compare("NewPassword", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
             public string ConfirmNewPassword { get; set; }
         }
     }

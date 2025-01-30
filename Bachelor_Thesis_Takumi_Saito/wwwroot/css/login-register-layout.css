@@ -36,6 +36,7 @@ a {
 .form-floating{
     display:flex;
     flex-direction:column;
+/*    align-items:center;*/
 }
 
 .form-label{
@@ -117,7 +118,7 @@ h2 {
     width:30%;
 }
 
-.p-mypage-value,.p-mypage-key{
+.p-mypage-value,.p-mypage-key,.p-language{
     margin:0;
 }
 
@@ -164,3 +165,4 @@ h2 {
     border-radius: 5px;
     width: 25vw;
 }
+
