@@ -97,6 +97,8 @@
             <textarea class="textarea-bio" asp-for="Input.Bio">@Model.CurrentUser?.Bio</textarea>
         </div>
     </div>
-    <a class="a-cancel-button button" href="/Identity/Account/MyPage">cancel</a>
-    <button id="updateSubmit" type="submit" class="button button-submit">submit</button>
+    <div class="div-buttons">
+        <a class="a-cancel-button button-submit button-edit" href="/Identity/Account/MyPage">cancel</a>
+        <button id="updateSubmit" type="submit" class="button button-submit button-edit">submit</button>
+    </div>
 </form>

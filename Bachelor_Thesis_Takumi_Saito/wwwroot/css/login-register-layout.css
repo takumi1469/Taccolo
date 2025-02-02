@@ -166,3 +166,14 @@ h2 {
     width: 25vw;
 }
 
+.div-buttons{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    margin: 1vw;
+}
+
+.button-edit{
+    margin-right:1.5vw;
+}
