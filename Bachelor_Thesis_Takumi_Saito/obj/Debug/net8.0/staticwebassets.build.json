@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r2s7KjRaxs/1KGb7jTAjEjTIY13FYyKwH/IM9va9rj8=",
+  "Hash": "cPhLgSFmuttyhOagkBAziJItpDBu6YwzUGExGhC8I5s=",
   "Source": "Bachelor_Thesis_Takumi_Saito",
   "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
   "Mode": "Default",
@@ -207,12 +207,12 @@
       "OriginalItemSpec": "wwwroot\\icons\\search2.svg"
     },
     {
-      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\js\\script.js",
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\js\\make-new-ls.js",
       "SourceId": "Bachelor_Thesis_Takumi_Saito",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\",
       "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
-      "RelativePath": "js/script.js",
+      "RelativePath": "js/make-new-ls.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -223,7 +223,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\script.js"
+      "OriginalItemSpec": "wwwroot\\js\\make-new-ls.js"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\js\\site.js",

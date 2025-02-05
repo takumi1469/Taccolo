@@ -374,9 +374,11 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\SendGrid.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\SQLitePCLRaw.core.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\StarkbankEcdsa.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\System.CodeDom.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -572,6 +574,7 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.MvcApplicationPartsAssemblyInfo.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.RazorAssemblyInfo.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.RazorAssemblyInfo.cs
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.sourcelink.json
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\staticwebassets.build.json
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\staticwebassets.development.json
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\staticwebassets\msbuild.Bachelor_Thesis_Takumi_Saito.Microsoft.AspNetCore.StaticWebAssets.props
@@ -586,6 +589,3 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.pdb
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.genruntimeconfig.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\ref\Bachelor_Thesis_Takumi_Saito.dll
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.sourcelink.json
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\SendGrid.dll
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\bin\Debug\net8.0\StarkbankEcdsa.dll
