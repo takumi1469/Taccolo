@@ -1,16 +1,16 @@
 {
   "Files": [
     {
-      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bachelor_Thesis_Takumi_Saito.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Bachelor_Thesis_Takumi_Saito.bundle.scp.css"
-    },
-    {
-      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\Words.css",
-      "PackagePath": "staticwebassets\\css\\Words.css"
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\just-header-layout.css",
+      "PackagePath": "staticwebassets\\css\\just-header-layout.css"
     },
     {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\login-register-layout.css",
       "PackagePath": "staticwebassets\\css\\login-register-layout.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\MakeNewLS.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\MakeNewLS.css"
     },
     {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\top.css",

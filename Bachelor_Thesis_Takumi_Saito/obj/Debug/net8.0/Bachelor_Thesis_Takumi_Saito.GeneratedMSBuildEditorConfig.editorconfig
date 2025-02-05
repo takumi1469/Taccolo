@@ -98,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/MakeNewLS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFrZU5ld0xTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,8 +110,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/Shared/_JustHeaderLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9KdXN0SGVhZGVyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/Shared/_LoginRegisterLayout.cshtml]
@@ -122,10 +126,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/Words.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29yZHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -133,7 +133,3 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Bachelor_Thesis_Takumi_Saito/BachelorThesisGitRepo/Bachelor_Thesis_Takumi_Saito/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-nykjslkhjb

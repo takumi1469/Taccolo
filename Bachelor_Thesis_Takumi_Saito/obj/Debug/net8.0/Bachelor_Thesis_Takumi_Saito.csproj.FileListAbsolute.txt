@@ -579,9 +579,7 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Bachelor_Thesis_Takumi_Saito.props
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Bachelor_Thesis_Takumi_Saito.props
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\staticwebassets.pack.json
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\scopedcss\bundle\Bachelor_Thesis_Takumi_Saito.styles.css
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\scopedcss\projectbundle\Bachelor_Thesis_Takumi_Saito.bundle.scp.css
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor.AD4F0574.Up2Date
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\Bachelor_Thesis_Takumi_Saito.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Bachelor_Thesis_Takumi_Saito\BachelorThesisGitRepo\Bachelor_Thesis_Takumi_Saito\obj\Debug\net8.0\refint\Bachelor_Thesis_Takumi_Saito.dll

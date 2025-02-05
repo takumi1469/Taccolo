@@ -23,7 +23,5 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
             TargetLanguage = targetLanguage;
             UserId = userId;
         }
-
-
     }
 }

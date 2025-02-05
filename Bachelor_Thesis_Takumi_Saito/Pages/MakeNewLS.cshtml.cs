@@ -10,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace Bachelor_Thesis_Takumi_Saito.Pages
 {
-    public class WordsModel : PageModel
+    public class MakeNewLSModel : PageModel
     {
         [BindProperty]
         public string Title { get; set; }
@@ -22,13 +22,14 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         [BindProperty]
         public string TargetChoice { get; set; }
+        public string WarningMessage {  get; set; } = string.Empty;
         public (LanguageCode, string) SourceLanguage { get; set; }
         public (LanguageCode, string) TargetLanguage { get; set; }
 
         public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
         public string Result { get; set; }
         public List<WordMeaningPair> IndividualWords = new List<WordMeaningPair>();
-        //public List<string> IndividualWords = new List<string>();
+
         public class Meaning
         {
             [JsonPropertyName("alternatives")]
@@ -39,12 +40,12 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public class WordMeaningPair
         {
-            public string word { get; set; }
+            public string Word { get; set; }
             public Meaning MeaningPaired { get; set; }
 
             public WordMeaningPair(string _word, Meaning _meaningPaired)
             {
-                this.word = _word;
+                this.Word = _word;
                 this.MeaningPaired = _meaningPaired;
             }
         }
@@ -53,7 +54,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public readonly AppDbContext _context;
 
-        public WordsModel(AppDbContext context, UserManager<ApplicationUser> userManager)
+        public MakeNewLSModel(AppDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context; //"context" comes from DI
             _userManager = userManager; //"userManager" comes from DI
@@ -77,6 +78,14 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
+            if (SourceChoice == "not-chosen" || TargetChoice== "not-chosen")
+            {
+                WarningMessage = "Please select both Source Language and Target Language";
+                return Page();
+            }
+
+            Console.WriteLine("(select one) condition didn't get triggered.");
+
             if (!string.IsNullOrEmpty(InputText))
             {
                 //translate whole text by Azure Translator
@@ -99,15 +108,12 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                     Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(word));
                     WordMeaningPair NewWordMeaningPair = new WordMeaningPair(word, NewMeaning);
                     IndividualWords.Add(NewWordMeaningPair);
-                    //IndividualWords.Add(await LookupLibreTranslate(word));
                 }
             }
 
             string UserId = (await _userManager.GetUserAsync(User))?.Id;
 
             LearningSet NewSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);
-            InputText = NewSet.Input;
-            Result = NewSet.Translation;
 
             _context.LearningSets.Add(NewSet);
             await _context.SaveChangesAsync();

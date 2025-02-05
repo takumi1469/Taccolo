@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>taccolo top</title>
-    <link rel="stylesheet" href="~/css/top-layout.css?v=1.0" />
+    <title>taccolo</title>
+    <link rel="stylesheet" href="~/css/just-header-layout.css?v=1.0" />
     @RenderSection("Styles", required: false)
 
     <script src="https://kit.fontawesome.com/ea07c1c07f.js" crossorigin="anonymous"></script>
@@ -27,50 +27,35 @@
                 </form>
             </div>
             <div class="div-login div-in-header">
-
-                    @if (User.Identity?.IsAuthenticated == true)
-                    {
+                @if (User.Identity?.IsAuthenticated == true)
+                {
                     <a class="a-login" href="/Identity/Account/MyPage">
                         <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
                         <label class="label-icon label-login" for="login">@User.Identity.Name My Page</label>
-                        </a>
-                    }
-                    else
-                    {
-                        <a class="a-login" href="/Identity/Account/Login">
-                            <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
+                    </a>
+                }
+                else
+                {
+                    <a class="a-login" href="/Identity/Account/Login">
+                        <img class="icon img-login" src="~/icons/login.svg" alt="login" id="login" />
                         <label class="label-icon label-login" for="login">Login/Register</label>
                     </a>
-                    }
+                }
                 </a>
             </div>
-                @if (User.Identity?.IsAuthenticated == true)
-                {
-                    <div class="div-logout div-in-header">
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <div class="div-logout div-in-header">
                     <a class="a-logout" href="@Url.Page("/Index", new { handler = "Logout" })">
-                            <img class="icon img-login" src="~/icons/logout.svg" alt="logout" id="logout" />
+                        <img class="icon img-login" src="~/icons/logout.svg" alt="logout" id="logout" />
                         <label class="label-icon label-logout" for="logout">Logout</label>
-                        </a>
-                    </div>
-                }
+                    </a>
+                </div>
+            }
         </div>
     </header>
-    <div class="div-level2">
-        <div class="div-navigation">
-            <nav>
-                <ul class="ul-side-menu">
-                    <li class="li-menu-item">How to Use</li>
-                    
-                    <li class="li-menu-item"><a href="/MakeNewLS">Make New <br>Learning Sets</a></li>
-                    <li class="li-menu-item">Favorite <br>Learning Sets</li>
-                    <li class="li-menu-item">FAQ</li>
-                    <li class="li-menu-item">About</li>
-                </ul>
-            </nav>
-        </div>
         <div class="div-each-page">
             @RenderBody()
         </div>
-    </div>
 </body>
 </html>

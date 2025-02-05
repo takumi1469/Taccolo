@@ -1,0 +1,115 @@
+﻿@page
+@model Bachelor_Thesis_Takumi_Saito.Pages.MakeNewLSModel
+@{
+    ViewData["Title"] = "Words";
+}
+@{
+    Layout = "_JustHeaderLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/MakeNewLS.css"/>
+}
+
+
+<div class="main-div">
+    <div class="video-field">
+        <div class="h">
+            <h2>Got a Video to Learn From? (Not mandatory)</h2>
+        </div>
+        <div class="div-video">
+            <label for="video-url" class="label-video-url">Please paste the URL of the video</label>
+            <div class="div-video-url">
+                <input class="input-video-url" type="text" id="video-url" />
+                <button class="button-use-video" onclick="embedVideo()">Use this video</button>
+            </div>
+            <div class="div-video-container">
+                <iframe id="video-frame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none;"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="input-field">
+        <div class="h">
+            <h2>INPUT TEXT</h2>
+        </div>
+        <span class="span-warning-message">@Model.WarningMessage</span>
+        <form method="post">
+            <div class="language-selection">
+                <div class="choose-language">
+                    <label for="from-language">From this language:</label>
+                    <select id="from-language" asp-for="SourceChoice" required>
+                        <option value="not-chosen">(select one)</option>
+                        @{
+                            for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                            {
+                                <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="choose-language">
+                    <label for="to-language">To this language:</label>
+                    <select id="to-language" asp-for="TargetChoice" required>
+                        <option value="not-chosen">(select one)</option>
+                        @{
+                            for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                            {
+                                <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="title" class="title">Title</label>
+                <input class="title" type="text" id="title" asp-for="Title" />
+            </div>
+            <div>
+                <label for="input-text" class="input-text">Input Text</label>
+                <textarea class="big-input input-text" type="text" id="input-text" asp-for="InputText" required></textarea>
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+    <div class="h">
+        <h2>Result:</h2>
+    </div>
+    <div class="output-field">
+        <div class="original-text">
+            <h4>Original Text</h4>
+            @if (Model.InputText != null)
+            {
+                <p>@Html.Raw(Model.InputText.Replace("\n", "<br>"))</p>
+                //replace \n with <br> because HTML can't read \n as line breaks
+            }
+        </div>
+        <div class="translated-text">
+            <h4>Translated Text</h4>
+            @if (Model.Result != null)
+            {
+                <p>@Html.Raw(Model.Result.Replace("\n", "<br>"))</p>
+                //replace \n with <br> because HTML can't read \n as line breaks
+            }
+        </div>
+        <div class="each-word">
+            <h4>List of Words</h4>
+            @if (Model.IndividualWords != null)
+            {
+                foreach (MakeNewLSModel.WordMeaningPair pair in Model.IndividualWords)
+                {
+                    <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.MeaningPaired.translatedText</p>
+                        @if (pair.MeaningPaired.Alternatives is not null && pair.MeaningPaired.Alternatives.Count > 0)
+                        {
+                        <span>Alternatives:</span>
+                        <ul class="ul-alternatives">
+                                @foreach (string alternative in pair.MeaningPaired.Alternatives)
+                                {
+                                <li class="li-alternative-meaning">@alternative</li>
+                                }
+                        </ul>
+                        }
+                }
+            }
+        </div>
+    </div>
+</div>
+<script src="/js/script.js"></script>

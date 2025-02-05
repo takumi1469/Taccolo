@@ -1,26 +1,6 @@
-body{
-    font-family:Nunito;
-    font-size: 1.5vw;
-    margin-left: 5vw;
-}
-
-.top-div {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color:white;
-    height:130px;
-}
 
 .main-div {
-    margin-top:130px;
-}
-
-h1{
-    font-size: 80px;
-    margin:0 0 0 5vw;
+    width:94%;
 }
 
 .div-video {
@@ -71,4 +51,17 @@ h2 {
 
 .output-field h4{
     margin:0 0 0 0;
+}
+
+.span-warning-message {
+    color: red;
+    font-size:2vw;
+}
+
+.ul-alternatives{
+    margin:0;
+}
+
+.p-word-meaning{
+    margin-bottom:0;
 }

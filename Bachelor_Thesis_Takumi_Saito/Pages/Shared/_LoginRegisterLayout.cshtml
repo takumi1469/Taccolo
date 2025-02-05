@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login-Register</title>
     <link rel="stylesheet" href="~/css/login-register-layout.css?v=1.0" />
-    @if (ViewData["PageSpecificCss"] != null)
-    {
-        <link rel="stylesheet" href="@ViewData["PageSpecificCss"]">
-    }
+    @RenderSection("Styles", required: false)
+
     @* for Select2 multiple-select UI *@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>

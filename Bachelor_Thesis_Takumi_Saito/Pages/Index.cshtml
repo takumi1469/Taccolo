@@ -2,10 +2,12 @@
 @model Bachelor_Thesis_Takumi_Saito.Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
-    ViewData["PageSpecificCss"] = "/css/page-specific/top.css";
 }
 @{
     Layout = "_taccoloLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/top.css" />
 }
 
 <div class="div-top-all">
