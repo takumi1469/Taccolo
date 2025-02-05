@@ -1,13 +1,13 @@
 ﻿@page
 @model Bachelor_Thesis_Takumi_Saito.Pages.MakeNewLSModel
 @{
-    ViewData["Title"] = "Words";
+    ViewData["Title"] = "MakeNewLS";
 }
 @{
     Layout = "_JustHeaderLayout";
 }
 @section Styles {
-    <link rel="stylesheet" href="/css/page-specific/MakeNewLS.css"/>
+    <link rel="stylesheet" href="/css/page-specific/MakeNewLS.css" />
 }
 
 
@@ -67,50 +67,56 @@
                 <label for="input-text" class="input-text">Input Text</label>
                 <textarea class="big-input input-text" type="text" id="input-text" asp-for="InputText" required></textarea>
             </div>
-            <button type="submit">SUBMIT</button>
+            <button type="submit" asp-page-handler="Process">SUBMIT</button>
         </form>
     </div>
-    <div class="h">
+    <div class="div-result-title">
         <h2>RESULT</h2>
-        <button class="button-save">Save this Learning Set</button>
+        @if (Model.ShowOutputField)
+        {
+            <button class="button-save"asp-page-handler="Save">Save this Learning Set</button>
+        }
     </div>
-    <div class="output-field">
-        <div class="original-text">
-            <h4>Original Text</h4>
-            @if (Model.InputText != null)
-            {
-                <p>@Html.Raw(Model.InputText.Replace("\n", "<br>"))</p>
-                //replace \n with <br> because HTML can't read \n as line breaks
-            }
-        </div>
-        <div class="translated-text">
-            <h4>Translated Text</h4>
-            @if (Model.Result != null)
-            {
-                <p>@Html.Raw(Model.Result.Replace("\n", "<br>"))</p>
-                //replace \n with <br> because HTML can't read \n as line breaks
-            }
-        </div>
-        <div class="each-word">
-            <h4>List of Words</h4>
-            @if (Model.IndividualWords != null)
-            {
-                foreach (MakeNewLSModel.WordMeaningPair pair in Model.IndividualWords)
+    @if (Model.ShowOutputField)
+    {
+        <div class="output-field" id="output-field">
+            <div class="original-text">
+                <h4>Original Text</h4>
+                @if (Model.InputText != null)
                 {
-                    <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.MeaningPaired.translatedText</p>
+                    <p>@Html.Raw(Model.InputText.Replace("\n", "<br>"))</p>
+                    //replace \n with <br> because HTML can't read \n as line breaks
+                }
+            </div>
+            <div class="translated-text">
+                <h4>Translated Text</h4>
+                @if (Model.Result != null)
+                {
+                    <p>@Html.Raw(Model.Result.Replace("\n", "<br>"))</p>
+                    //replace \n with <br> because HTML can't read \n as line breaks
+                }
+            </div>
+            <div class="each-word">
+                <h4>List of Words</h4>
+                @if (Model.IndividualWords != null)
+                {
+                    foreach (MakeNewLSModel.WordMeaningPair pair in Model.IndividualWords)
+                    {
+                        <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.MeaningPaired.translatedText</p>
                         @if (pair.MeaningPaired.Alternatives is not null && pair.MeaningPaired.Alternatives.Count > 0)
                         {
-                        <span>Alternatives:</span>
-                        <ul class="ul-alternatives">
+                            <span>Alternatives:</span>
+                            <ul class="ul-alternatives">
                                 @foreach (string alternative in pair.MeaningPaired.Alternatives)
                                 {
-                                <li class="li-alternative-meaning">@alternative</li>
+                                    <li class="li-alternative-meaning">@alternative</li>
                                 }
-                        </ul>
+                            </ul>
                         }
+                    }
                 }
-            }
+            </div>
         </div>
-    </div>
+    }
 </div>
 <script src="/js/make-new-ls.js"></script>

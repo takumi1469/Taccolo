@@ -13,6 +13,11 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
     public class MakeNewLSModel : PageModel
     {
         [BindProperty]
+        public bool ShowOutputField { get; set; } = false;
+
+        public LearningSet? TempLearningSet { get; set; }
+
+        [BindProperty]
         public string Title { get; set; }
         [BindProperty]
         public string InputText { get; set; }
@@ -50,9 +55,9 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             }
         }
 
-        public readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public readonly AppDbContext _context;
+        private readonly AppDbContext _context;
 
         public MakeNewLSModel(AppDbContext context, UserManager<ApplicationUser> userManager)
         {
@@ -76,7 +81,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             ApplicationUser? user = await _userManager.GetUserAsync(User); //Gets user information from DI
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostProcessAsync()
         {
             if (SourceChoice == "not-chosen" || TargetChoice== "not-chosen")
             {
@@ -84,7 +89,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 return Page();
             }
 
-            Console.WriteLine("(select one) condition didn't get triggered.");
+            ShowOutputField = true;
 
             if (!string.IsNullOrEmpty(InputText))
             {
@@ -114,6 +119,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             string UserId = (await _userManager.GetUserAsync(User))?.Id;
 
             LearningSet NewSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);
+            TempLearningSet = NewSet;
 
             _context.LearningSets.Add(NewSet);
             await _context.SaveChangesAsync();

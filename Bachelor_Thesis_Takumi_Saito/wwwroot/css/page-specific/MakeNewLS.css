@@ -38,6 +38,18 @@ h2 {
     flex-direction: column;
 }
 
+.div-result-title{
+    display:flex;
+    flex-direction:row;
+    margin: 0.5vw 0 0.5vw 0;
+}
+
+.button-save{
+    margin-left:3vw;
+    width:22vw;
+    font-size:1.6vw;
+}
+
 .output-field {
     display: flex;
     height: 0.1vw;

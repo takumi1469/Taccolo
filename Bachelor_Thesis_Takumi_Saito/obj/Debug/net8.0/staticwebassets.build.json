@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cPhLgSFmuttyhOagkBAziJItpDBu6YwzUGExGhC8I5s=",
+  "Hash": "cpNAfMiBpPAJDRz38qsjHDfzd82+olaSVIiFYECvJ5c=",
   "Source": "Bachelor_Thesis_Takumi_Saito",
   "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login-register-layout.css"
+    },
+    {
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\EditViewLS.css",
+      "SourceId": "Bachelor_Thesis_Takumi_Saito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\",
+      "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
+      "RelativePath": "css/page-specific/EditViewLS.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\page-specific\\EditViewLS.css"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\MakeNewLS.css",
