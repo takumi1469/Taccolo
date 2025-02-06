@@ -5,16 +5,37 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Bachelor_Thesis_Takumi_Saito.Pages
 {
-    public class EditViewLSModel : PageModel
+    public class EditViewLsModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
-
         private readonly AppDbContext _context;
 
-        public LearningSet CurrentLearningSet { get; set; }
+        [BindProperty(SupportsGet = true, Name ="lsid")] // This binds the route parameter
+        public Guid? LsId { get; set; }
+        public LearningSet? LsToDisplay { get; set; }
 
-        public void OnGet()
+        public EditViewLsModel(UserManager<ApplicationUser> userManager,
+            AppDbContext context)
         {
+            _userManager = userManager;
+            _context = context;
+        }
+
+        public async Task OnGetAsync()
+        {
+            ApplicationUser? user = await _userManager.GetUserAsync(User); 
+
+            if (LsId is null )
+            {
+                RedirectToPage("Index");
+            }
+
+            // Fetch the LearningSet using the string ID
+            LsToDisplay = await _context.LearningSets.FindAsync(LsId);
+            if (LsToDisplay == null)
+            {
+                RedirectToPage("List");
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@page
-@model Bachelor_Thesis_Takumi_Saito.Pages.MakeNewLSModel
+@model Bachelor_Thesis_Takumi_Saito.Pages.MakeNewLsModel
 @{
     ViewData["Title"] = "MakeNewLS";
 }
@@ -7,7 +7,7 @@
     Layout = "_JustHeaderLayout";
 }
 @section Styles {
-    <link rel="stylesheet" href="/css/page-specific/MakeNewLS.css" />
+    <link rel="stylesheet" href="/css/page-specific/MakeNewLs.css" />
 }
 
 
@@ -74,7 +74,9 @@
         <h2>RESULT</h2>
         @if (Model.ShowOutputField)
         {
-            <button class="button-save"asp-page-handler="Save">Save this Learning Set</button>
+            <form method="post">
+            <button class="button-save" asp-page-handler="Save" type="submit" >Save this Learning Set</button>
+            </form>
         }
     </div>
     @if (Model.ShowOutputField)
@@ -100,7 +102,7 @@
                 <h4>List of Words</h4>
                 @if (Model.IndividualWords != null)
                 {
-                    foreach (MakeNewLSModel.WordMeaningPair pair in Model.IndividualWords)
+                    foreach (WordMeaningPair pair in Model.IndividualWords)
                     {
                         <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.MeaningPaired.translatedText</p>
                         @if (pair.MeaningPaired.Alternatives is not null && pair.MeaningPaired.Alternatives.Count > 0)

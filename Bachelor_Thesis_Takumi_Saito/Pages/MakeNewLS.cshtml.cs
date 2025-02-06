@@ -7,10 +7,11 @@ using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bachelor_Thesis_Takumi_Saito.Pages
 {
-    public class MakeNewLSModel : PageModel
+    public class MakeNewLsModel : PageModel
     {
         [BindProperty]
         public bool ShowOutputField { get; set; } = false;
@@ -33,33 +34,34 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
         public string Result { get; set; }
-        public List<WordMeaningPair> IndividualWords = new List<WordMeaningPair>();
 
-        public class Meaning
-        {
-            [JsonPropertyName("alternatives")]
-            public List<string>? Alternatives { get; set; } = new List<string>();
-            [JsonPropertyName("translatedText")]
-            public string translatedText { get; set; }
-        }
+        public List<WordMeaningPair> IndividualWords { get; set; } = new List<WordMeaningPair>();
 
-        public class WordMeaningPair
-        {
-            public string Word { get; set; }
-            public Meaning MeaningPaired { get; set; }
+        //public class Meaning
+        //{
+        //    [JsonPropertyName("alternatives")]
+        //    public List<string>? Alternatives { get; set; } = new List<string>();
+        //    [JsonPropertyName("translatedText")]
+        //    public string translatedText { get; set; }
+        //}
 
-            public WordMeaningPair(string _word, Meaning _meaningPaired)
-            {
-                this.Word = _word;
-                this.MeaningPaired = _meaningPaired;
-            }
-        }
+        //public class WordMeaningPair
+        //{
+        //    public string Word { get; set; }
+        //    public Meaning MeaningPaired { get; set; }
+
+        //    public WordMeaningPair(string _word, Meaning _meaningPaired)
+        //    {
+        //        this.Word = _word;
+        //        this.MeaningPaired = _meaningPaired;
+        //    }
+        //}
 
         private readonly UserManager<ApplicationUser> _userManager;
 
         private readonly AppDbContext _context;
 
-        public MakeNewLSModel(AppDbContext context, UserManager<ApplicationUser> userManager)
+        public MakeNewLsModel(AppDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context; //"context" comes from DI
             _userManager = userManager; //"userManager" comes from DI
@@ -118,14 +120,32 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
             string UserId = (await _userManager.GetUserAsync(User))?.Id;
 
-            LearningSet NewSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);
-            TempLearningSet = NewSet;
-
-            _context.LearningSets.Add(NewSet);
-            await _context.SaveChangesAsync();
+            TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);
+            TempData["TempLearningSet"] = JsonSerializer.Serialize(TempLearningSet);
 
             return Page();
         }
+
+        public async Task<IActionResult> OnPostSaveAsync()
+        {
+            if (TempData["TempLearningSet"] is string serializedSet)
+            {
+                // Deserialize the TempLearningSet from TempData
+                TempLearningSet = JsonSerializer.Deserialize<LearningSet>(serializedSet);
+
+                if(TempData is not null)
+                {
+                    // Now save TempLearningSet to the database
+                    _context.LearningSets.Add(TempLearningSet);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("EditViewLs", new { lsid = TempLearningSet.Id });
+                }
+                else return Page();
+            }
+            else
+                return Page();
+        }
+
 
         public (LanguageCode, string) DetermineLanguage(string choice)
         {

@@ -12,4 +12,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
 
         public DbSet<LearningSet> LearningSets { get; set; } // Table in the database
     }
+
+    //public DbSet<LearningSet> LearningSets { get; set; } // Table in the database
+}
 }

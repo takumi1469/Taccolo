@@ -1,11 +1,24 @@
-﻿@page
-@model Bachelor_Thesis_Takumi_Saito.Pages.EditViewLSModel
+﻿@page "{lsid?}"
+@model Bachelor_Thesis_Takumi_Saito.Pages.EditViewLsModel
 @{
-    ViewData["Title"] = "EditViewLS";
+    ViewData["Title"] = "EditViewLs";
 }
 @{
     Layout = "_JustHeaderLayout";
 }
 @section Styles {
-    <link rel="stylesheet" href="/css/page-specific/EditViewLS.css" />
+    <link rel="stylesheet" href="/css/page-specific/EditViewLs.css" />
+}
+<h1>Edit and View Learning Set</h1>
+@if (Model.LsId != null)
+{
+    <p>Model.LsToDisplay.Id</p>
+    <p>@Model.LsToDisplay?.SourceLanguage</p>
+    <p>@Model.LsToDisplay?.TargetLanguage</p>
+    <p>@Model.LsToDisplay?.Input</p>
+    <p>@Model.LsToDisplay?.Translation</p>
+}
+else
+{
+    <span>LsId is empty</span>
 }

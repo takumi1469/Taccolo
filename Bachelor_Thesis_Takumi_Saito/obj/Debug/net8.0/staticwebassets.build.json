@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cpNAfMiBpPAJDRz38qsjHDfzd82+olaSVIiFYECvJ5c=",
+  "Hash": "flcRNqF74cP06cnQxBygvP5YlnDepJEOsGmuj5C+m9E=",
   "Source": "Bachelor_Thesis_Takumi_Saito",
   "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
   "Mode": "Default",
@@ -55,12 +55,12 @@
       "OriginalItemSpec": "wwwroot\\css\\login-register-layout.css"
     },
     {
-      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\EditViewLS.css",
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\EditViewLs.css",
       "SourceId": "Bachelor_Thesis_Takumi_Saito",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\",
       "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
-      "RelativePath": "css/page-specific/EditViewLS.css",
+      "RelativePath": "css/page-specific/EditViewLs.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,15 +71,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\page-specific\\EditViewLS.css"
+      "OriginalItemSpec": "wwwroot\\css\\page-specific\\EditViewLs.css"
     },
     {
-      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\MakeNewLS.css",
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\MakeNewLs.css",
       "SourceId": "Bachelor_Thesis_Takumi_Saito",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\",
       "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
-      "RelativePath": "css/page-specific/MakeNewLS.css",
+      "RelativePath": "css/page-specific/MakeNewLs.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -90,7 +90,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\page-specific\\MakeNewLS.css"
+      "OriginalItemSpec": "wwwroot\\css\\page-specific\\MakeNewLs.css"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\css\\page-specific\\top.css",

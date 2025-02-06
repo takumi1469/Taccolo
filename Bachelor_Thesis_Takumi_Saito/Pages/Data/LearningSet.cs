@@ -11,6 +11,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
         public string SourceLanguage { get; set; }
         public string TargetLanguage { get; set; }
         public string? UserId { get; set; }
+        //public List<WordMeaningPair> IndividualWords { get; set; } = new List<WordMeaningPair>();
 
         [NotMapped]
         public ApplicationUser User { get; set; }
