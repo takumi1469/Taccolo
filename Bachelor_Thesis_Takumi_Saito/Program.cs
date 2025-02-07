@@ -23,8 +23,16 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 //    options.SignIn.RequireConfirmedEmail = true; //require email verification for registration
 //});
 
-builder.Services.AddTransient<IEmailSender, EmailSender>();//Add EmailSender to DI
+//Add EmailSender to DI
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
+//Add Session State
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;  // Ensures cookies are only accessible by the server
+    options.IdleTimeout = TimeSpan.FromMinutes(20); // Set session timeout (optional)
+    options.Cookie.IsEssential = true; // Makes the session cookie essential
+});
 
 // Configure Authentication middleware
 builder.Services.ConfigureApplicationCookie(options =>
@@ -43,6 +51,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

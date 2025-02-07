@@ -117,7 +117,11 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                     TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
                 }
 
-                TempData["TempLearningSet"] = JsonSerializer.Serialize(TempLearningSet);
+                // TempData might be causing cookie bloating that makes the site inaccessible
+                //TempData["TempLearningSet"] = JsonSerializer.Serialize(TempLearningSet);
+
+                var tempLearningSetString = JsonSerializer.Serialize(TempLearningSet);
+                HttpContext.Session.SetString("tempLearningSetString", tempLearningSetString);
 
                 return Page();
             }
@@ -128,14 +132,21 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public async Task<IActionResult> OnPostSaveAsync()
         {
-            if (TempData["TempLearningSet"] is string serializedSet)
+            if (HttpContext.Session.GetString("tempLearningSetString") is string serializedSet)
             {
                 // Deserialize the TempLearningSet from TempData
+                // TempData might need to be avoided
+                //TempLearningSet = JsonSerializer.Deserialize<LearningSet>(serializedSet);
+
                 TempLearningSet = JsonSerializer.Deserialize<LearningSet>(serializedSet);
 
-                if(TempData is not null)
+                if (TempLearningSet is not null)
                 {
                     // Now save TempLearningSet to the database
+
+                    // For troubleshooting crash: make WordMeaningPairs empty. Result: this was NOT it.
+                    //TempLearningSet.WordMeaningPairs = null; 
+                    
                     _context.LearningSets.Add(TempLearningSet);
                     await _context.SaveChangesAsync();
                     return RedirectToPage("EditViewLs", new { lsid = TempLearningSet.Id });

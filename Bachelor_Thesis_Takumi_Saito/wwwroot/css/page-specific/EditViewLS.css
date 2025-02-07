@@ -1,5 +1,5 @@
 ﻿.div-main {
-    /*width: 94%;*/
+    width: 94%;
 }
 .h1-title{
     margin:0 0 1vw 0;
@@ -16,8 +16,9 @@
 
 .div-outputs div {
     width: 33%;
-    height: 10vw;
+    height: 50vw;
     padding: 0 2vw 0 0;
+    overflow-y: scroll;
 }
 
 .ul-alternatives {
