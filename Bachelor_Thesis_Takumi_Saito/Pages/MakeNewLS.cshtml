@@ -100,16 +100,16 @@
             </div>
             <div class="each-word">
                 <h4>List of Words</h4>
-                @if (Model.IndividualWords != null)
+                @if (Model.TempLearningSet?.WordMeaningPairs != null)
                 {
-                    foreach (WordMeaningPair pair in Model.IndividualWords)
+                    foreach (WordMeaningPair pair in Model.TempLearningSet.WordMeaningPairs)
                     {
-                        <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.MeaningPaired.translatedText</p>
-                        @if (pair.MeaningPaired.Alternatives is not null && pair.MeaningPaired.Alternatives.Count > 0)
+                        <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.TranslatedText</p>
+                        @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
                         {
                             <span>Alternatives:</span>
                             <ul class="ul-alternatives">
-                                @foreach (string alternative in pair.MeaningPaired.Alternatives)
+                                @foreach (string alternative in pair.Alternatives)
                                 {
                                     <li class="li-alternative-meaning">@alternative</li>
                                 }

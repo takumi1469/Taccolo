@@ -35,7 +35,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
         public string Result { get; set; }
 
-        public List<WordMeaningPair> IndividualWords { get; set; } = new List<WordMeaningPair>();
+        //public List<WordMeaningPair> WordMeaningPairs { get; set; } = new List<WordMeaningPair>();
 
         //public class Meaning
         //{
@@ -85,7 +85,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public async Task<IActionResult> OnPostProcessAsync()
         {
-            if (SourceChoice == "not-chosen" || TargetChoice== "not-chosen")
+            if (SourceChoice == "not-chosen" || TargetChoice == "not-chosen")
             {
                 WarningMessage = "Please select both Source Language and Target Language";
                 return Page();
@@ -95,16 +95,15 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
             if (!string.IsNullOrEmpty(InputText))
             {
+                string UserId = (await _userManager.GetUserAsync(User))?.Id;
+
                 //translate whole text by Azure Translator
-                if (!string.IsNullOrEmpty(InputText))
-                {
-                    SourceLanguage = DetermineLanguage(SourceChoice);
-                    TargetLanguage = DetermineLanguage(TargetChoice);
-                    string toTranslate = await AzureTranslator.AzTranslate(SourceLanguage.Item2, TargetLanguage.Item2, InputText);
-                    Result = toTranslate;
-                }
-                else
-                    Result = "Input is empty";
+                SourceLanguage = DetermineLanguage(SourceChoice);
+                TargetLanguage = DetermineLanguage(TargetChoice);
+                string toTranslate = await AzureTranslator.AzTranslate(SourceLanguage.Item2, TargetLanguage.Item2, InputText);
+                Result = toTranslate;
+
+                TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);
 
                 //look up individual words by LibreTranslate
                 string cleanedInput = Regex.Replace(InputText, @"[^\w\s']", "");
@@ -113,16 +112,18 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 foreach (string word in allWords)
                 {
                     Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(word));
-                    WordMeaningPair NewWordMeaningPair = new WordMeaningPair(word, NewMeaning);
-                    IndividualWords.Add(NewWordMeaningPair);
+
+                    WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id, word, NewMeaning.translatedText, NewMeaning.Alternatives);
+                    TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
                 }
+
+
+                TempData["TempLearningSet"] = JsonSerializer.Serialize(TempLearningSet);
+
+                return Page();
             }
-
-            string UserId = (await _userManager.GetUserAsync(User))?.Id;
-
-            TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);
-            TempData["TempLearningSet"] = JsonSerializer.Serialize(TempLearningSet);
-
+            else
+                Result = "Input is empty";
             return Page();
         }
 

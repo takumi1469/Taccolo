@@ -9,10 +9,18 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
             : base(options)
         {
         }
-
         public DbSet<LearningSet> LearningSets { get; set; } // Table in the database
-    }
+        public DbSet<WordMeaningPair> WordMeaningPairs { get; set; } // Table in the database
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
-    //public DbSet<LearningSet> LearningSets { get; set; } // Table in the database
-}
+            // Configure one-to-many relationship between LearningSet and WordMeaningPair
+            modelBuilder.Entity<WordMeaningPair>()
+                .HasOne(wmp => wmp.LearningSet) // Each WordMeaningPair has one LearningSet
+                .WithMany(ls => ls.WordMeaningPairs) // Each LearningSet has many WordMeaningPairs
+                .HasForeignKey(wmp => wmp.LsId) // Foreign key in WordMeaningPair
+                .OnDelete(DeleteBehavior.Cascade); // Optional: Specify cascade delete behavior
+        }
+    }
 }

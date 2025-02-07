@@ -4,17 +4,21 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
 {
     public class LearningSet
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; } = Guid.NewGuid(); //Primary key
+        public string? UserId { get; set; } //Foreign key
         public string? Title { get; set; } = null;
         public string Input { get; set; }
         public string Translation { get; set; }
         public string SourceLanguage { get; set; }
         public string TargetLanguage { get; set; }
-        public string? UserId { get; set; }
-        //public List<WordMeaningPair> IndividualWords { get; set; } = new List<WordMeaningPair>();
+
+
+        [NotMapped]
+        public List<WordMeaningPair> WordMeaningPairs { get; set; } = new List<WordMeaningPair>(); // Navigation property
 
         [NotMapped]
         public ApplicationUser User { get; set; }
+        public LearningSet() { }
         public LearningSet(string? title, string input, string translation, string sourceLanguage, string targetLanguage, string? userId = null)
         {
             Title = title;
