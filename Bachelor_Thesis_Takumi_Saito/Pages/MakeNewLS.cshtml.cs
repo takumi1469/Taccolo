@@ -117,7 +117,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                     TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
                 }
 
-
                 TempData["TempLearningSet"] = JsonSerializer.Serialize(TempLearningSet);
 
                 return Page();

@@ -2,6 +2,7 @@ using Bachelor_Thesis_Takumi_Saito.Pages.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bachelor_Thesis_Takumi_Saito.Pages
 {
@@ -30,8 +31,10 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 RedirectToPage("Index");
             }
 
-            // Fetch the LearningSet using the string ID
-            LsToDisplay = await _context.LearningSets.FindAsync(LsId);
+            // Fetch the LearningSet using ID
+            LsToDisplay = await _context.LearningSets
+                .Include(ls => ls.WordMeaningPairs)
+                .FirstOrDefaultAsync(ls => ls.Id == LsId);
             if (LsToDisplay == null)
             {
                 RedirectToPage("List");

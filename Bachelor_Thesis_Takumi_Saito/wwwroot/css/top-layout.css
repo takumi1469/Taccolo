@@ -86,11 +86,16 @@ a {
 .div-level2 {
     display: flex;
     flex-direction: row;
+    width:100%;
 }
 
 .div-navigation {
     display: flex;
     width: 13%;
+}
+
+.div-each-page {
+    width: 87%;
 }
 
 .ul-side-menu {

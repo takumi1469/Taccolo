@@ -1,2 +1,29 @@
-﻿body {
+﻿.div-main {
+    /*width: 94%;*/
+}
+.h1-title{
+    margin:0 0 1vw 0;
+}
+
+.span-basic-info{
+    margin-right:2vw;
+}
+
+.div-outputs {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-outputs div {
+    width: 33%;
+    height: 10vw;
+    padding: 0 2vw 0 0;
+}
+
+.ul-alternatives {
+    margin: 0;
+}
+
+.p-word-meaning {
+    margin-bottom: 0;
 }
