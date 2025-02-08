@@ -11,12 +11,17 @@
 }
 
 <div class="div-main">
-    <h1 class="h1-title">Edit and View Learning Set</h1>
-    <div class="div-basic-info">
+    <div class="div-title">
+        <h1 class="h1-title">Edit and View Learning Set</h1>
+        <div class="div-buttons" id="div-buttons">
+            <button class="button-edit" id="button-edit" onclick="changeToEdit()">EDIT</button>
+        </div>
     </div>
-    <span class="span-basic-info"><strong>Title: </strong>@Model.LsToDisplay?.Title</span>
-    <span class="span-basic-info"><strong>From: </strong>@Model.LsToDisplay?.SourceLanguage</span>
-    <span class="span-basic-info"><strong>To: </strong>@Model.LsToDisplay?.TargetLanguage</span>
+    <div class="div-basic-info">
+        <span class="span-basic-info"><strong>Title: </strong>@Model.LsToDisplay?.Title</span>
+        <span class="span-basic-info"><strong>From: </strong>@Model.LsToDisplay?.SourceLanguage</span>
+        <span class="span-basic-info"><strong>To: </strong>@Model.LsToDisplay?.TargetLanguage</span>
+    </div>
     @if (Model.LsId == null)
     {
         <h4>Learning Set is not chosen.</h4>
@@ -24,11 +29,11 @@
     else
     {
         <div class="div-outputs">
-            <div class="div-original">
+            <div class="div-original" id="div-original">
                 <h2>Original Text</h2>
                 @if (Model.LsToDisplay?.Input != null)
                 {
-                    <p>@Html.Raw(Model.LsToDisplay?.Input.Replace("\n", "<br>"))</p>
+                    <p class="p-original" id="p-original">@Html.Raw(Model.LsToDisplay?.Input.Replace("\n", "<br>"))</p>
                     //replace \n with <br> because HTML can't read \n as line breaks
                 }
             </div>
@@ -36,7 +41,7 @@
                 <h2>Translated Text</h2>
                 @if (Model.LsToDisplay?.Translation != null)
                 {
-                    <p>@Html.Raw(Model.LsToDisplay?.Translation.Replace("\n", "<br>"))</p>
+                    <p class="p-translated" id="p-translated">@Html.Raw(Model.LsToDisplay?.Translation.Replace("\n", "<br>"))</p>
                     //replace \n with <br> because HTML can't read \n as line breaks
                 }
             </div>
@@ -60,3 +65,4 @@
         </div>
     }
 </div>
+<script src="/js/edit-view-ls.js"></script>

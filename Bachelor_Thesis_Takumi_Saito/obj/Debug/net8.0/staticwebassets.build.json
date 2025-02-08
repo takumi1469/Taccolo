@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "flcRNqF74cP06cnQxBygvP5YlnDepJEOsGmuj5C+m9E=",
+  "Hash": "sG29veiTGMdh0FlaCCcca5SPPHUQK530Vchyuqpo2iw=",
   "Source": "Bachelor_Thesis_Takumi_Saito",
   "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
   "Mode": "Default",
@@ -224,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icons\\search2.svg"
+    },
+    {
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\js\\edit-view-ls.js",
+      "SourceId": "Bachelor_Thesis_Takumi_Saito",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\",
+      "BasePath": "_content/Bachelor_Thesis_Takumi_Saito",
+      "RelativePath": "js/edit-view-ls.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\edit-view-ls.js"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\js\\make-new-ls.js",
