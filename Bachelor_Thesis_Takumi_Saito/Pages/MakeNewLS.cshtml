@@ -4,7 +4,7 @@
     ViewData["Title"] = "MakeNewLS";
 }
 @{
-    Layout = "_JustHeaderLayout";
+    Layout = "_taccoloLayout";
 }
 @section Styles {
     <link rel="stylesheet" href="/css/page-specific/MakeNewLs.css" />
@@ -12,9 +12,10 @@
 
 
 <div class="main-div">
-    <div class="video-field">
+    <h1>Make New Learning Set</h1>
+    <div class="video-field div-margin-bottom">
         <div class="h">
-            <h2>Got a Video to Learn From? (Not mandatory)</h2>
+            <h2>Got a Video to Learn From? (Not Mandatory)</h2>
         </div>
         <div class="div-video">
             <label for="video-url" class="label-video-url">Please paste the URL of the video</label>
@@ -33,7 +34,7 @@
         </div>
         <span class="span-warning-message">@Model.WarningMessage</span>
         <form method="post">
-            <div class="language-selection">
+            <div class="language-selection div-margin-bottom">
                 <div class="choose-language">
                     <label for="from-language">From this language:</label>
                     <select id="from-language" asp-for="SourceChoice" required>
@@ -59,15 +60,16 @@
                     </select>
                 </div>
             </div>
-            <div>
+            <div class="div-ls-title div-margin-bottom">
                 <label for="title" class="title">Title</label>
-                <input class="title" type="text" id="title" asp-for="Title" />
+                <input class="input-title" type="text" id="title" asp-for="Title" />
             </div>
-            <div>
+            <div class="div-input-text div-margin-bottom">
                 <label for="input-text" class="input-text">Input Text</label>
                 <textarea class="big-input input-text" type="text" id="input-text" asp-for="InputText" required></textarea>
             </div>
             <button type="submit" asp-page-handler="Process">SUBMIT</button>
+            <span>(This may take 10-30 seconds for long text)</span>
         </form>
     </div>
     <div class="div-result-title">
@@ -83,7 +85,7 @@
     {
         <div class="output-field" id="output-field">
             <div class="original-text">
-                <h4>Original Text</h4>
+                <h3>Original Text</h3>
                 @if (Model.InputText != null)
                 {
                     <p>@Html.Raw(Model.InputText.Replace("\n", "<br>"))</p>
@@ -91,7 +93,7 @@
                 }
             </div>
             <div class="translated-text">
-                <h4>Translated Text</h4>
+                <h3>Translated Text</h3>
                 @if (Model.Result != null)
                 {
                     <p>@Html.Raw(Model.Result.Replace("\n", "<br>"))</p>
@@ -99,7 +101,7 @@
                 }
             </div>
             <div class="each-word">
-                <h4>List of Words</h4>
+                <h3>List of Words</h3>
                 @if (Model.TempLearningSet?.WordMeaningPairs != null)
                 {
                     foreach (WordMeaningPair pair in Model.TempLearningSet.WordMeaningPairs)

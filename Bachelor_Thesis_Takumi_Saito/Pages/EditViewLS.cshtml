@@ -25,7 +25,7 @@
     {
         <div class="div-outputs">
             <div class="div-original">
-                <h4>Original Text</h4>
+                <h2>Original Text</h2>
                 @if (Model.LsToDisplay?.Input != null)
                 {
                     <p>@Html.Raw(Model.LsToDisplay?.Input.Replace("\n", "<br>"))</p>
@@ -33,7 +33,7 @@
                 }
             </div>
             <div class="div-translation">
-                <h4>Translated Text</h4>
+                <h2>Translated Text</h2>
                 @if (Model.LsToDisplay?.Translation != null)
                 {
                     <p>@Html.Raw(Model.LsToDisplay?.Translation.Replace("\n", "<br>"))</p>
@@ -41,7 +41,7 @@
                 }
             </div>
             <div class="div-glossary">
-                <h4>List of Words</h4>
+                <h2>List of Words</h2>
                 @foreach (WordMeaningPair pair in Model.LsToDisplay?.WordMeaningPairs)
                 {
                     <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.TranslatedText</p>

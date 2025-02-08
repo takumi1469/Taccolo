@@ -7,19 +7,35 @@
     flex-direction: column;
 }
 
-.input-video-url{
-    width:500px;
+.input-video-url {
+    width: 500px;
+    border-radius: 5px;
+    height:2vw;
+}
+
+input,textarea{
+    font-size:1.2vw;
 }
 
 .big-input {
-    width: 600px;
-    height: 300px;
-    font-size: 20px;
+    width: 40vw;
+    height: 20vw;
+    font-size: 1.3vw;
+    border-radius:5px;
 }
 
-h2 {
-    height:3vw;
+h1, h2, h3, h4{
     margin:0 0 0 0;
+}
+
+.div-margin-bottom{
+    margin-bottom:0.8vw;
+}
+
+button, select {
+    height: 1.8vw;
+    font-size: 1.1vw;
+    font-family: Nunito;
 }
 
 .input-text{
@@ -37,9 +53,15 @@ h2 {
     flex-direction: column;
 }
 
-.div-result-title{
-    display:flex;
-    flex-direction:row;
+.input-title{
+    width:35vw;
+    height:2vw;
+    border-radius:5px;
+}
+
+.div-result-title {
+    display: flex;
+    flex-direction: row;
     margin: 0.5vw 0 0.5vw 0;
 }
 
@@ -47,6 +69,7 @@ h2 {
     margin-left:3vw;
     width:22vw;
     font-size:1.6vw;
+    height:3vw;
 }
 
 .output-field {
