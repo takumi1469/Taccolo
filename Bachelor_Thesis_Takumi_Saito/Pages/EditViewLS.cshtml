@@ -9,12 +9,13 @@
 @section Styles {
     <link rel="stylesheet" href="/css/page-specific/EditViewLs.css" />
 }
+<p id="p-id">@Model.LsId</p>
 
 <div class="div-main">
     <div class="div-title">
         <h1 class="h1-title">Edit and View Learning Set</h1>
         <div class="div-buttons" id="div-buttons">
-            <button class="button-edit" id="button-edit" onclick="changeToEdit()">EDIT</button>
+            <button class="button-edit" id="button-edit" onclick="switchToEdit()">EDIT</button>
         </div>
     </div>
     <div class="div-basic-info">
@@ -37,7 +38,7 @@
                     //replace \n with <br> because HTML can't read \n as line breaks
                 }
             </div>
-            <div class="div-translation">
+            <div class="div-translated">
                 <h2>Translated Text</h2>
                 @if (Model.LsToDisplay?.Translation != null)
                 {

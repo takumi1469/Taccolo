@@ -40,5 +40,34 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 RedirectToPage("List");
             }
         }
+
+        [HttpPost]
+        [Route("EditViewLs/UpdateLs/{lsid}")]
+        public JsonResult OnPostUpdateLs([FromBody] UpdateLsDto updatedData)
+        {
+            var currentLs = _context.LearningSets.Find(updatedData.Id);
+
+            if (currentLs == null)
+            {
+                return new JsonResult(new { success = false, message = "LearningSet not found" });
+            }
+
+            // Update properties based on the incoming data
+            currentLs.Input = updatedData.OriginalText;
+            currentLs.Translation = updatedData.TranslatedText;
+
+            // Save changes to the database
+            _context.SaveChanges();
+
+            return new JsonResult(new { success = true, message = "LearningSet updated successfully" });
+        }
+
+        public class UpdateLsDto
+        {
+            public Guid Id { get; set; } // ID of the LearningSet
+            public string? OriginalText { get; set; }
+            public string? TranslatedText { get; set; }
+        }
+
     }
 }
