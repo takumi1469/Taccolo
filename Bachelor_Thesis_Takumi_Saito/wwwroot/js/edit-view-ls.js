@@ -39,10 +39,6 @@ function saveLearningSet() {
     const originalText = document.getElementById("textarea-original").value;
     const translatedText = document.getElementById("textarea-translated").value;
 
-    // Extract LearningSet ID from the URL
-    //const pathParts = window.location.pathname.split('/'); // Split the URL path by '/'
-    //const id = pathParts[pathParts.length - 2]; // Get the second last part of the URL
-
     const id = document.getElementById("p-id").textContent;
 
     // Prepare the data to send
@@ -52,12 +48,8 @@ function saveLearningSet() {
         TranslatedText: translatedText
     };
 
-    // Get ID of LearningSet because the endpoint includes ID in url
-    //const url = window.location.href;
-    //const learningSetId = url.split('/').pop(); 
-
     // Make the fetch call
-    fetch(`/EditViewLs/UpdateLs/${id}`, {
+    fetch(`/api/LearningSet/Update`, {
 
         method: "POST",
         headers: {

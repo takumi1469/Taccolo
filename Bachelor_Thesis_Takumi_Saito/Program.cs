@@ -55,12 +55,12 @@ app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
-
 // Add Authentication and Authorization to the pipeline
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.UseRouting();
+app.MapControllers();
 
 app.Run();
