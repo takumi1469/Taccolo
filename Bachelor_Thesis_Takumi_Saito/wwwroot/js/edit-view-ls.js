@@ -1,4 +1,13 @@
-﻿function switchToEdit() {
+﻿let originalTextUnchanged;
+let translatedTextUnchanged;
+
+// When the page loads, capture the initial texts
+window.onload = function () {
+    originalTextUnchanged = document.getElementById("p-original").textContent;
+    translatedTextUnchanged = document.getElementById("p-translated").textContent;
+};
+
+function switchToEdit() {
     // Get the p element with the original text
     const pOriginal = document.getElementById("p-original");
     const originalText = pOriginal.textContent;
@@ -28,6 +37,7 @@
     const buttonCancel = document.createElement("button");
     buttonCancel.id = "button-cancel";
     buttonCancel.textContent = "CANCEL";
+    buttonCancel.onclick = switchToViewByCancel;
 
     divButtons.innerHTML = "";
     divButtons.appendChild(buttonSave);
@@ -68,7 +78,7 @@ function saveLearningSet() {
             console.log("Learning Set updated successfully:", result);
 
             // Update the UI to "view mode"
-            switchToView(originalText, translatedText);
+            switchToViewBySave(originalText, translatedText);
         })
         .catch(error => {
             console.error("Error saving the learning set:", error);
@@ -76,22 +86,15 @@ function saveLearningSet() {
         });
 }
 
-function switchToView(originalText, translatedText) {
-    //// Replace textareas with <p> elements showing the updated text
-    //const divOriginal = document.getElementById("div-original");
-    //const divTranslation = document.getElementById("div-translation");
-
-    //divOriginal.innerHTML = `<p id="p-original">${originalText}</p>`;
-    //divTranslation.innerHTML = `<p id="p-translated">${translatedText}</p>`;
-
+function switchToViewBySave(originalText, translatedText) {
     const pOriginal = document.createElement("p");
     pOriginal.id = "p-original";
     pOriginal.className = "p-original";
     pOriginal.textContent = originalText;
 
     const pTranslated = document.createElement("p");
-    pTranslated.id = "p-original";
-    pTranslated.className = "p-original";
+    pTranslated.id = "p-tramslated";
+    pTranslated.className = "p-translated";
     pTranslated.textContent = translatedText;
 
     const textareaOriginal = document.getElementById("textarea-original");
@@ -103,32 +106,38 @@ function switchToView(originalText, translatedText) {
     // Replace SAVE and CANCEL buttons with the EDIT button
     const divButtons = document.getElementById("div-buttons");
     divButtons.innerHTML = `
-        <button class="button-edit" id="button-edit" onclick="switchToEdit()">EDIT</button>
+        <button class="button-edit" id="button-edit">EDIT</button>
     `;
 
+    // Attach the event listener to the new Edit button
+    const editButton = document.getElementById("button-edit");
+    editButton.addEventListener("click", switchToEdit);
+}
 
+function switchToViewByCancel(originalText, translatedText) {
+    const pOriginal = document.createElement("p");
+    pOriginal.id = "p-original";
+    pOriginal.className = "p-original";
+    pOriginal.textContent = originalTextUnchanged;
 
+    const pTranslated = document.createElement("p");
+    pTranslated.id = "p-translated";
+    pTranslated.className = "p-translated";
+    pTranslated.textContent = translatedTextUnchanged;
 
-    //// Get the p element with the original text
-    //const pOriginal = document.getElementById("p-original");
-    //const originalText = pOriginal.textContent;
+    const textareaOriginal = document.getElementById("textarea-original");
+    const textareaTranslated = document.getElementById("textarea-translated");
 
-    //const pTranslated = document.getElementById("p-translated");
-    //const translatedText = pTranslated.textContent;
+    textareaOriginal.replaceWith(pOriginal);
+    textareaTranslated.replaceWith(pTranslated);
 
-    //// Create a new textarea element
-    //const textareaOriginal = document.createElement("textarea");
-    //textareaOriginal.id = "textarea-original";
-    //textareaOriginal.value = originalText;
+    // Replace SAVE and CANCEL buttons with the EDIT button
+    const divButtons = document.getElementById("div-buttons");
+    divButtons.innerHTML = `
+        <button class="button-edit" id="button-edit">EDIT</button>
+    `; 
 
-    //const textareaTranslated = document.createElement("textarea");
-    //textareaTranslated.id = "textarea-translated";
-    //textareaTranslated.value = translatedText;
-
-
-    //pOriginal.replaceWith(textareaOriginal);
-    //pTranslated.replaceWith(textareaTranslated);
-
-
-
+    // Attach the event listener to the new Edit button
+    const editButton = document.getElementById("button-edit");
+    editButton.addEventListener("click", switchToEdit);
 }
