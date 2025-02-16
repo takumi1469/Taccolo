@@ -5,5 +5,7 @@
         public Guid Id { get; set; }
         public string? OriginalText { get; set; }
         public string? TranslatedText { get; set; }
+
+        public List<WordMeaningPair>? WordMeaningPairs { get; set;}
     }
 }

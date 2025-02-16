@@ -55,15 +55,19 @@ function saveLearningSet() {
 
     const id = document.getElementById("p-id").textContent;
 
+    // Get the updated WMPs
+    const updatedWmps = getAllWmpsAfterEdit();
+
     // Prepare the data to send
     const data = {
         Id: id,
         OriginalText: originalText,
-        TranslatedText: translatedText
+        TranslatedText: translatedText,
+        WordMeaningPairs: updatedWmps
     };
 
     // Make the fetch call
-    fetch(`/api/LearningSet/Update`, {
+    fetch(`/api/LearningSet/UpdateLs`, {
 
         method: "POST",
         headers: {
@@ -79,7 +83,7 @@ function saveLearningSet() {
             return response.json(); // Parse the JSON response
         })
         .then(result => {
-            console.log("Learning Set updated successfully:", result);
+            console.log("Learning Set updated successfully TEST3:", result);
 
             // Update the UI to "view mode"
             switchToViewBySave(originalText, translatedText);
@@ -149,10 +153,13 @@ function switchToViewByCancel(originalText, translatedText) {
 
 // <<From here down is for List of Words>>
 class WordMeaningPair {
-    constructor(word, translatedText, alternatives) {
+    constructor(word, translatedText, alternatives, lsId, wmpId, order) {
         this.word = word; // string
         this.translatedText = translatedText; //string 
         this.alternatives = alternatives; //array of strings
+        this.lsId = lsId;
+        this.wmpId = wmpId;
+        this.order = order;
     }
 }
 
@@ -179,16 +186,19 @@ function getAllWmpsBeforeEdit() {
     wmpContainers.forEach(wmp => {
         const word = wmp.querySelector(".p-word")?.textContent || "";
         const translatedText = wmp.querySelector(".p-translated-text")?.textContent || "";
+        const lsid = document.getElementById("p-id")?.textContent || "";
+        const wmpId = wmp.querySelector(".p-wmp-id")?.textContent || "";
+        const order = wmp.querySelector(".p-order")?.textContent || "";
 
         // Extract alternatives
         const alternatives = Array.from(wmp.querySelectorAll(".li-alternative-meaning"))
             .map(p => p.textContent)
             .filter(value => value.trim() !== ""); // Remove empty values
 
-        wmpArray.push({ word, translatedText, alternatives });
+        wmpArray.push({ wmpId, lsid, word, translatedText, alternatives, order });
     });
 
-    console.log(JSON.stringify(wmpArray));
+    //console.log(JSON.stringify(wmpArray));
     return wmpArray;
 }
 function getAllWmpsAfterEdit() {
@@ -196,22 +206,23 @@ function getAllWmpsAfterEdit() {
     let wmpArray = [];
 
     wmpContainers.forEach(wmp => {
-        const word = wmp.querySelector(".input-word")?.value || "";
+        const word = wmp.querySelector(".p-word")?.textContent || "";
         const translatedText = wmp.querySelector(".input-translated-text")?.value || "";
+        const lsid = document.getElementById("p-id")?.textContent || "";
+        const wmpId = wmp.querySelector(".p-wmp-id")?.textContent || "";
+        const order = wmp.querySelector(".p-order")?.textContent || "";
 
         // Extract alternatives (assuming they are in input elements with class 'input-alternative')
         const alternatives = Array.from(wmp.querySelectorAll(".input-alternative-meaning"))
             .map(input => input.value)
             .filter(value => value.trim() !== ""); // Remove empty values
 
-        wmpArray.push({ word, translatedText, alternatives });
+        wmpArray.push({ wmpId, lsid, word, translatedText, alternatives, order });
     });
 
+    console.log(JSON.stringify(wmpArray));
     return wmpArray;
 }
-
-
-
 
 
 

@@ -54,14 +54,14 @@
                 @foreach (WordMeaningPair pair in Model.LsToDisplay?.WordMeaningPairs)
                 {
                     <div class="div-wmp" id="div-wmp-@i">
-                        <p class="p-word"><strong>@pair.Word</strong> : </p>
+                        <p class="p-word"><strong>@pair.Word</strong></p><span> :</span>
                         <p class="p-translated-text">@pair.TranslatedText</p><br />
                         <p class="p-order no-display">@pair.Order</p>
                         <p class="p-wmp-id no-display">@pair.Id</p>
                         @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
                         {
                             int j = 0;
-                            <span>or:</span>
+                            <span class="span-or">or:</span>
                             <ul class="ul-alternatives">
                                 @foreach (string alternative in pair.Alternatives)
                                 {

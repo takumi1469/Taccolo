@@ -60,12 +60,17 @@ textarea{
 }
 
 .div-wmp{
-    margin-bottom:1.5vw;
+    margin:1vw 0 2vw 0;
+
 }
 
 .ul-alternatives {
     margin: 0;
 }
+
+/*.li-alternative-meaning {
+    margin-left: 20px;*/ /* Adjust indent */
+/*}*/
 
 .p-word, .p-translated-text {
     font-size: 1.6vw;
