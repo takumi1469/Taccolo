@@ -30,7 +30,7 @@
     else
     {
         <div class="div-outputs">
-            <div class="div-original" id="div-original">
+            <div class="div-original div-output-column" id="div-original">
                 <h2>Original Text</h2>
                 @if (Model.LsToDisplay?.Input != null)
                 {
@@ -38,7 +38,7 @@
                     //replace \n with <br> because HTML can't read \n as line breaks
                 }
             </div>
-            <div class="div-translated">
+            <div class="div-translated  div-output-column">
                 <h2>Translated Text</h2>
                 @if (Model.LsToDisplay?.Translation != null)
                 {
@@ -46,21 +46,30 @@
                     //replace \n with <br> because HTML can't read \n as line breaks
                 }
             </div>
-            <div class="div-glossary">
+            <div class="div-glossary div-output-column">
                 <h2>List of Words</h2>
+                @{
+                    int i = 0;
+                }
                 @foreach (WordMeaningPair pair in Model.LsToDisplay?.WordMeaningPairs)
                 {
-                    <p class="p-word-meaning"><strong>@pair.Word</strong> : @pair.TranslatedText</p>
-                    @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
-                    {
-                        <span>Alternatives:</span>
-                        <ul class="ul-alternatives">
-                            @foreach (string alternative in pair.Alternatives)
-                            {
-                                <li class="li-alternative-meaning">@alternative</li>
-                            }
-                        </ul>
-                    }
+                    <div class="div-wordmeaningpair" id="div-wmp-@i">
+                        <p class="p-word"><strong>@pair.Word</strong> : </p>
+                        <p class="p-translated-text">@pair.TranslatedText</p><br />
+                        @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
+                        {
+                            int j = 0;
+                            <span>Alternatives:</span>
+                            <ul class="ul-alternatives">
+                                @foreach (string alternative in pair.Alternatives)
+                                {
+                                    <li class="li-alternative-meaning" id="li-alt-@j">@alternative</li>
+                                    j++;
+                                }
+                            </ul>
+                        }
+                    </div>
+                    i++;
                 }
             </div>
         </div>

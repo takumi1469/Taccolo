@@ -42,6 +42,8 @@ function switchToEdit() {
     divButtons.innerHTML = "";
     divButtons.appendChild(buttonSave);
     divButtons.appendChild(buttonCancel);
+
+    switchToEditWords();
 }
 
 function saveLearningSet() {
@@ -141,3 +143,68 @@ function switchToViewByCancel(originalText, translatedText) {
     const editButton = document.getElementById("button-edit");
     editButton.addEventListener("click", switchToEdit);
 }
+
+// <<From here down is for List of Words>>
+
+// Define the Meaning class
+
+// Define the WordMeaningPair class
+class WordMeaningPair {
+    constructor(word, meaning) {
+        this.word = word; // String
+        this.meaning = meaning; // Instance of the Meaning class
+    }
+}
+
+class Meaning {
+    constructor(translatedText, alternatives) {
+        this.translatedText = translatedText; // String
+        this.alternatives = alternatives; // Array of strings
+    }
+}
+function switchToEditWords() {
+    const translatedTexts = document.getElementsByClassName("p-translated-text"); //returns HTMLCollection
+
+    for (let i = 0; i < translatedTexts.length; i++) {
+        var originalTranslatedText = translatedTexts[i].textContent;
+        const inputTranslatedText = document.createElement("input");
+        inputTranslatedText.value = originalTranslatedText;
+        inputTranslatedText.className = "input-translated-text";
+        translatedTexts[i].replaceWith(inputTranslatedText);
+        
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//// Example usage
+//const pair1 = new WordMeaningPair(
+//    "hello",
+//    new Meaning("hola", ["saludo", "hi"])
+//);
+
+//const pair2 = new WordMeaningPair(
+//    "goodbye",
+//    new Meaning("adiós", ["bye", "farewell"])
+//);
+
+//// Create an array of WordMeaningPair objects
+//const wordMeaningPairs = [pair1, pair2];
+
+//console.log(wordMeaningPairs);

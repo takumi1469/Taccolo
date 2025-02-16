@@ -109,12 +109,15 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 string cleanedInput = Regex.Replace(InputText, @"[^\w\s']", "");
                 string[] wordsArray = cleanedInput.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 List<string> allWords = new List<string>(wordsArray);
+
+                int tempOrder = 100;
                 foreach (string word in allWords)
                 {
                     Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(word));
 
-                    WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id, word, NewMeaning.translatedText, NewMeaning.Alternatives);
+                    WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id, word, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
                     TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
+                    tempOrder = tempOrder + 100;
                 }
 
                 // TempData might be causing cookie bloating that makes the site inaccessible
@@ -142,11 +145,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
                 if (TempLearningSet is not null)
                 {
-                    // Now save TempLearningSet to the database
-
-                    // For troubleshooting crash: make WordMeaningPairs empty. Result: this was NOT it.
-                    //TempLearningSet.WordMeaningPairs = null; 
-                    
+                    // Now save TempLearningSet to the database                    
                     _context.LearningSets.Add(TempLearningSet);
                     await _context.SaveChangesAsync();
                     return RedirectToPage("EditViewLs", new { lsid = TempLearningSet.Id });

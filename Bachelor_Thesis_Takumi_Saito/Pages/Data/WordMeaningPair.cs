@@ -12,15 +12,18 @@ namespace Bachelor_Thesis_Takumi_Saito
         public string TranslatedText { get; set; }
         public List<string>? Alternatives { get; set; } = new List<string>();
 
+        public int Order { get; set; }  
+
         [NotMapped]
         public LearningSet LearningSet { get; set; } // Navigation property
         public WordMeaningPair() { }
-        public WordMeaningPair(Guid lsid, string word, string translatedText, List<string>? alternatives)
+        public WordMeaningPair(Guid lsid, string word, string translatedText, List<string>? alternatives, int order)
         {
             LsId = lsid;
             Word = word;
             TranslatedText = translatedText;
             Alternatives = alternatives;
+            Order = order;  
         }
     }
 }
