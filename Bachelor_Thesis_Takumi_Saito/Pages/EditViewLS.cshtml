@@ -9,7 +9,7 @@
 @section Styles {
     <link rel="stylesheet" href="/css/page-specific/EditViewLs.css" />
 }
-<p id="p-id">@Model.LsId</p>
+<p id="p-id" class="p-id no-display">@Model.LsId</p>
 
 <div class="div-main">
     <div class="div-title">
@@ -53,13 +53,15 @@
                 }
                 @foreach (WordMeaningPair pair in Model.LsToDisplay?.WordMeaningPairs)
                 {
-                    <div class="div-wordmeaningpair" id="div-wmp-@i">
+                    <div class="div-wmp" id="div-wmp-@i">
                         <p class="p-word"><strong>@pair.Word</strong> : </p>
                         <p class="p-translated-text">@pair.TranslatedText</p><br />
+                        <p class="p-order no-display">@pair.Order</p>
+                        <p class="p-wmp-id no-display">@pair.Id</p>
                         @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
                         {
                             int j = 0;
-                            <span>Alternatives:</span>
+                            <span>or:</span>
                             <ul class="ul-alternatives">
                                 @foreach (string alternative in pair.Alternatives)
                                 {

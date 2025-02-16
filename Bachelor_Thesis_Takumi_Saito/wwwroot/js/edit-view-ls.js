@@ -1,10 +1,12 @@
 ﻿let originalTextUnchanged;
 let translatedTextUnchanged;
+let wmpUnchanged;
 
 // When the page loads, capture the initial texts
 window.onload = function () {
     originalTextUnchanged = document.getElementById("p-original").textContent;
     translatedTextUnchanged = document.getElementById("p-translated").textContent;
+    wmpUnchanged = getAllWmpsBeforeEdit();
 };
 
 function switchToEdit() {
@@ -43,7 +45,7 @@ function switchToEdit() {
     divButtons.appendChild(buttonSave);
     divButtons.appendChild(buttonCancel);
 
-    switchToEditWords();
+    switchToEditWmps();
 }
 
 function saveLearningSet() {
@@ -95,7 +97,7 @@ function switchToViewBySave(originalText, translatedText) {
     pOriginal.textContent = originalText;
 
     const pTranslated = document.createElement("p");
-    pTranslated.id = "p-tramslated";
+    pTranslated.id = "p-translated";
     pTranslated.className = "p-translated";
     pTranslated.textContent = translatedText;
 
@@ -144,38 +146,69 @@ function switchToViewByCancel(originalText, translatedText) {
     editButton.addEventListener("click", switchToEdit);
 }
 
+
 // <<From here down is for List of Words>>
-
-// Define the Meaning class
-
-// Define the WordMeaningPair class
 class WordMeaningPair {
-    constructor(word, meaning) {
-        this.word = word; // String
-        this.meaning = meaning; // Instance of the Meaning class
+    constructor(word, translatedText, alternatives) {
+        this.word = word; // string
+        this.translatedText = translatedText; //string 
+        this.alternatives = alternatives; //array of strings
     }
 }
 
-class Meaning {
-    constructor(translatedText, alternatives) {
-        this.translatedText = translatedText; // String
-        this.alternatives = alternatives; // Array of strings
-    }
-}
-function switchToEditWords() {
-    const translatedTexts = document.getElementsByClassName("p-translated-text"); //returns HTMLCollection
+function switchToEditWmps() {
+    document.querySelectorAll(".p-translated-text").forEach(el => {
+        const input = document.createElement("input");
+        input.value = el.textContent;
+        input.className = "input-translated-text";
+        el.replaceWith(input);
+    });
 
-    for (let i = 0; i < translatedTexts.length; i++) {
-        var originalTranslatedText = translatedTexts[i].textContent;
-        const inputTranslatedText = document.createElement("input");
-        inputTranslatedText.value = originalTranslatedText;
-        inputTranslatedText.className = "input-translated-text";
-        translatedTexts[i].replaceWith(inputTranslatedText);
-        
-    }
-
+    document.querySelectorAll(".li-alternative-meaning").forEach(el => {
+        const input = document.createElement("input");
+        input.value = el.textContent;
+        input.className = "input-alternative-meaning";
+        el.replaceWith(input);
+    });
 }
 
+function getAllWmpsBeforeEdit() {
+    const wmpContainers = document.querySelectorAll(".div-wmp"); // Select all WMP containers
+    let wmpArray = [];
+
+    wmpContainers.forEach(wmp => {
+        const word = wmp.querySelector(".p-word")?.textContent || "";
+        const translatedText = wmp.querySelector(".p-translated-text")?.textContent || "";
+
+        // Extract alternatives
+        const alternatives = Array.from(wmp.querySelectorAll(".li-alternative-meaning"))
+            .map(p => p.textContent)
+            .filter(value => value.trim() !== ""); // Remove empty values
+
+        wmpArray.push({ word, translatedText, alternatives });
+    });
+
+    console.log(JSON.stringify(wmpArray));
+    return wmpArray;
+}
+function getAllWmpsAfterEdit() {
+    const wmpContainers = document.querySelectorAll(".div-wmp"); // Select all WMP containers
+    let wmpArray = [];
+
+    wmpContainers.forEach(wmp => {
+        const word = wmp.querySelector(".input-word")?.value || "";
+        const translatedText = wmp.querySelector(".input-translated-text")?.value || "";
+
+        // Extract alternatives (assuming they are in input elements with class 'input-alternative')
+        const alternatives = Array.from(wmp.querySelectorAll(".input-alternative-meaning"))
+            .map(input => input.value)
+            .filter(value => value.trim() !== ""); // Remove empty values
+
+        wmpArray.push({ word, translatedText, alternatives });
+    });
+
+    return wmpArray;
+}
 
 
 
@@ -186,25 +219,3 @@ function switchToEditWords() {
 
 
 
-
-
-
-
-
-
-
-//// Example usage
-//const pair1 = new WordMeaningPair(
-//    "hello",
-//    new Meaning("hola", ["saludo", "hi"])
-//);
-
-//const pair2 = new WordMeaningPair(
-//    "goodbye",
-//    new Meaning("adiós", ["bye", "farewell"])
-//);
-
-//// Create an array of WordMeaningPair objects
-//const wordMeaningPairs = [pair1, pair2];
-
-//console.log(wordMeaningPairs);

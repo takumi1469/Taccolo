@@ -37,10 +37,17 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 RedirectToPage("Index");
             }
 
-            // Fetch the LearningSet using ID
+            // Fetch the LearningSet using ID together with associated WordMeaningPair
             LsToDisplay = await _context.LearningSets
                 .Include(ls => ls.WordMeaningPairs)
                 .FirstOrDefaultAsync(ls => ls.Id == LsId);
+
+            // Reorder WordMeaningPair accorging to Order
+            if (LsToDisplay != null)
+            {
+                LsToDisplay.WordMeaningPairs = LsToDisplay.WordMeaningPairs.OrderBy(wmp => wmp.Order).ToList();
+            }
+
             if (LsToDisplay == null)
             {
                 RedirectToPage("List");

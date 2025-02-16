@@ -2,6 +2,10 @@
     width: 94%;
 }
 
+.no-display{
+    display:none;
+}
+
 h1, h2, h3, h4 {
     margin: 0 0 0 0;
 }
@@ -55,15 +59,32 @@ textarea{
     font-family:Nunito;
 }
 
+.div-wmp{
+    margin-bottom:1.5vw;
+}
+
 .ul-alternatives {
     margin: 0;
 }
 
 .p-word, .p-translated-text {
+    font-size: 1.6vw;
     margin-bottom: 0;
-    display:inline;
+    display: inline;
 }
 
 .ul-alternatives{
     margin-bottom:1vw;
+}
+
+.input-translated-text,.input-alternative-meaning{
+    border-radius:3px;
+    margin-bottom:0.5vw;
+    height:1.5vw;
+    font-size:1.2vw;
+/*    width:8vw;*/
+}
+
+.input-alternative-meaning {
+    display: block;
 }
