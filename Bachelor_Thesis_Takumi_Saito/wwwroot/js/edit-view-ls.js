@@ -1,15 +1,18 @@
 ﻿let originalTextUnchanged;
 let translatedTextUnchanged;
 let wmpUnchanged;
+let WmpHTMLUnchanged;
 
 // When the page loads, capture the initial texts
-window.onload = function () {
+function getUnchangedItems () {
     originalTextUnchanged = document.getElementById("p-original").textContent;
     translatedTextUnchanged = document.getElementById("p-translated").textContent;
     wmpUnchanged = getAllWmpsBeforeEdit();
+    WmpHTMLUnchanged = document.getElementById("div-glossary").innerHTML;
 };
 
 function switchToEdit() {
+    getUnchangedItems();
     // Get the p element with the original text
     const pOriginal = document.getElementById("p-original");
     const originalText = pOriginal.textContent;
@@ -44,6 +47,11 @@ function switchToEdit() {
     divButtons.innerHTML = "";
     divButtons.appendChild(buttonSave);
     divButtons.appendChild(buttonCancel);
+
+    // Make icons appear
+    const icons = document.querySelectorAll(".icon-for-edit").forEach(el => {
+        el.style.display = "inline";
+    });
 
     switchToEditWmps();
 }
@@ -120,6 +128,8 @@ function switchToViewBySave(originalText, translatedText) {
     // Attach the event listener to the new Edit button
     const editButton = document.getElementById("button-edit");
     editButton.addEventListener("click", switchToEdit);
+
+    switchToViewWmpBySave();
 }
 
 function switchToViewByCancel(originalText, translatedText) {
@@ -148,18 +158,20 @@ function switchToViewByCancel(originalText, translatedText) {
     // Attach the event listener to the new Edit button
     const editButton = document.getElementById("button-edit");
     editButton.addEventListener("click", switchToEdit);
+
+    switchToViewWmpByCancel()
 }
 
 
 // <<From here down is for List of Words>>
 class WordMeaningPair {
     constructor(word, translatedText, alternatives, lsId, wmpId, order) {
-        this.word = word; // string
-        this.translatedText = translatedText; //string 
-        this.alternatives = alternatives; //array of strings
-        this.lsId = lsId;
-        this.wmpId = wmpId;
-        this.order = order;
+        this.Word = word; // string
+        this.TranslatedText = translatedText; //string 
+        this.Alternatives = alternatives; //array of strings
+        this.LsId = lsId;
+        this.Id = wmpId;
+        this.Order = order;
     }
 }
 
@@ -186,8 +198,8 @@ function getAllWmpsBeforeEdit() {
     wmpContainers.forEach(wmp => {
         const word = wmp.querySelector(".p-word")?.textContent || "";
         const translatedText = wmp.querySelector(".p-translated-text")?.textContent || "";
-        const lsid = document.getElementById("p-id")?.textContent || "";
-        const wmpId = wmp.querySelector(".p-wmp-id")?.textContent || "";
+        const lsid = document.getElementById("p-id")?.textContent.trim() || "";
+        const wmpId = wmp.querySelector(".p-wmp-id")?.textContent.trim() || "";
         const order = wmp.querySelector(".p-order")?.textContent || "";
 
         // Extract alternatives
@@ -206,27 +218,53 @@ function getAllWmpsAfterEdit() {
     let wmpArray = [];
 
     wmpContainers.forEach(wmp => {
-        const word = wmp.querySelector(".p-word")?.textContent || "";
-        const translatedText = wmp.querySelector(".input-translated-text")?.value || "";
-        const lsid = document.getElementById("p-id")?.textContent || "";
-        const wmpId = wmp.querySelector(".p-wmp-id")?.textContent || "";
-        const order = wmp.querySelector(".p-order")?.textContent || "";
+        const Word = wmp.querySelector(".p-word")?.textContent || "";
+        const TranslatedText = wmp.querySelector(".input-translated-text")?.value || "";
+        const LsId = document.getElementById("p-id")?.textContent.trim() || "";
+        const Id = wmp.querySelector(".p-wmp-id")?.textContent.trim() || "";
+        const Order = wmp.querySelector(".p-order")?.textContent || "";
 
-        // Extract alternatives (assuming they are in input elements with class 'input-alternative')
-        const alternatives = Array.from(wmp.querySelectorAll(".input-alternative-meaning"))
+        // Extract alternatives
+        const Alternatives = Array.from(wmp.querySelectorAll(".input-alternative-meaning"))
             .map(input => input.value)
             .filter(value => value.trim() !== ""); // Remove empty values
 
-        wmpArray.push({ wmpId, lsid, word, translatedText, alternatives, order });
+        wmpArray.push({ Id, LsId, Word, TranslatedText, Alternatives, Order });
     });
 
     console.log(JSON.stringify(wmpArray));
     return wmpArray;
 }
 
+function switchToViewWmpBySave() {
+    document.querySelectorAll(".input-translated-text").forEach(el => {
+        const p = document.createElement("p");
+        p.textContent = el.value;
+        p.className = "p-translated-text";
+        el.replaceWith(p);
+    });
+
+    document.querySelectorAll(".input-alternative-meaning").forEach(el => {
+        const li = document.createElement("li");
+        li.textContent = el.value;
+        li.className = "li-alternative-meaning";
+        el.replaceWith(li);
+    });
+}
+
+function switchToViewWmpByCancel() {
+    document.getElementById("div-glossary").innerHTML = WmpHTMLUnchanged;
 
 
 
 
 
 
+    //const divGlossary = document.getElementById("div-glossary");
+    //divGlossary.innerHTML = "<h2>List of Words</h2>";
+    //wmpUnchanged.forEach(wmp => {
+    //    const divWmp = document.createElement("div");
+    //    divWmp.className = "div-wmp";
+
+    //})
+}

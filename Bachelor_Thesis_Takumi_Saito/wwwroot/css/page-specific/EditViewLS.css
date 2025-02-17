@@ -60,17 +60,9 @@ textarea{
 }
 
 .div-wmp{
-    margin:1vw 0 2vw 0;
+    margin:1vw 0 0 0;
 
 }
-
-.ul-alternatives {
-    margin: 0;
-}
-
-/*.li-alternative-meaning {
-    margin-left: 20px;*/ /* Adjust indent */
-/*}*/
 
 .p-word, .p-translated-text {
     font-size: 1.6vw;
@@ -78,8 +70,26 @@ textarea{
     display: inline;
 }
 
-.ul-alternatives{
-    margin-bottom:1vw;
+.icon-for-edit {
+    width: 2vw;
+    display: inline;
+    margin-left: 2vw;
+    vertical-align: middle;
+    display:none;
+}
+
+.div-each-alt{
+    display:flex;
+    flex-direction:row;
+}
+
+.li-alternative-meaning{
+    display:flex;
+    flex-direction:row;
+}
+
+.ul-alternatives {
+    margin: 0 0 1vw 0;
 }
 
 .input-translated-text,.input-alternative-meaning{

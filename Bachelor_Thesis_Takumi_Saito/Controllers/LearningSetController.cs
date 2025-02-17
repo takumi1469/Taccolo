@@ -43,7 +43,20 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
             // Update properties of current LS based on the incoming data
             currentLs.Input = updatedData.OriginalText;
             currentLs.Translation = updatedData.TranslatedText;
-            currentLs.WordMeaningPairs = updatedData.WordMeaningPairs;
+            currentLs.WordMeaningPairs = updatedData.WordMeaningPairs?.Select(dto => new WordMeaningPair
+            {
+                Id = dto.Id,
+                LsId = dto.LsId,
+                Word = dto.Word,
+                TranslatedText = dto.TranslatedText,
+                Alternatives = dto.Alternatives,
+                Order = dto.Order
+            }).ToList();
+
+
+
+
+
 
             // Save changes to the database
             _context.SaveChanges();
@@ -51,29 +64,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
             return new JsonResult(new { success = true, message = "LearningSet updated successfully TEST" });
         }
 
-        [HttpPost("UpdateWmps")]
-        [IgnoreAntiforgeryToken]
-        [AllowAnonymous]
-        public IActionResult UpdateWordMeaningPairs([FromBody] UpdateLsDto updatedData)
-        {
-            _logger.LogInformation("***UpdateWmps Endpoint triggered***");
-
-            var currentLs = _context.LearningSets.Find(updatedData.Id);
-
-            if (currentLs == null)
-            {
-                return new JsonResult(new { success = false, message = "LearningSet not found" });
-            }
-
-            // Update properties of current LS based on the incoming data
-            currentLs.Input = updatedData.OriginalText;
-            currentLs.Translation = updatedData.TranslatedText;
-
-            // Save changes to the database
-            _context.SaveChanges();
-
-            return new JsonResult(new { success = true, message = "LearningSet updated successfully Test2" });
-        }
+       
 
     }
 }

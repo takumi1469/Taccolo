@@ -46,7 +46,7 @@
                     //replace \n with <br> because HTML can't read \n as line breaks
                 }
             </div>
-            <div class="div-glossary div-output-column">
+            <div class="div-glossary div-output-column" id="div-glossary">
                 <h2>List of Words</h2>
                 @{
                     int i = 0;
@@ -55,7 +55,10 @@
                 {
                     <div class="div-wmp" id="div-wmp-@i">
                         <p class="p-word"><strong>@pair.Word</strong></p><span> :</span>
-                        <p class="p-translated-text">@pair.TranslatedText</p><br />
+                        <p class="p-translated-text">@pair.TranslatedText</p>
+                        <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit">
+                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit">
+                        <br />
                         <p class="p-order no-display">@pair.Order</p>
                         <p class="p-wmp-id no-display">@pair.Id</p>
                         @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
@@ -65,16 +68,22 @@
                             <ul class="ul-alternatives">
                                 @foreach (string alternative in pair.Alternatives)
                                 {
-                                    <li class="li-alternative-meaning" id="li-alt-@j">@alternative</li>
+                                    if (alternative != String.Empty)
+                                    {
+                                        <div class="div-each-alt">
+                                        <li class="li-alternative-meaning" id="li-alt-@j">@alternative</li>
+                                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit">
+                                        </div>
+                                    }
                                     j++;
                                 }
-                            </ul>
+                        </ul>
                         }
-                    </div>
+                </div>
                     i++;
                 }
-            </div>
         </div>
+    </div>
     }
 </div>
 <script src="/js/edit-view-ls.js"></script>

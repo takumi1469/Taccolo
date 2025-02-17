@@ -6,6 +6,6 @@
         public string? OriginalText { get; set; }
         public string? TranslatedText { get; set; }
 
-        public List<WordMeaningPair>? WordMeaningPairs { get; set;}
+        public List<WordMeaningPairDto>? WordMeaningPairs { get; set;}
     }
 }

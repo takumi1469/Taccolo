@@ -41,6 +41,26 @@
       "PackagePath": "staticwebassets\\icons\\logout.svg"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\minus.svg",
+      "PackagePath": "staticwebassets\\icons\\minus.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\minus3.svg",
+      "PackagePath": "staticwebassets\\icons\\minus3.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\plus.svg",
+      "PackagePath": "staticwebassets\\icons\\plus.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\plus2.svg",
+      "PackagePath": "staticwebassets\\icons\\plus2.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\plus3.svg",
+      "PackagePath": "staticwebassets\\icons\\plus3.svg"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\search2.svg",
       "PackagePath": "staticwebassets\\icons\\search2.svg"
     },
