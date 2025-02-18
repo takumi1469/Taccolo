@@ -71,11 +71,15 @@ textarea{
 }
 
 .icon-for-edit {
-    width: 2vw;
+    width: 1.5vw;
     display: inline;
-    margin-left: 2vw;
+    margin-left: 1vw;
     vertical-align: middle;
     display:none;
+}
+
+.icon-plus-meaning {
+    margin: 0.3vw 0 0.3vw 0.5vw;
 }
 
 .div-each-alt{

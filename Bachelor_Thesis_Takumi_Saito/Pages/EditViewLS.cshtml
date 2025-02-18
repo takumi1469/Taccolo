@@ -56,15 +56,15 @@
                     <div class="div-wmp" id="div-wmp-@i">
                         <p class="p-word"><strong>@pair.Word</strong></p><span> :</span>
                         <p class="p-translated-text">@pair.TranslatedText</p>
-                        <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit">
-                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit">
+                        <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-word" title="add word below">
+                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-word" title="delete this word">
                         <br />
                         <p class="p-order no-display">@pair.Order</p>
                         <p class="p-wmp-id no-display">@pair.Id</p>
                         @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
                         {
                             int j = 0;
-                            <span class="span-or">or:</span>
+                            <span class="span-or">or: <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning" /></span>
                             <ul class="ul-alternatives">
                                 @foreach (string alternative in pair.Alternatives)
                                 {
@@ -72,12 +72,12 @@
                                     {
                                         <div class="div-each-alt">
                                         <li class="li-alternative-meaning" id="li-alt-@j">@alternative</li>
-                                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit">
+                                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning">
                                         </div>
                                     }
                                     j++;
                                 }
-                        </ul>
+                            </ul>
                         }
                 </div>
                     i++;

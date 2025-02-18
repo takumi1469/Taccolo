@@ -4,7 +4,7 @@ let wmpUnchanged;
 let WmpHTMLUnchanged;
 
 // When the page loads, capture the initial texts
-function getUnchangedItems () {
+function getUnchangedItems() {
     originalTextUnchanged = document.getElementById("p-original").textContent;
     translatedTextUnchanged = document.getElementById("p-translated").textContent;
     wmpUnchanged = getAllWmpsBeforeEdit();
@@ -153,7 +153,7 @@ function switchToViewByCancel(originalText, translatedText) {
     const divButtons = document.getElementById("div-buttons");
     divButtons.innerHTML = `
         <button class="button-edit" id="button-edit">EDIT</button>
-    `; 
+    `;
 
     // Attach the event listener to the new Edit button
     const editButton = document.getElementById("button-edit");
@@ -255,16 +255,26 @@ function switchToViewWmpBySave() {
 function switchToViewWmpByCancel() {
     document.getElementById("div-glossary").innerHTML = WmpHTMLUnchanged;
 
+    // Attach events to Plus and Minus buttons
 
 
 
 
 
-    //const divGlossary = document.getElementById("div-glossary");
-    //divGlossary.innerHTML = "<h2>List of Words</h2>";
-    //wmpUnchanged.forEach(wmp => {
-    //    const divWmp = document.createElement("div");
-    //    divWmp.className = "div-wmp";
+}
 
-    //})
+function addWord() {
+
+}
+
+function addMeaning() {
+
+}
+
+function deleteWord() {
+
+}
+
+function deleteMeaning() {
+
 }
