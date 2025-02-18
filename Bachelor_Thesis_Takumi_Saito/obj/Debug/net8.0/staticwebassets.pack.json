@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\icons\\search2.svg"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\icons\\star.svg",
+      "PackagePath": "staticwebassets\\icons\\star.svg"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Bachelor_Thesis_Takumi_Saito\\BachelorThesisGitRepo\\Bachelor_Thesis_Takumi_Saito\\wwwroot\\js\\edit-view-ls.js",
       "PackagePath": "staticwebassets\\js\\edit-view-ls.js"
     },

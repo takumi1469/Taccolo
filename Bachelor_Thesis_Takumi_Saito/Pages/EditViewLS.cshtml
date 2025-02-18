@@ -54,6 +54,7 @@
                 @foreach (WordMeaningPair pair in Model.LsToDisplay?.WordMeaningPairs)
                 {
                     <div class="div-wmp" id="div-wmp-@i">
+                        <img src="~/icons/star.svg" class="icon icon-star" title="add word below">
                         <p class="p-word"><strong>@pair.Word</strong></p><span> :</span>
                         <p class="p-translated-text">@pair.TranslatedText</p>
                         <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-word" title="add word below">

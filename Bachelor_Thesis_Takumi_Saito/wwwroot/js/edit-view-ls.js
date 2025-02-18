@@ -2,8 +2,40 @@
 let translatedTextUnchanged;
 let wmpUnchanged;
 let WmpHTMLUnchanged;
+const lsId = document.getElementById("p-id").textContent;
 
-// When the page loads, capture the initial texts
+window.onload = function () {
+    // Attach event listeners here
+    const addWordButtons = document.querySelectorAll(".icon-plus-word");
+    const addMeaningButtons = document.querySelectorAll(".icon-plus-meaning");
+    const deleteWordButtons = document.querySelectorAll(".icon-minus-word");
+    const deleteMeaningButtons = document.querySelectorAll(".icon-minus-meaning");
+
+    addWordButtons.forEach(el => {
+        el.addEventListener("click", addWord);
+    });
+
+    addMeaningButtons.forEach(el => {
+        el.addEventListener("click", addMeaning);
+    });
+
+    deleteWordButtons.forEach(el => {
+        el.addEventListener("click", deleteWord);
+    });
+
+    deleteMeaningButtons.forEach(el => {
+        el.addEventListener("click", deleteMeaning);
+    });
+
+
+
+    myElement.addEventListener('click', function () {
+        console.log('Element clicked');
+    });
+};
+
+
+// When you switch to EDIT mode, capture the initial texts
 function getUnchangedItems() {
     originalTextUnchanged = document.getElementById("p-original").textContent;
     translatedTextUnchanged = document.getElementById("p-translated").textContent;
@@ -176,6 +208,14 @@ class WordMeaningPair {
 }
 
 function switchToEditWmps() {
+    document.querySelectorAll(".p-word").forEach(el => {
+        const input = document.createElement("input");
+        input.value = el.textContent;
+        input.className = "input-word";
+        el.replaceWith(input);
+    });
+
+
     document.querySelectorAll(".p-translated-text").forEach(el => {
         const input = document.createElement("input");
         input.value = el.textContent;
@@ -218,7 +258,7 @@ function getAllWmpsAfterEdit() {
     let wmpArray = [];
 
     wmpContainers.forEach(wmp => {
-        const Word = wmp.querySelector(".p-word")?.textContent || "";
+        const Word = wmp.querySelector(".input-word")?.value || "";
         const TranslatedText = wmp.querySelector(".input-translated-text")?.value || "";
         const LsId = document.getElementById("p-id")?.textContent.trim() || "";
         const Id = wmp.querySelector(".p-wmp-id")?.textContent.trim() || "";
@@ -237,6 +277,15 @@ function getAllWmpsAfterEdit() {
 }
 
 function switchToViewWmpBySave() {
+    document.querySelectorAll(".input-word").forEach(el => {
+        const p = document.createElement("p");
+        const strong = document.createElement("strong");
+        strong.textContent = el.value;
+        p.appendChild(strong);
+        p.className = "p-word";
+        el.replaceWith(p);
+    });
+
     document.querySelectorAll(".input-translated-text").forEach(el => {
         const p = document.createElement("p");
         p.textContent = el.value;
@@ -250,6 +299,12 @@ function switchToViewWmpBySave() {
         li.className = "li-alternative-meaning";
         el.replaceWith(li);
     });
+
+    // Make icons disappear
+    const icons = document.querySelectorAll(".icon-for-edit").forEach(el => {
+        el.style.display = "none";
+    });
+
 }
 
 function switchToViewWmpByCancel() {
@@ -264,7 +319,37 @@ function switchToViewWmpByCancel() {
 }
 
 function addWord() {
+    // Step 1: Find the closest WMP container (assuming it's wrapped in a div)
+    const closestDivWmp = button.closest(".div-wmp");
+    const currentOrder = parseInt(closestDivWmp.querySelector(".p-order").textContent, 10);
+    const newOrder = currentOrder + 1;
 
+    // Step 2: Create a new div for the new WordMeaningPair inputs
+    const newDivWmp = document.createElement("div");
+    newDivWmp.classList.add("div-wmp"); // Same class as other WMPs
+
+    const newGuid = crypto.randomUUID();
+
+    newDivWmp.innerHTML = `
+                        <img src="/icons/star.svg" class="icon icon-star" title="add word below">
+                        <input class="input-word" placeholder="Word"><span> :</span>
+                        <input class="input-translated-text" placeholder="Meaning">
+                        <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-word" title="add word below" style="display: inline;">
+                        <img src="/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-word" title="delete this word" style="display: inline;">
+                        <br>
+                        <p class="p-order no-display">${newOrder}</p>
+                        <p class="p-wmp-id no-display">${newGuid}</p>
+                            <span class="span-or">or: <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning" style="display: inline;"></span>
+                            <ul class="ul-alternatives">
+                                        <div class="div-each-alt">
+                                        <input class="input-alternative-meaning" placeholder="other meaning">
+                                        <img src="/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning" style="display: inline;">
+                                        </div>
+                            </ul>
+    `;
+
+    // Step 3: Insert the new WMP div **right after** the current WMP container
+    wmpContainer.insertAdjacentElement("afterend", newDivWmp);
 }
 
 function addMeaning() {
