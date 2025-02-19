@@ -110,14 +110,14 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 string[] wordsArray = cleanedInput.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 List<string> allWords = new List<string>(wordsArray);
 
-                int tempOrder = 100;
+                int tempOrder = 1;
                 foreach (string word in allWords)
                 {
                     Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(word));
 
                     WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id, word, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
                     TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
-                    tempOrder = tempOrder + 100;
+                    tempOrder++;
                 }
 
                 // TempData might be causing cookie bloating that makes the site inaccessible

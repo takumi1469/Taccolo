@@ -5,6 +5,8 @@ using Bachelor_Thesis_Takumi_Saito.Pages.Data;
 using Bachelor_Thesis_Takumi_Saito.Pages;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Humanizer;
 
 namespace Bachelor_Thesis_Takumi_Saito.Controllers
 {
@@ -33,7 +35,11 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
         {
             _logger.LogInformation("***UpdateLs Endpoint triggered***");
 
-            var currentLs = _context.LearningSets.Find(updatedData.Id);
+            //var currentLs = _context.LearningSets.Find(updatedData.Id);
+
+            var currentLs = _context.LearningSets
+        .Include(ls => ls.WordMeaningPairs)
+        .FirstOrDefault(ls => ls.Id == updatedData.Id);
 
             if (currentLs == null)
             {
@@ -43,7 +49,8 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
             // Update properties of current LS based on the incoming data
             currentLs.Input = updatedData.OriginalText;
             currentLs.Translation = updatedData.TranslatedText;
-            currentLs.WordMeaningPairs = updatedData.WordMeaningPairs?.Select(dto => new WordMeaningPair
+
+            List<WordMeaningPair> tempWMPs = updatedData.WordMeaningPairs?.Select(dto => new WordMeaningPair
             {
                 Id = dto.Id,
                 LsId = dto.LsId,
@@ -52,6 +59,37 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
                 Alternatives = dto.Alternatives,
                 Order = dto.Order
             }).ToList();
+
+            foreach (var wmp in tempWMPs)
+            {
+                if (wmp.Id == Guid.Empty)
+                {
+                    // New WMP, add to context
+                    var newWmp = new WordMeaningPair
+                    {
+                        Id = Guid.NewGuid(),
+                        LsId = wmp.LsId,
+                        Word = wmp.Word,
+                        TranslatedText = wmp.TranslatedText,
+                        Alternatives = wmp.Alternatives,
+                        Order = wmp.Order
+                    };
+                    _context.WordMeaningPairs.Add(newWmp);
+                }
+                else
+                {
+                    // Existing WMP, update it
+                    var existingWmp = currentLs.WordMeaningPairs.FirstOrDefault(x => x.Id == wmp.Id);
+                    if (existingWmp != null)
+                    {
+                        existingWmp.Word = wmp.Word;
+                        existingWmp.TranslatedText = wmp.TranslatedText;
+                        existingWmp.Alternatives = wmp.Alternatives;
+                        existingWmp.Order = wmp.Order;
+                    }
+                }
+            }
+
 
 
 

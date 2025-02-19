@@ -4,35 +4,35 @@ let wmpUnchanged;
 let WmpHTMLUnchanged;
 const lsId = document.getElementById("p-id").textContent;
 
-window.onload = function () {
-    // Attach event listeners here
+window.onload = attachEventListenerToIcons();
+
+function attachEventListenerToIcons() {
     const addWordButtons = document.querySelectorAll(".icon-plus-word");
     const addMeaningButtons = document.querySelectorAll(".icon-plus-meaning");
     const deleteWordButtons = document.querySelectorAll(".icon-minus-word");
     const deleteMeaningButtons = document.querySelectorAll(".icon-minus-meaning");
 
     addWordButtons.forEach(el => {
+        el.removeEventListener("click", addWord);
         el.addEventListener("click", addWord);
     });
 
     addMeaningButtons.forEach(el => {
+        el.removeEventListener("click", addMeaning);
         el.addEventListener("click", addMeaning);
     });
 
     deleteWordButtons.forEach(el => {
+        el.removeEventListener("click", deleteWord);
         el.addEventListener("click", deleteWord);
     });
 
     deleteMeaningButtons.forEach(el => {
+        el.removeEventListener("click", deleteMeaning);
         el.addEventListener("click", deleteMeaning);
     });
 
-
-
-    myElement.addEventListener('click', function () {
-        console.log('Element clicked');
-    });
-};
+}
 
 
 // When you switch to EDIT mode, capture the initial texts
@@ -256,13 +256,15 @@ function getAllWmpsBeforeEdit() {
 function getAllWmpsAfterEdit() {
     const wmpContainers = document.querySelectorAll(".div-wmp"); // Select all WMP containers
     let wmpArray = [];
+    let newOrder = 1;
 
     wmpContainers.forEach(wmp => {
         const Word = wmp.querySelector(".input-word")?.value || "";
         const TranslatedText = wmp.querySelector(".input-translated-text")?.value || "";
         const LsId = document.getElementById("p-id")?.textContent.trim() || "";
         const Id = wmp.querySelector(".p-wmp-id")?.textContent.trim() || "";
-        const Order = wmp.querySelector(".p-order")?.textContent || "";
+        const Order = newOrder;
+        newOrder++;
 
         // Extract alternatives
         const Alternatives = Array.from(wmp.querySelectorAll(".input-alternative-meaning"))
@@ -309,26 +311,22 @@ function switchToViewWmpBySave() {
 
 function switchToViewWmpByCancel() {
     document.getElementById("div-glossary").innerHTML = WmpHTMLUnchanged;
-
-    // Attach events to Plus and Minus buttons
-
-
-
-
-
+    attachEventListenerToIcons();
 }
 
-function addWord() {
+function addWord(event) {
     // Step 1: Find the closest WMP container (assuming it's wrapped in a div)
+    const button = event.target;
     const closestDivWmp = button.closest(".div-wmp");
     const currentOrder = parseInt(closestDivWmp.querySelector(".p-order").textContent, 10);
-    const newOrder = currentOrder + 1;
+    //const newOrder = currentOrder + 1;
 
     // Step 2: Create a new div for the new WordMeaningPair inputs
     const newDivWmp = document.createElement("div");
     newDivWmp.classList.add("div-wmp"); // Same class as other WMPs
 
-    const newGuid = crypto.randomUUID();
+    //Give placeholder GUID to signify to backend that it's a new WMP
+    const newGuid = "00000000-0000-0000-0000-000000000000" 
 
     newDivWmp.innerHTML = `
                         <img src="/icons/star.svg" class="icon icon-star" title="add word below">
@@ -337,7 +335,7 @@ function addWord() {
                         <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-word" title="add word below" style="display: inline;">
                         <img src="/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-word" title="delete this word" style="display: inline;">
                         <br>
-                        <p class="p-order no-display">${newOrder}</p>
+                        <p class="p-order no-display">dummy order</p>
                         <p class="p-wmp-id no-display">${newGuid}</p>
                             <span class="span-or">or: <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning" style="display: inline;"></span>
                             <ul class="ul-alternatives">
@@ -349,7 +347,9 @@ function addWord() {
     `;
 
     // Step 3: Insert the new WMP div **right after** the current WMP container
-    wmpContainer.insertAdjacentElement("afterend", newDivWmp);
+        closestDivWmp.insertAdjacentElement("afterend", newDivWmp);
+
+    attachEventListenerToIcons();
 }
 
 function addMeaning() {
