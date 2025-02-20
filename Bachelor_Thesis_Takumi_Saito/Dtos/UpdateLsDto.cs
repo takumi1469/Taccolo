@@ -7,5 +7,6 @@
         public string? TranslatedText { get; set; }
 
         public List<WordMeaningPairDto>? WordMeaningPairs { get; set;}
+        public List<Guid> WmpsToDelete { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 let translatedTextUnchanged;
 let wmpUnchanged;
 let WmpHTMLUnchanged;
+let wmpsToDelete = [];
 const lsId = document.getElementById("p-id").textContent;
 
 window.onload = attachEventListenerToIcons();
@@ -103,7 +104,8 @@ function saveLearningSet() {
         Id: id,
         OriginalText: originalText,
         TranslatedText: translatedText,
-        WordMeaningPairs: updatedWmps
+        WordMeaningPairs: updatedWmps,
+        WmpsToDelete: wmpsToDelete
     };
 
     // Make the fetch call
@@ -259,19 +261,21 @@ function getAllWmpsAfterEdit() {
     let newOrder = 1;
 
     wmpContainers.forEach(wmp => {
-        const Word = wmp.querySelector(".input-word")?.value || "";
-        const TranslatedText = wmp.querySelector(".input-translated-text")?.value || "";
-        const LsId = document.getElementById("p-id")?.textContent.trim() || "";
-        const Id = wmp.querySelector(".p-wmp-id")?.textContent.trim() || "";
-        const Order = newOrder;
-        newOrder++;
+        if (wmp.querySelector(".input-word").value.trim() != "") {
+            const Word = wmp.querySelector(".input-word").value;
+            const TranslatedText = wmp.querySelector(".input-translated-text")?.value || "";
+            const LsId = document.getElementById("p-id")?.textContent.trim() || "";
+            const Id = wmp.querySelector(".p-wmp-id")?.textContent.trim() || "";
+            const Order = newOrder;
+            newOrder++;
 
-        // Extract alternatives
-        const Alternatives = Array.from(wmp.querySelectorAll(".input-alternative-meaning"))
-            .map(input => input.value)
-            .filter(value => value.trim() !== ""); // Remove empty values
+            // Extract alternatives
+            const Alternatives = Array.from(wmp.querySelectorAll(".input-alternative-meaning"))
+                .map(input => input.value)
+                .filter(value => value.trim() !== ""); // Remove empty values
 
-        wmpArray.push({ Id, LsId, Word, TranslatedText, Alternatives, Order });
+            wmpArray.push({ Id, LsId, Word, TranslatedText, Alternatives, Order });
+        }
     });
 
     console.log(JSON.stringify(wmpArray));
@@ -280,12 +284,18 @@ function getAllWmpsAfterEdit() {
 
 function switchToViewWmpBySave() {
     document.querySelectorAll(".input-word").forEach(el => {
-        const p = document.createElement("p");
-        const strong = document.createElement("strong");
-        strong.textContent = el.value;
-        p.appendChild(strong);
-        p.className = "p-word";
-        el.replaceWith(p);
+
+        if (el.value.trim() === "") {
+            el.closest(".div-wmp")?.remove();
+        }
+        else {
+            const p = document.createElement("p");
+            const strong = document.createElement("strong");
+            strong.textContent = el.value;
+            p.appendChild(strong);
+            p.className = "p-word";
+            el.replaceWith(p);
+        }
     });
 
     document.querySelectorAll(".input-translated-text").forEach(el => {
@@ -296,10 +306,21 @@ function switchToViewWmpBySave() {
     });
 
     document.querySelectorAll(".input-alternative-meaning").forEach(el => {
-        const li = document.createElement("li");
-        li.textContent = el.value;
-        li.className = "li-alternative-meaning";
-        el.replaceWith(li);
+
+        const closestDivAlt = el.closest(".div-each-alt");
+        const closestDivWmp = closestDivAlt.closest(".div-wmp");
+        const listDivAlts = closestDivWmp.querySelectorAll(".div-each-alt");
+
+        if (listDivAlts.length > 1 && el.value === "") {
+            closestDivAlt.remove();
+        }
+        else {
+            const li = document.createElement("li");
+            li.textContent = el.value;
+            li.className = "li-alternative-meaning";
+            el.replaceWith(li);
+        }
+
     });
 
     // Make icons disappear
@@ -352,14 +373,45 @@ function addWord(event) {
     attachEventListenerToIcons();
 }
 
-function addMeaning() {
+function addMeaning(event) {
+    const button = event.target;
+    const closestDivAlt = button.closest(".div-each-alt");
+    const newDivAlt = document.createElement("div");
+    newDivAlt.className = "div-each-alt";
+    newDivAlt.innerHTML = `
+                        <input class="input-alternative-meaning" placeholder="other meaning">
+                        <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below" style="display: inline;">
+                        <img src="/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning" style="display: inline;">
+    `;
 
+    closestDivAlt.insertAdjacentElement("afterend", newDivAlt);
+
+    attachEventListenerToIcons();
 }
 
-function deleteWord() {
-
+function deleteWord(event) {
+    const button = event.target;
+    const closestDivWmp = button.closest(".div-wmp");
+    const guidToDelete = closestDivWmp.querySelector(".p-wmp-id").textContent.trim();
+    wmpsToDelete.push(guidToDelete);
+    
+    closestDivWmp.remove();
 }
 
-function deleteMeaning() {
+function deleteMeaning(event) {
+    const button = event.target;
+    const closestDivAlt = button.closest(".div-each-alt");
+    const closestDivWmp = closestDivAlt.closest(".div-wmp");
+    const listDivAlts = closestDivWmp.querySelectorAll(".div-each-alt");
+    if (listDivAlts.length > 1) {
+        closestDivAlt.remove();
+    }
+    else {
+        closestDivAlt.innerHTML = `
+                        <input class="input-alternative-meaning" placeholder="other meaning">
+                        <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below" style="display: inline;">
+                        <img src="/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning" style="display: inline;">
+    `;
+    }
 
 }

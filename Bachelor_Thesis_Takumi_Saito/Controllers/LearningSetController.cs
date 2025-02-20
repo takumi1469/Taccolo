@@ -90,7 +90,17 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
                 }
             }
 
-
+            if (updatedData.WmpsToDelete != null)
+            {
+                foreach (var guid in updatedData.WmpsToDelete)
+                {
+                    var wmpToDelete = _context.WordMeaningPairs.Find(guid);
+                    if (wmpToDelete != null)
+                    {
+                        _context.WordMeaningPairs.Remove(wmpToDelete);
+                    }
+                }
+            }
 
 
 

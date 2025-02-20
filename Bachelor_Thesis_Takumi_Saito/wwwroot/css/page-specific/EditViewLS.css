@@ -83,12 +83,6 @@ textarea{
     width: 1.5vw;
 }
 
-
-
-.icon-plus-meaning {
-    margin: 0.3vw 0 0.3vw 0.5vw;
-}
-
 .div-each-alt{
     display:flex;
     flex-direction:row;

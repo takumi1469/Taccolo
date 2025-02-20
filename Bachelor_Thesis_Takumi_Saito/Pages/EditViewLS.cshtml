@@ -48,12 +48,9 @@
             </div>
             <div class="div-glossary div-output-column" id="div-glossary">
                 <h2>List of Words</h2>
-                @{
-                    int i = 0;
-                }
                 @foreach (WordMeaningPair pair in Model.LsToDisplay?.WordMeaningPairs)
                 {
-                    <div class="div-wmp" id="div-wmp-@i">
+                    <div class="div-wmp">
                         <img src="~/icons/star.svg" class="icon icon-star" title="add word below">
                         <p class="p-word"><strong>@pair.Word</strong></p><span> :</span>
                         <p class="p-translated-text">@pair.TranslatedText</p>
@@ -62,26 +59,36 @@
                         <br />
                         <p class="p-order no-display">@pair.Order</p>
                         <p class="p-wmp-id no-display">@pair.Id</p>
-                        @if (pair.Alternatives is not null && pair.Alternatives.Count > 0)
+                        @if (pair.Alternatives is not null)
                         {
-                            int j = 0;
-                            <span class="span-or">or: <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning" /></span>
+                            <span class="span-or">or: </span>
                             <ul class="ul-alternatives">
-                                @foreach (string alternative in pair.Alternatives)
+                                @if(pair.Alternatives.Count == 0)
                                 {
-                                    if (alternative != String.Empty)
-                                    {
-                                        <div class="div-each-alt">
-                                        <li class="li-alternative-meaning" id="li-alt-@j">@alternative</li>
-                                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning">
-                                        </div>
-                                    }
-                                    j++;
+                                    <div class="div-each-alt">
+                                    <li class="li-alternative-meaning"></li>
+                                    <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below">
+                                    <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning">
+                                    </div>
                                 }
+                                else
+                                {
+                                    foreach (string alternative in pair.Alternatives)
+                                    {
+                                        if (alternative != String.Empty)
+                                        {
+                                    <div class="div-each-alt">
+                                        <li class="li-alternative-meaning">@alternative</li>
+                                        <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below">
+                                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning">
+                                    </div>
+                                        }
+                                    }
+                                }
+                                
                             </ul>
                         }
                 </div>
-                    i++;
                 }
         </div>
     </div>
