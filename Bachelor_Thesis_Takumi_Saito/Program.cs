@@ -26,6 +26,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 //Add EmailSender to DI
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
+//Add AzureTranslator to DI
+builder.Services.AddSingleton<AzureTranslator>();
+
 //Add Session State
 builder.Services.AddSession(options =>
 {

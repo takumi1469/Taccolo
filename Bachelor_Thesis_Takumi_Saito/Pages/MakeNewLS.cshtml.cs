@@ -58,13 +58,14 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         //}
 
         private readonly UserManager<ApplicationUser> _userManager;
-
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public MakeNewLsModel(AppDbContext context, UserManager<ApplicationUser> userManager)
+        public MakeNewLsModel(AppDbContext context, UserManager<ApplicationUser> userManager, IConfiguration configuration)
         {
             _context = context; //"context" comes from DI
             _userManager = userManager; //"userManager" comes from DI
+            _configuration = configuration;
         }
 
         public async Task<string> LookupLibreTranslate(string word)
@@ -100,7 +101,8 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 //translate whole text by Azure Translator
                 SourceLanguage = DetermineLanguage(SourceChoice);
                 TargetLanguage = DetermineLanguage(TargetChoice);
-                string toTranslate = await AzureTranslator.AzTranslate(SourceLanguage.Item2, TargetLanguage.Item2, InputText);
+                AzureTranslator azureTranslator = new AzureTranslator(_configuration);
+                string toTranslate = await azureTranslator.AzTranslate(SourceLanguage.Item2, TargetLanguage.Item2, InputText);
                 Result = toTranslate;
 
                 TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);

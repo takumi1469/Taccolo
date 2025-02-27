@@ -7,14 +7,18 @@ namespace Bachelor_Thesis_Takumi_Saito
 {
     public class AzureTranslator
     {
-        private static readonly string key = "6TWINhsRBQXsJ2hHqW31pclMmXk5EWC08c02OFTzBeoQcWWXPbrFJQQJ99AKAC5RqLJXJ3w3AAAbACOG8Xvs";
+        private static string key;
         private static readonly string endpoint = "https://api.cognitive.microsofttranslator.com";
 
         // location, also known as region.
         // required if you're using a multi-service or regional (not global) resource. It can be found in the Azure portal on the Keys and Endpoint page.
         private static readonly string location = "westeurope";
 
-        public static async Task<string> AzTranslate(string sourceLanguage, string targetLanguage, string inputText)
+        public AzureTranslator(IConfiguration configuration)
+        {
+            key = configuration["AzureTranslator:ApiKey"];
+        }
+        public async Task<string> AzTranslate(string sourceLanguage, string targetLanguage, string inputText)
         {
             // Input and output languages are defined as parameters.
             string route = $"/translate?api-version=3.0&from={sourceLanguage}&to={targetLanguage}";
