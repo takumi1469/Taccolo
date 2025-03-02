@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Bachelor_Thesis_Takumi_Saito.Pages.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,9 +13,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Bachelor_Thesis_Takumi_Saito.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250301124214_AddedCommentsAndDescriptionEmptyConstructors")]
+    partial class AddedCommentsAndDescriptionEmptyConstructors
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,72 +97,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.Comment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Body")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("LsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LsId");
-
-                    b.ToTable("Comments");
-                });
-
-            modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.HelpReply", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Body")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("RequestId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RequestId");
-
-                    b.ToTable("HelpReplys");
-                });
-
-            modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.HelpRequest", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Body")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("LsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LsId");
-
-                    b.ToTable("HelpRequests");
                 });
 
             modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.LearningSet", b =>
@@ -358,39 +295,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.Comment", b =>
-                {
-                    b.HasOne("Bachelor_Thesis_Takumi_Saito.Pages.Data.LearningSet", "LearningSet")
-                        .WithMany("Comments")
-                        .HasForeignKey("LsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LearningSet");
-                });
-
-            modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.HelpReply", b =>
-                {
-                    b.HasOne("Bachelor_Thesis_Takumi_Saito.Pages.Data.HelpRequest", "HelpRequest")
-                        .WithMany("HelpReplys")
-                        .HasForeignKey("RequestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HelpRequest");
-                });
-
-            modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.HelpRequest", b =>
-                {
-                    b.HasOne("Bachelor_Thesis_Takumi_Saito.Pages.Data.LearningSet", "LearningSet")
-                        .WithMany("HelpRequests")
-                        .HasForeignKey("LsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LearningSet");
-                });
-
             modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.WordMeaningPair", b =>
                 {
                     b.HasOne("Bachelor_Thesis_Takumi_Saito.Pages.Data.LearningSet", "LearningSet")
@@ -452,17 +356,8 @@ namespace Bachelor_Thesis_Takumi_Saito.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.HelpRequest", b =>
-                {
-                    b.Navigation("HelpReplys");
-                });
-
             modelBuilder.Entity("Bachelor_Thesis_Takumi_Saito.Pages.Data.LearningSet", b =>
                 {
-                    b.Navigation("Comments");
-
-                    b.Navigation("HelpRequests");
-
                     b.Navigation("WordMeaningPairs");
                 });
 #pragma warning restore 612, 618

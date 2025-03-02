@@ -1,4 +1,5 @@
 ﻿@page "{lsid?}"
+@using Bachelor_Thesis_Takumi_Saito.Pages.Data
 @model Bachelor_Thesis_Takumi_Saito.Pages.EditViewLsModel
 @{
     ViewData["Title"] = "EditViewLs";
@@ -10,6 +11,11 @@
     <link rel="stylesheet" href="/css/page-specific/EditViewLs.css" />
 }
 <p id="p-id" class="p-id no-display">@Model.LsId</p>
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <p id="p-username" class="p-username no-display">@User.Identity.Name</p>
+}
+
 
 <div class="div-main">
     <div class="div-title">
@@ -62,54 +68,83 @@
                         @if (pair.Alternatives is not null)
                         {
                             <span class="span-or">or: </span>
-                            <ul class="ul-alternatives">
-                                @if(pair.Alternatives.Count == 0)
-                                {
-                                    <div class="div-each-alt">
-                                    <li class="li-alternative-meaning"></li>
+                            @if (pair.Alternatives.Count == 0)
+                            {
+                                <div class="div-each-alt">
+                                    <p class="p-alternative-meaning"></p>
                                     <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below">
                                     <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning">
-                                    </div>
-                                }
-                                else
+                                </div>
+                            }
+                            else
+                            {
+                                foreach (string alternative in pair.Alternatives)
                                 {
-                                    foreach (string alternative in pair.Alternatives)
+                                    if (alternative != String.Empty)
                                     {
-                                        if (alternative != String.Empty)
-                                        {
-                                    <div class="div-each-alt">
-                                        <li class="li-alternative-meaning">@alternative</li>
-                                        <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below">
-                                        <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning">
-                                    </div>
-                                        }
+                                        <div class="div-each-alt">
+                                            <p class="p-alternative-meaning">@alternative</p>
+                                            <img src="~/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below">
+                                            <img src="~/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning">
+                                        </div>
                                     }
                                 }
-                                
-                            </ul>
+                            }
                         }
-                </div>
+                    </div>
                 }
+            </div>
         </div>
-        <div class="div-comments-etc">
-            <div class="div-description">
-                <h4 class="h4-description-title">Description</h4>
-                if(@Model.LsToDisplay.Description != null){
+    }
+
+    <div class="div-comments-etc">
+        <div class="div-description">
+            <h3 class="h3-description-title">Description</h3>
+            @if (Model.LsToDisplay.Description != null)
+            {
                 <p class="p-description">@Model.LsToDisplay.Description</p>
-                }
-                else {
+            }
+            else
+            {
                 <p class="p-description">There is no description for this Learning Set.</p>
+            }
+        </div>
+        <div class="div-comments-helps">
+            <div class="div-comments">
+                <h3 class="h3-comments-title">Comments on Learning Set</h3>
+                <textarea class="textarea-comment" id="textarea-comment" placeholder="Add a comment"></textarea>
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <button class="button-comment" onclick="addComment(event)">Comment</button>
                 }
-            </div>
-            <div class="div-comments-helps">
-                <div class="div-comments">
+                else
+                {
+                    <a class="a-redirect-login" href="/Identity/Account/Login"><button class="button-comment">Comment</button></a>
+                }
+                
+                @if(Model.LsToDisplay.Comments != null){
+                    @foreach (EditViewLsModel.CommentWithUsername comment in Model.CommentWithUsernames)
+                    {
+                        <div class="div-each-comment">
+                            <p class="p-comment-username">@comment.Username</p>
+                            <p class="p-comment">@comment.Body</p>
+                        </div>
 
-                </div>
-                <div class="div-helps"></div>
-            </div>
+                    }
+                }
+                else
+                {
+                    <p id="p-no-comment">There's no comments yet.</p>
+                }
 
+            </div>
+            <div class="div-helps">
+                <h3 class="h3-helps-title">Help Requests and Replies</h3>
+                <p>Dummy</p>
+            </div>
         </div>
     </div>
-    }
+
+
 </div>
 <script src="/js/edit-view-ls.js"></script>

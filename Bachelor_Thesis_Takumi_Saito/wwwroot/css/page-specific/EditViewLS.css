@@ -45,11 +45,12 @@ button {
     flex-direction: row;
 }
 
-.div-output-column{
+.div-output-column {
     width: 33%;
     height: 50vw;
     padding: 0 2vw 0 0;
     overflow-y: scroll;
+    height: 35vw;
 }
 
 textarea{
@@ -88,13 +89,10 @@ textarea{
     flex-direction:row;
 }
 
-.li-alternative-meaning{
+.p-alternative-meaning{
     display:flex;
     flex-direction:row;
-}
-
-.ul-alternatives {
-    margin: 0 0 1vw 0;
+    margin: 0 0 0 2vw;
 }
 
 .input-word,.input-translated-text, .input-alternative-meaning {
@@ -115,3 +113,32 @@ textarea{
 .input-alternative-meaning {
     display: block;
 }
+
+/*from here down is for comments*/
+
+.div-comments-helps{
+    display:flex;
+    flex-direction:row;
+}
+
+.div-comments,.div-helps{
+    margin-right:3vw;
+    width:48%;
+    display:flex;
+    flex-direction:column;
+}
+
+.textarea-comment{
+    height:5vw;
+}
+
+.button-comment{
+    margin-left:auto;
+    font-size:1.2vw;
+    height:2vw;
+}
+
+.span-date-time{
+    font-size:1vw;
+}
+

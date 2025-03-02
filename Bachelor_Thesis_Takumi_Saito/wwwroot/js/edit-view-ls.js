@@ -4,6 +4,15 @@ let wmpUnchanged;
 let WmpHTMLUnchanged;
 let wmpsToDelete = [];
 const lsId = document.getElementById("p-id").textContent;
+let dateTime = new Date().toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+});
+console.log(dateTime); // Example output: "20:30 March 1, 2025"
 
 window.onload = attachEventListenerToIcons();
 
@@ -225,7 +234,7 @@ function switchToEditWmps() {
         el.replaceWith(input);
     });
 
-    document.querySelectorAll(".li-alternative-meaning").forEach(el => {
+    document.querySelectorAll(".p-alternative-meaning").forEach(el => {
         const input = document.createElement("input");
         input.value = el.textContent;
         input.className = "input-alternative-meaning";
@@ -245,7 +254,7 @@ function getAllWmpsBeforeEdit() {
         const order = wmp.querySelector(".p-order")?.textContent || "";
 
         // Extract alternatives
-        const alternatives = Array.from(wmp.querySelectorAll(".li-alternative-meaning"))
+        const alternatives = Array.from(wmp.querySelectorAll(".p-alternative-meaning"))
             .map(p => p.textContent)
             .filter(value => value.trim() !== ""); // Remove empty values
 
@@ -315,10 +324,10 @@ function switchToViewWmpBySave() {
             closestDivAlt.remove();
         }
         else {
-            const li = document.createElement("li");
-            li.textContent = el.value;
-            li.className = "li-alternative-meaning";
-            el.replaceWith(li);
+            const p = document.createElement("p");
+            p.textContent = el.value;
+            p.className = "p-alternative-meaning";
+            el.replaceWith(p);
         }
 
     });
@@ -359,12 +368,10 @@ function addWord(event) {
                         <p class="p-order no-display">dummy order</p>
                         <p class="p-wmp-id no-display">${newGuid}</p>
                             <span class="span-or">or: <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning" style="display: inline;"></span>
-                            <ul class="ul-alternatives">
                                         <div class="div-each-alt">
                                         <input class="input-alternative-meaning" placeholder="other meaning">
                                         <img src="/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning" style="display: inline;">
                                         </div>
-                            </ul>
     `;
 
     // Step 3: Insert the new WMP div **right after** the current WMP container
@@ -412,6 +419,26 @@ function deleteMeaning(event) {
                         <img src="/icons/plus3.svg" class="icon icon-plus icon-for-edit icon-plus-meaning" title="add meaning below" style="display: inline;">
                         <img src="/icons/minus3.svg" class="icon icon-minus icon-for-edit icon-minus-meaning" title="delete this meaning" style="display: inline;">
     `;
+    }
+}
+
+
+// <<From here down is for Comments and Helps>>
+
+function addComment(event) {
+    const button = event.target;
+    const username = document.getElementById("p-username").textContent;
+    const comment = document.getElementById("textarea-comment").value.trim();
+    const newDivComment = document.createElement("div");
+    newDivComment.className = "div-each-comment";
+    if (comment == "") {}
+    else {
+        newDivComment.innerHTML = `
+    <p class="p-comment-username">${username} <span class="span-date-time">(${dateTime})</span></p>
+    <p class="p-comment">${comment}</p>
+    `;
+        button.insertAdjacentElement("afterend", newDivComment);
+        document.getElementById("p-no-comment").remove();
     }
 
 }

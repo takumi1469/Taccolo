@@ -26,10 +26,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
         [NotMapped]
         public List<HelpRequest> HelpRequests { get; set; }
 
-        [NotMapped]
-        public List<HelpReply> HelpReplys { get; set; }
-
-
         public LearningSet() { }
         public LearningSet(string? title, string input, string translation, string sourceLanguage, string targetLanguage, string? userId = null)
         {

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using static Bachelor_Thesis_Takumi_Saito.Pages.EditViewLsModel;
 
 namespace Bachelor_Thesis_Takumi_Saito.Pages
 {
@@ -16,6 +17,10 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         [BindProperty(SupportsGet = true, Name = "lsid")] // This binds the route parameter
         public Guid? LsId { get; set; }
         public LearningSet? LsToDisplay { get; set; }
+
+        public List<CommentWithUsername> CommentWithUsernames { get; set; } = new List<CommentWithUsername>();
+
+
 
         public EditViewLsModel(UserManager<ApplicationUser> userManager,
             AppDbContext context,
@@ -47,14 +52,30 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             {
                 LsToDisplay.WordMeaningPairs = LsToDisplay.WordMeaningPairs.OrderBy(wmp => wmp.Order).ToList();
             }
-
-            if (LsToDisplay == null)
+            else
             {
                 RedirectToPage("List");
             }
+
+            // Prepare CommentWithUsernames for Razor Page to show username
+            var comments = await _context.Comments.ToListAsync();
+
+            // Fetch usernames and map them
+            CommentWithUsernames = comments.Select(c => new CommentWithUsername
+            {
+                Body = c.Body,
+                //Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName).FirstOrDefault() ?? "Unknown"
+                Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName)
+                             .FirstOrDefault() ?? "Unknown"
+            }).ToList();
+
         }
 
-        
+        public class CommentWithUsername()
+        {
+            public string Body { get; set; }
+            public string Username { get; set; }
+        }
 
 
         
