@@ -27,15 +27,12 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
             _logger = logger;
         }
 
-
         [HttpPost("UpdateLs")]
         [IgnoreAntiforgeryToken]
         [AllowAnonymous]
         public IActionResult UpdateLearningSet([FromBody] UpdateLsDto updatedData)
         {
             _logger.LogInformation("***UpdateLs Endpoint triggered***");
-
-            //var currentLs = _context.LearningSets.Find(updatedData.Id);
 
             var currentLs = _context.LearningSets
         .Include(ls => ls.WordMeaningPairs)
@@ -46,9 +43,11 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
                 return new JsonResult(new { success = false, message = "LearningSet not found" });
             }
 
-            // Update properties of current LS based on the incoming data
+            // Update original text and translation of current LS based on the incoming data
             currentLs.Input = updatedData.OriginalText;
             currentLs.Translation = updatedData.TranslatedText;
+
+            // from here down is for WordMeaningPair
 
             List<WordMeaningPair> tempWMPs = updatedData.WordMeaningPairs?.Select(dto => new WordMeaningPair
             {
@@ -102,17 +101,15 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
                 }
             }
 
+            // from here down is for comments
+            var userId = _userManager.GetUserId(User);
 
 
 
-
-            // Save changes to the database
+            // Save changes to the database, after all the changes are made
             _context.SaveChanges();
 
             return new JsonResult(new { success = true, message = "LearningSet updated successfully TEST" });
         }
-
-       
-
     }
 }

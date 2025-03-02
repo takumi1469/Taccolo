@@ -35,28 +35,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
         public string Result { get; set; }
 
-        //public List<WordMeaningPair> WordMeaningPairs { get; set; } = new List<WordMeaningPair>();
-
-        //public class Meaning
-        //{
-        //    [JsonPropertyName("alternatives")]
-        //    public List<string>? Alternatives { get; set; } = new List<string>();
-        //    [JsonPropertyName("translatedText")]
-        //    public string translatedText { get; set; }
-        //}
-
-        //public class WordMeaningPair
-        //{
-        //    public string Word { get; set; }
-        //    public Meaning MeaningPaired { get; set; }
-
-        //    public WordMeaningPair(string _word, Meaning _meaningPaired)
-        //    {
-        //        this.Word = _word;
-        //        this.MeaningPaired = _meaningPaired;
-        //    }
-        //}
-
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;

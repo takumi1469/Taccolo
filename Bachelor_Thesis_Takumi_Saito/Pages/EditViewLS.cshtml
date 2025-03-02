@@ -1,5 +1,6 @@
 ﻿@page "{lsid?}"
 @using Bachelor_Thesis_Takumi_Saito.Pages.Data
+@using System.Security.Claims
 @model Bachelor_Thesis_Takumi_Saito.Pages.EditViewLsModel
 @{
     ViewData["Title"] = "EditViewLs";
@@ -14,6 +15,7 @@
 @if (User.Identity?.IsAuthenticated == true)
 {
     <p id="p-username" class="p-username no-display">@User.Identity.Name</p>
+    <p id="p-user-id" class=p-user-id no-display">@User.FindFirstValue(ClaimTypes.NameIdentifier)</p>
 }
 
 
