@@ -49,67 +49,70 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
 
             // from here down is for WordMeaningPair
 
-            List<WordMeaningPair> tempWMPs = updatedData.WordMeaningPairs?.Select(dto => new WordMeaningPair
-            {
-                Id = dto.Id,
-                LsId = dto.LsId,
-                Word = dto.Word,
-                TranslatedText = dto.TranslatedText,
-                Alternatives = dto.Alternatives,
-                Order = dto.Order
-            }).ToList();
+            //List<WordMeaningPair> tempWMPs = updatedData.WordMeaningPairs?.Select(dto => new WordMeaningPair
+            //{
+            //    Id = dto.Id,
+            //    LsId = dto.LsId,
+            //    Word = dto.Word,
+            //    TranslatedText = dto.TranslatedText,
+            //    Alternatives = dto.Alternatives,
+            //    Order = dto.Order
+            //}).ToList();
 
-            foreach (var wmp in tempWMPs)
-            {
-                if (wmp.Id == Guid.Empty)
-                {
-                    // New WMP, add to context
-                    var newWmp = new WordMeaningPair
-                    {
-                        Id = Guid.NewGuid(),
-                        LsId = wmp.LsId,
-                        Word = wmp.Word,
-                        TranslatedText = wmp.TranslatedText,
-                        Alternatives = wmp.Alternatives,
-                        Order = wmp.Order
-                    };
-                    _context.WordMeaningPairs.Add(newWmp);
-                }
-                else
-                {
-                    // Existing WMP, update it
-                    var existingWmp = currentLs.WordMeaningPairs.FirstOrDefault(x => x.Id == wmp.Id);
-                    if (existingWmp != null)
-                    {
-                        existingWmp.Word = wmp.Word;
-                        existingWmp.TranslatedText = wmp.TranslatedText;
-                        existingWmp.Alternatives = wmp.Alternatives;
-                        existingWmp.Order = wmp.Order;
-                    }
-                }
-            }
+            //foreach (var wmp in tempWMPs)
+            //{
+            //    if (wmp.Id == Guid.Empty)
+            //    {
+            //        // New WMP, add to context
+            //        var newWmp = new WordMeaningPair
+            //        {
+            //            Id = Guid.NewGuid(),
+            //            LsId = wmp.LsId,
+            //            Word = wmp.Word,
+            //            TranslatedText = wmp.TranslatedText,
+            //            Alternatives = wmp.Alternatives,
+            //            Order = wmp.Order
+            //        };
+            //        _context.WordMeaningPairs.Add(newWmp);
+            //    }
+            //    else
+            //    {
+            //        // Existing WMP, update it
+            //        var existingWmp = currentLs.WordMeaningPairs.FirstOrDefault(x => x.Id == wmp.Id);
+            //        if (existingWmp != null)
+            //        {
+            //            existingWmp.Word = wmp.Word;
+            //            existingWmp.TranslatedText = wmp.TranslatedText;
+            //            existingWmp.Alternatives = wmp.Alternatives;
+            //            existingWmp.Order = wmp.Order;
+            //        }
+            //    }
+            //}
 
-            if (updatedData.WmpsToDelete != null)
-            {
-                foreach (var guid in updatedData.WmpsToDelete)
-                {
-                    var wmpToDelete = _context.WordMeaningPairs.Find(guid);
-                    if (wmpToDelete != null)
-                    {
-                        _context.WordMeaningPairs.Remove(wmpToDelete);
-                    }
-                }
-            }
+            //if (updatedData.WmpsToDelete != null)
+            //{
+            //    foreach (var guid in updatedData.WmpsToDelete)
+            //    {
+            //        var wmpToDelete = _context.WordMeaningPairs.Find(guid);
+            //        if (wmpToDelete != null)
+            //        {
+            //            _context.WordMeaningPairs.Remove(wmpToDelete);
+            //        }
+            //    }
+            //}
 
             // from here down is for comments
-            var userId = _userManager.GetUserId(User);
+            //var userId = _userManager.GetUserId(User);
 
 
 
-            // Save changes to the database, after all the changes are made
-            _context.SaveChanges();
+            //// Save changes to the database, after all the changes are made
+            //_context.SaveChanges();
 
-            return new JsonResult(new { success = true, message = "LearningSet updated successfully TEST" });
+            
+            
+            
+            return new JsonResult(new { success = true, message = "LearningSet updated successfully" });
         }
     }
 }

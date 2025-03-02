@@ -105,16 +105,11 @@ function saveLearningSet() {
 
     const id = document.getElementById("p-id").textContent;
 
-    // Get the updated WMPs
-    const updatedWmps = getAllWmpsAfterEdit();
-
     // Prepare the data to send
     const data = {
         Id: id,
         OriginalText: originalText,
         TranslatedText: translatedText,
-        WordMeaningPairs: updatedWmps,
-        WmpsToDelete: wmpsToDelete
     };
 
     // Make the fetch call
@@ -135,9 +130,47 @@ function saveLearningSet() {
         })
         .then(result => {
             console.log("Learning Set updated successfully TEST3:", result);
-
+            // Move on to save WMPs
+            saveWordMeaningPairs();
             // Update the UI to "view mode"
             switchToViewBySave(originalText, translatedText);
+        })
+        .catch(error => {
+            console.error("Error saving the learning set:", error);
+            alert("An error occurred while saving the learning set.");
+        });
+
+}
+
+function saveWordMeaningPairs() {
+    // Get the updated WMPs
+    const updatedWmps = getAllWmpsAfterEdit();
+
+    // Prepare the data to send
+    const data = {
+        WordMeaningPairs: updatedWmps,
+        WmpsToDelete: wmpsToDelete
+    };
+
+    // Make the fetch call
+    fetch(`/api/WordMeaningPair/UpdateWmp`, {
+
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" // Let the server know we're sending JSON
+        },
+        body: JSON.stringify(data) // Convert the data to JSON format
+    })
+        .then(response => {
+            if (!response.ok) {
+                /*throw new Error("Failed to save the learning set.");*/
+                alert("Saving wasn't successful")
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(result => {
+            console.log("WordMeaningPairs updated successfully TEST3:", result);
+
         })
         .catch(error => {
             console.error("Error saving the learning set:", error);
@@ -225,7 +258,6 @@ function switchToEditWmps() {
         input.className = "input-word";
         el.replaceWith(input);
     });
-
 
     document.querySelectorAll(".p-translated-text").forEach(el => {
         const input = document.createElement("input");
@@ -329,7 +361,6 @@ function switchToViewWmpBySave() {
             p.className = "p-alternative-meaning";
             el.replaceWith(p);
         }
-
     });
 
     // Make icons disappear
@@ -426,6 +457,7 @@ function deleteMeaning(event) {
 // <<From here down is for Comments and Helps>>
 
 function addComment(event) {
+    // update the view with added comments
     const button = event.target;
     const username = document.getElementById("p-username").textContent;
     const comment = document.getElementById("textarea-comment").value.trim();
@@ -440,5 +472,7 @@ function addComment(event) {
         button.insertAdjacentElement("afterend", newDivComment);
         document.getElementById("p-no-comment").remove();
     }
+
+    // Ajax request to save comments to database
 
 }

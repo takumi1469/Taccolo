@@ -15,7 +15,6 @@
 @if (User.Identity?.IsAuthenticated == true)
 {
     <p id="p-username" class="p-username no-display">@User.Identity.Name</p>
-    <p id="p-user-id" class=p-user-id no-display">@User.FindFirstValue(ClaimTypes.NameIdentifier)</p>
 }
 
 
