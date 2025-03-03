@@ -65,8 +65,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
                 {
                     // Existing WMP, update it
 
-                    //var existingWmp = currentLs.WordMeaningPairs.FirstOrDefault(x => x.Id == wmp.Id);
-
                     var existingWmp = _context.WordMeaningPairs
                            .Where(w => w.LsId == currentLsId && w.Id == wmp.Id)
                            .FirstOrDefault();

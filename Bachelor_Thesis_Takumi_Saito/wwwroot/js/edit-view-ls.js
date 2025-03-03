@@ -474,5 +474,31 @@ function addComment(event) {
     }
 
     // Ajax request to save comments to database
+    // Prepare the data to send
+    const data = {
+        Body: comment,
+        LsId: lsId
+    };
 
+    fetch(`/api/Comment/UpdateComment`, {
+
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" // Let the server know we're sending JSON
+        },
+        body: JSON.stringify(data) // Convert the data to JSON format
+    })
+        .then(response => {
+            if (!response.ok) {
+                alert("Saving wasn't successful")
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(result => {
+            console.log("Comment saved successfully TESTComment:", result);
+        })
+        .catch(error => {
+            console.error("Error saving the learning set:", error);
+            alert("An error occurred while saving the learning set.");
+        });
 }

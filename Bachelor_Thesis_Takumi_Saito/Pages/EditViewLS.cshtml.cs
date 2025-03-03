@@ -64,7 +64,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             CommentWithUsernames = comments.Select(c => new CommentWithUsername
             {
                 Body = c.Body,
-                //Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName).FirstOrDefault() ?? "Unknown"
                 Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName)
                              .FirstOrDefault() ?? "Unknown"
             }).ToList();

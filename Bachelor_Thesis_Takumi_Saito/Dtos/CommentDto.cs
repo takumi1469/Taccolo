@@ -2,7 +2,7 @@
 {
     public class CommentDto
     {
-        public string UserId { get; set; }
+        //public string UserId { get; set; } // passing UserId between server and client is not secure 
         public string Body { get; set; }
         public Guid LsId { get; set; }
     }
