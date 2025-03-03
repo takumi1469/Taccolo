@@ -10,6 +10,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
 
         [NotMapped]
         public LearningSet LearningSet { get; set; } // Navigation property
+        [NotMapped]
         public List<HelpReply> HelpReplys { get; set; } // Navigation property
         public HelpRequest() { }
         public HelpRequest(string body, Guid lsId)

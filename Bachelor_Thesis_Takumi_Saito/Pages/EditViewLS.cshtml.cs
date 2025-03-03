@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using static Bachelor_Thesis_Takumi_Saito.Pages.EditViewLsModel;
 
 namespace Bachelor_Thesis_Takumi_Saito.Pages
@@ -14,12 +15,12 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         private readonly AppDbContext _context;
         private readonly ILogger<EditViewLsModel> _logger;
 
-        [BindProperty(SupportsGet = true, Name = "lsid")] // This binds the route parameter
+        [BindProperty(SupportsGet = true, Name = "lsid")] // This binds the route parameter to LsId
         public Guid? LsId { get; set; }
         public LearningSet? LsToDisplay { get; set; }
-
         public List<CommentWithUsername> CommentWithUsernames { get; set; } = new List<CommentWithUsername>();
 
+        public bool IsOwner { get; set; } = false;
 
 
         public EditViewLsModel(UserManager<ApplicationUser> userManager,
@@ -34,18 +35,17 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         public async Task OnGetAsync()
         {
             _logger.LogInformation("***Logging test***");
-
-            ApplicationUser? user = await _userManager.GetUserAsync(User);
-
             if (LsId is null)
-            {
                 RedirectToPage("Index");
-            }
-
+       
+            ApplicationUser? user = await _userManager.GetUserAsync(User);
             // Fetch the LearningSet using ID together with associated WordMeaningPair
             LsToDisplay = await _context.LearningSets
                 .Include(ls => ls.WordMeaningPairs)
                 .FirstOrDefaultAsync(ls => ls.Id == LsId);
+
+            if (user != null && user.Id == LsToDisplay.UserId)
+                IsOwner = true; // otherwise default is false
 
             // Reorder WordMeaningPair accorging to Order
             if (LsToDisplay != null)
@@ -70,7 +70,15 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         }
 
+
+
         public class CommentWithUsername()
+        {
+            public string Body { get; set; }
+            public string Username { get; set; }
+        }
+
+        public class HelpReplyWithUsername()
         {
             public string Body { get; set; }
             public string Username { get; set; }

@@ -128,14 +128,14 @@ textarea{
     flex-direction:column;
 }
 
-.textarea-comment{
-    height:5vw;
+.textarea-comment-help {
+    height: 5vw;
 }
 
-.button-comment{
-    margin-left:auto;
-    font-size:1.2vw;
-    height:2vw;
+.button-comment-help {
+    margin-left: auto;
+    font-size: 1.2vw;
+    height: 2vw;
 }
 
 .span-date-time{

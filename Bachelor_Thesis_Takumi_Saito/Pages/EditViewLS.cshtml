@@ -113,10 +113,10 @@
         <div class="div-comments-helps">
             <div class="div-comments">
                 <h3 class="h3-comments-title">Comments on Learning Set</h3>
-                <textarea class="textarea-comment" id="textarea-comment" placeholder="Add a comment"></textarea>
+                <textarea class="textarea-comment textarea-comment-help" id="textarea-comment" placeholder="Add a comment"></textarea>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
-                    <button class="button-comment" onclick="addComment(event)">Comment</button>
+                    <button class="button-comment button-comment-help" onclick="addComment(event)">Comment</button>
                 }
                 else
                 {
@@ -130,18 +130,34 @@
                             <p class="p-comment-username">@comment.Username</p>
                             <p class="p-comment">@comment.Body</p>
                         </div>
-
                     }
                 }
                 else
                 {
                     <p id="p-no-comment">There's no comments yet.</p>
                 }
-
             </div>
             <div class="div-helps">
-                <h3 class="h3-helps-title">Help Requests and Replies</h3>
-                <p>Dummy</p>
+                <h3 class="h3-help-requrst-title">Help Requests and Replies</h3>
+                <textarea class="textarea-help-request textarea-comment-help" id="textarea-help-request" placeholder="Add a Help Request"></textarea>
+                @if (Model.IsOwner)
+                {
+                    <button class="button-help-request button-comment-help" onclick="addHelpRequest(event)">Add Help Request</button>
+                }
+
+                @if (Model.LsToDisplay.HelpRequests != null)
+                {
+                    @foreach (HelpRequest helpRequest in Model.LsToDisplay.HelpRequests)
+                    {
+                        <div class="div-each-help-request">
+                            <h4 class="h4-help-request">@helpRequest.Body</h4>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p id="p-no-help-request">There's no help requests yet.</p>
+                }
             </div>
         </div>
     </div>
