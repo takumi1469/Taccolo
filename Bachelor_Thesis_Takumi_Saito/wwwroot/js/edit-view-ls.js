@@ -4,15 +4,6 @@ let wmpUnchanged;
 let WmpHTMLUnchanged;
 let wmpsToDelete = [];
 const lsId = document.getElementById("p-id").textContent;
-let dateTime = new Date().toLocaleString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
-});
-console.log(dateTime); // Example output: "20:30 March 1, 2025"
 
 window.onload = attachEventListenerToIcons();
 
@@ -456,6 +447,15 @@ function deleteMeaning(event) {
 
 // <<From here down is for Comments and Helps>>
 function addComment(event) {
+    let dateTime = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+
     // update the view with added comments
     const button = event.target;
     const username = document.getElementById("p-username").textContent;
@@ -476,7 +476,8 @@ function addComment(event) {
     // Prepare the data to send
     const data = {
         Body: comment,
-        LsId: lsId
+        LsId: lsId,
+        Date: dateTime
     };
 
     fetch(`/api/Comment/AddComment`, {
@@ -511,10 +512,21 @@ function addHelpRequest(event) {
     newDivHelpRequest.className = "div-each-help-request";
     if (helpRequest == "") { }
     else {
-        newDivHelpRequest.innerHTML = `
-    <h4 class="h4-help-request">${helpRequest}</h4>
-    `;
+        if (isAuthenticated) {
+            newDivHelpRequest.innerHTML = `
+            <h4 class="h4-help-request">${helpRequest}</h4>
+            <a class="a-redirect-login" href="/Identity/Account/Login"><button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button></a>
+          `;
+        }
+        else {
+            newDivHelpRequest.innerHTML = `
+            <h4 class="h4-help-request">${helpRequest}</h4>
+            <button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button>
+          `;
+        }
+
         button.insertAdjacentElement("afterend", newDivHelpRequest);
+        document.getElementById("button-add-help-reply").addEventListener("click", addHelpReply);
         document.getElementById("p-no-help-request")?.remove(); //will not happen if p-no-help-request doesn't exist
     }
 

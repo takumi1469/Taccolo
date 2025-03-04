@@ -22,7 +22,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         public List<HelpRequest> CurrentHelpRequests { get; set; }
 
         public bool IsOwner { get; set; } = false;
-
+        public bool IsAuthenticated { get; set; } = false;
 
         public EditViewLsModel(UserManager<ApplicationUser> userManager,
             AppDbContext context,
@@ -40,6 +40,9 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 RedirectToPage("Index");
        
             ApplicationUser? user = await _userManager.GetUserAsync(User);
+            if (user != null)
+                IsAuthenticated = true;
+
             // Fetch the LearningSet using ID together with associated WordMeaningPair
             LsToDisplay = await _context.LearningSets
                 .Include(ls => ls.WordMeaningPairs)
@@ -66,7 +69,8 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             {
                 Body = c.Body,
                 Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName)
-                             .FirstOrDefault() ?? "Unknown"
+                             .FirstOrDefault() ?? "Unknown",
+                Date = c.Date,
             }).ToList();
 
             // Now prepare HelpRequests
@@ -81,12 +85,14 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         {
             public string Body { get; set; }
             public string Username { get; set; }
+            public string? Date { get; set; }
         }
 
         public class HelpReplyWithUsername()
         {
             public string Body { get; set; }
             public string Username { get; set; }
+            public string? Date { get; set; }
         }
 
 

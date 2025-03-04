@@ -33,7 +33,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
             _logger.LogInformation("***AddComment Endpoint triggered***");
             
             string userId = _userManager.GetUserId(User);
-            Comment newComment = new Comment(updatedData.Body, updatedData.LsId, userId, "dummyDate");
+            Comment newComment = new Comment(updatedData.Body, updatedData.LsId, userId, updatedData.Date);
 
             _context.Comments.Add(newComment);
 

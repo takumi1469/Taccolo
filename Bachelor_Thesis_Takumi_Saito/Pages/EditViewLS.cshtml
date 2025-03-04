@@ -127,7 +127,7 @@
                     @foreach (EditViewLsModel.CommentWithUsername comment in Model.CommentWithUsernames)
                     {
                         <div class="div-each-comment">
-                            <p class="p-comment-username">@comment.Username</p>
+                            <p class="p-comment-username">@comment.Username<span class="span-date-time">(@comment.Date)</span></p>
                             <p class="p-comment">@comment.Body</p>
                         </div>
                     }
@@ -165,3 +165,6 @@
 
 </div>
 <script src="/js/edit-view-ls.js"></script>
+<script>
+    const isAuthenticated = @Json.Serialize(Model.IsAuthenticated);
+</script>
