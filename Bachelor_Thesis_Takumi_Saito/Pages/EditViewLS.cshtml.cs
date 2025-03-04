@@ -19,6 +19,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         public Guid? LsId { get; set; }
         public LearningSet? LsToDisplay { get; set; }
         public List<CommentWithUsername> CommentWithUsernames { get; set; } = new List<CommentWithUsername>();
+        public List<HelpRequest> CurrentHelpRequests { get; set; }
 
         public bool IsOwner { get; set; } = false;
 
@@ -67,6 +68,10 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName)
                              .FirstOrDefault() ?? "Unknown"
             }).ToList();
+
+            // Now prepare HelpRequests
+            CurrentHelpRequests = await _context.HelpRequests.Where(hr => hr.LsId == LsId).ToListAsync();
+
 
         }
 

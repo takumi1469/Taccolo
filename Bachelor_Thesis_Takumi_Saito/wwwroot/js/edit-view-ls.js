@@ -455,12 +455,11 @@ function deleteMeaning(event) {
 
 
 // <<From here down is for Comments and Helps>>
-
 function addComment(event) {
     // update the view with added comments
     const button = event.target;
     const username = document.getElementById("p-username").textContent;
-    const comment = document.getElementById("textarea-comment").value.trim();
+    const comment = document.getElementById("textarea-comment").value.trim(); // trim() removes white space at start or end
     const newDivComment = document.createElement("div");
     newDivComment.className = "div-each-comment";
     if (comment == "") {}
@@ -470,7 +469,7 @@ function addComment(event) {
     <p class="p-comment">${comment}</p>
     `;
         button.insertAdjacentElement("afterend", newDivComment);
-        document.getElementById("p-no-comment").remove();
+        document.getElementById("p-no-comment")?.remove(); //will not happen if p-no-comment doesn't exist
     }
 
     // Ajax request to save comments to database
@@ -480,7 +479,7 @@ function addComment(event) {
         LsId: lsId
     };
 
-    fetch(`/api/Comment/UpdateComment`, {
+    fetch(`/api/Comment/AddComment`, {
 
         method: "POST",
         headers: {
@@ -496,6 +495,52 @@ function addComment(event) {
         })
         .then(result => {
             console.log("Comment saved successfully TESTComment:", result);
+        })
+        .catch(error => {
+            console.error("Error saving the learning set:", error);
+            alert("An error occurred while saving the learning set.");
+        });
+}
+
+function addHelpRequest(event) {
+    // update the view with added comments
+    const button = event.target;
+    //const username = document.getElementById("p-username").textContent;
+    const helpRequest = document.getElementById("textarea-help-request").value.trim(); // trim() removes white space at start or end
+    const newDivHelpRequest = document.createElement("div");
+    newDivHelpRequest.className = "div-each-help-request";
+    if (helpRequest == "") { }
+    else {
+        newDivHelpRequest.innerHTML = `
+    <h4 class="h4-help-request">${helpRequest}</h4>
+    `;
+        button.insertAdjacentElement("afterend", newDivHelpRequest);
+        document.getElementById("p-no-help-request")?.remove(); //will not happen if p-no-help-request doesn't exist
+    }
+
+    // Ajax request to save comments to database
+    // Prepare the data to send
+    const data = {
+        Body: helpRequest,
+        LsId: lsId
+    };
+
+    fetch(`/api/HelpRequest/AddHelpRequest`, {
+
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" // Let the server know we're sending JSON
+        },
+        body: JSON.stringify(data) // Convert the data to JSON format
+    })
+        .then(response => {
+            if (!response.ok) {
+                alert("Saving wasn't successful")
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(result => {
+            console.log("Comment saved successfully TESTHelpRequest:", result);
         })
         .catch(error => {
             console.error("Error saving the learning set:", error);

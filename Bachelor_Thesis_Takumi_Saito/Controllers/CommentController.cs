@@ -25,16 +25,15 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
             _logger = logger;
         }
 
-        [HttpPost("UpdateComment")]
+        [HttpPost("AddComment")]
         [IgnoreAntiforgeryToken]
         [AllowAnonymous]
-        public IActionResult UpdateComment([FromBody] CommentDto updatedData)
+        public IActionResult AddComment([FromBody] CommentDto updatedData)
         {
-            _logger.LogInformation("***UpdateComment Endpoint triggered***");
+            _logger.LogInformation("***AddComment Endpoint triggered***");
             
             string userId = _userManager.GetUserId(User);
-            //string body, Guid lsId, string userId
-            Comment newComment = new Comment(updatedData.Body, updatedData.LsId, userId);
+            Comment newComment = new Comment(updatedData.Body, updatedData.LsId, userId, "dummyDate");
 
             _context.Comments.Add(newComment);
 

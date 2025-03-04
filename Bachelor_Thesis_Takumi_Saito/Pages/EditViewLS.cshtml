@@ -139,15 +139,15 @@
             </div>
             <div class="div-helps">
                 <h3 class="h3-help-requrst-title">Help Requests and Replies</h3>
-                <textarea class="textarea-help-request textarea-comment-help" id="textarea-help-request" placeholder="Add a Help Request"></textarea>
                 @if (Model.IsOwner)
                 {
+                    <textarea class="textarea-help-request textarea-comment-help" id="textarea-help-request" placeholder="Add a Help Request"></textarea>
                     <button class="button-help-request button-comment-help" onclick="addHelpRequest(event)">Add Help Request</button>
                 }
 
                 @if (Model.LsToDisplay.HelpRequests != null)
                 {
-                    @foreach (HelpRequest helpRequest in Model.LsToDisplay.HelpRequests)
+                    @foreach (HelpRequest helpRequest in Model.CurrentHelpRequests)
                     {
                         <div class="div-each-help-request">
                             <h4 class="h4-help-request">@helpRequest.Body</h4>
