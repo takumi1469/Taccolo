@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Packaging;
+using System.Collections.Generic;
 using System.Security.Claims;
 using static Bachelor_Thesis_Takumi_Saito.Pages.EditViewLsModel;
 
@@ -19,6 +21,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
         public Guid? LsId { get; set; }
         public LearningSet? LsToDisplay { get; set; }
         public List<CommentWithUsername> CommentWithUsernames { get; set; } = new List<CommentWithUsername>();
+        public List<HelpReplyWithUsername> HelpReplyWithUsernames { get; set; } = new List<HelpReplyWithUsername>();
         public List<HelpRequest> CurrentHelpRequests { get; set; }
 
         public bool IsOwner { get; set; } = false;
@@ -62,7 +65,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             }
 
             // Prepare CommentWithUsernames for Razor Page to show username
-            var comments = await _context.Comments.ToListAsync();
+            var comments = await _context.Comments.Where(c => c.LsId == LsId).ToListAsync();
 
             // Fetch usernames and map them
             CommentWithUsernames = comments.Select(c => new CommentWithUsername
@@ -75,7 +78,20 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
             // Now prepare HelpRequests
             CurrentHelpRequests = await _context.HelpRequests.Where(hr => hr.LsId == LsId).ToListAsync();
+            var helpReplys = new List<HelpReply>();
+            foreach (HelpRequest helpRequest in CurrentHelpRequests)
+            {
+                var newReplys = await _context.HelpReplys.Where(helpReply => helpReply.RequestId == helpRequest.Id).ToListAsync();
+                helpReplys.AddRange(newReplys);
+            }
 
+            HelpReplyWithUsernames = helpReplys.Select(r => new HelpReplyWithUsername
+            {
+                Body = r.Body,
+                Username = _context.Users.Where(u => u.Id == r.UserId).Select(u => u.UserName)
+                             .FirstOrDefault() ?? "Unknown",
+                Date = r.Date,
+            }).ToList();
 
         }
 

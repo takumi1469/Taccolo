@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bachelor_Thesis_Takumi_Saito")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74c0f83406eff54e71d383171522c99d5c3fd348")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f6865a8fbc2b340933fcee50c3a3e291ea9e493")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bachelor_Thesis_Takumi_Saito")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bachelor_Thesis_Takumi_Saito")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

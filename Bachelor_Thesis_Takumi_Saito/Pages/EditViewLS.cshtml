@@ -145,12 +145,26 @@
                     <button class="button-help-request button-comment-help" onclick="addHelpRequest(event)">Add Help Request</button>
                 }
 
-                @if (Model.LsToDisplay.HelpRequests != null)
+                @if (Model.CurrentHelpRequests != null)
                 {
                     @foreach (HelpRequest helpRequest in Model.CurrentHelpRequests)
                     {
                         <div class="div-each-help-request">
                             <h4 class="h4-help-request">@helpRequest.Body</h4>
+                            @if(Model.HelpReplyWithUsernames != null){
+                                @foreach (EditViewLsModel.HelpReplyWithUsername helpReply in Model.HelpReplyWithUsernames)
+                                {
+                                    if(helpReply.RequestId)
+                                    
+                                }
+                                <div class="div-each-help-reply">
+                                    <p class="p-help-reply"></p>
+                                </div>
+                            }
+
+
+
+
                         </div>
                     }
                 }
