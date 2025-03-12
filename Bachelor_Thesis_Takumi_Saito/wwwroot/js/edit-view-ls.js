@@ -470,8 +470,7 @@ function addComment(event) {
     `;
         button.insertAdjacentElement("afterend", newDivComment);
         document.getElementById("p-no-comment")?.remove(); //will not happen if p-no-comment doesn't exist
-    }
-
+    
     // Ajax request to save comments to database
     // Prepare the data to send
     const data = {
@@ -501,12 +500,12 @@ function addComment(event) {
             console.error("Error saving the learning set:", error);
             alert("An error occurred while saving the learning set.");
         });
+    }
 }
 
 function addHelpRequest(event) {
     // update the view with added comments
     const button = event.target;
-    //const username = document.getElementById("p-username").textContent;
     const helpRequest = document.getElementById("textarea-help-request").value.trim(); // trim() removes white space at start or end
     const newDivHelpRequest = document.createElement("div");
     newDivHelpRequest.className = "div-each-help-request";
@@ -515,108 +514,107 @@ function addHelpRequest(event) {
         if (isAuthenticated) {
             newDivHelpRequest.innerHTML = `
             <h4 class="h4-help-request">${helpRequest}</h4>
-            <textarea class="textarea-help-reply" id="textarea-help-reply"></textarea>
+            <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
             <button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button>
           `;
         }
         else {
             newDivHelpRequest.innerHTML = `
             <h4 class="h4-help-request">${helpRequest}</h4>
-            <textarea class="textarea-help-reply" id="textarea-help-reply"></textarea>
+            <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
             <a class="a-redirect-login" href="/Identity/Account/Login"><button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button></a>
-
           `;
         }
 
         button.insertAdjacentElement("afterend", newDivHelpRequest);
         document.getElementById("button-add-help-reply").addEventListener("click", addHelpReply);
         document.getElementById("p-no-help-request")?.remove(); //will not happen if p-no-help-request doesn't exist
+
+
+        // Ajax request to save comments to database
+        // Prepare the data to send
+        const data = {
+            Body: helpRequest,
+            LsId: lsId
+        };
+
+        fetch(`/api/HelpRequest/AddHelpRequest`, {
+
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json" // Let the server know we're sending JSON
+            },
+            body: JSON.stringify(data) // Convert the data to JSON format
+        })
+            .then(response => {
+                if (!response.ok) {
+                    alert("Saving wasn't successful")
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(result => {
+                console.log("Comment saved successfully TESTHelpRequest:", result);
+            })
+            .catch(error => {
+                console.error("Error saving the learning set:", error);
+                alert("An error occurred while saving the learning set.");
+            });
     }
-
-    // Ajax request to save comments to database
-    // Prepare the data to send
-    const data = {
-        Body: helpRequest,
-        LsId: lsId
-    };
-
-    fetch(`/api/HelpRequest/AddHelpRequest`, {
-
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json" // Let the server know we're sending JSON
-        },
-        body: JSON.stringify(data) // Convert the data to JSON format
-    })
-        .then(response => {
-            if (!response.ok) {
-                alert("Saving wasn't successful")
-            }
-            return response.json(); // Parse the JSON response
-        })
-        .then(result => {
-            console.log("Comment saved successfully TESTHelpRequest:", result);
-        })
-        .catch(error => {
-            console.error("Error saving the learning set:", error);
-            alert("An error occurred while saving the learning set.");
-        });
 }
 
 function addHelpReply(event) {
-    // update the view with added comments
+    let dateTime = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+
+    // update the view with added replys
     const button = event.target;
-    //const username = document.getElementById("p-username").textContent;
-    const helpReply = document.getElementById("textarea-help-request").value.trim(); // trim() removes white space at start or end
-    const newDivHelpRequest = document.createElement("div");
-    newDivHelpRequest.className = "div-each-help-request";
-    if (helpRequest == "") { }
+    const username = document.getElementById("p-username").textContent;
+    const helpReply = document.getElementById("textarea-help-reply").value.trim(); // trim() removes white space at start or end
+    const newDivHelpReply = document.createElement("div");
+    newDivHelpReply.className = "div-each-help-reply";
+    if (helpReply == "") { }
     else {
-        if (isAuthenticated) {
-            newDivHelpRequest.innerHTML = `
-            <h4 class="h4-help-request">${helpRequest}</h4>
-            <button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button>
+        newDivHelpReply.innerHTML = `
+            <p class="p-help-reply-username">${username} <span class="span-date-time">(${dateTime})</span></p>
+            <p class="p-help-reply"${helpReply}</p>
           `;
-        }
-        else {
-            newDivHelpRequest.innerHTML = `
-            <h4 class="h4-help-request">${helpRequest}</h4>
-            <a class="a-redirect-login" href="/Identity/Account/Login"><button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button></a>
 
-          `;
-        }
+        button.insertAdjacentElement("afterend", newDivHelpReply);
 
-        button.insertAdjacentElement("afterend", newDivHelpRequest);
-        //document.getElementById("button-add-help-reply").addEventListener("click", addHelpReply);
-        //document.getElementById("p-no-help-request")?.remove(); //will not happen if p-no-help-request doesn't exist
+        // Ajax request to save comments to database
+        // Prepare the data to send
+        const data = {
+            Body: helpReply,
+            RequestId: lsId,
+            Date: dateTime
+        };
+
+        fetch(`/api/HelpReply/AddHelpReply`, {
+
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json" // Let the server know we're sending JSON
+            },
+            body: JSON.stringify(data) // Convert the data to JSON format
+        })
+            .then(response => {
+                if (!response.ok) {
+                    alert("Saving wasn't successful")
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(result => {
+                console.log("Comment saved successfully TESTHelpReply:", result);
+            })
+            .catch(error => {
+                console.error("Error saving the learning set:", error);
+                alert("An error occurred while saving the learning set.");
+            });
     }
-
-    // Ajax request to save comments to database
-    // Prepare the data to send
-    const data = {
-        Body: helpRequest,
-        LsId: lsId
-    };
-
-    fetch(`/api/HelpRequest/AddHelpRequest`, {
-
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json" // Let the server know we're sending JSON
-        },
-        body: JSON.stringify(data) // Convert the data to JSON format
-    })
-        .then(response => {
-            if (!response.ok) {
-                alert("Saving wasn't successful")
-            }
-            return response.json(); // Parse the JSON response
-        })
-        .then(result => {
-            console.log("Comment saved successfully TESTHelpRequest:", result);
-        })
-        .catch(error => {
-            console.error("Error saving the learning set:", error);
-            alert("An error occurred while saving the learning set.");
-        });
 }

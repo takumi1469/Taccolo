@@ -38,8 +38,6 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
             _context.SaveChanges();
 
             return new JsonResult(new { success = true, message = "LearningSet updated successfully" });
-
-
         }
     }
 }

@@ -91,6 +91,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 Username = _context.Users.Where(u => u.Id == r.UserId).Select(u => u.UserName)
                              .FirstOrDefault() ?? "Unknown",
                 Date = r.Date,
+                RequestId = r.RequestId
             }).ToList();
 
         }
@@ -109,6 +110,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
             public string Body { get; set; }
             public string Username { get; set; }
             public string? Date { get; set; }
+            public Guid RequestId { get; set; }
         }
 
 

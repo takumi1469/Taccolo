@@ -120,7 +120,7 @@
                 }
                 else
                 {
-                    <a class="a-redirect-login" href="/Identity/Account/Login"><button class="button-comment">Comment</button></a>
+                    <a class="a-redirect-login" href="/Identity/Account/Login"><button class="button-comment button-comment-help">Comment</button></a>
                 }
                 
                 @if(Model.LsToDisplay.Comments != null){
@@ -151,20 +151,28 @@
                     {
                         <div class="div-each-help-request">
                             <h4 class="h4-help-request">@helpRequest.Body</h4>
-                            @if(Model.HelpReplyWithUsernames != null){
+                            <p class="p-help-request-id no-display"></p>
+                            <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
+                            @if (User.Identity?.IsAuthenticated == true)
+                            {
+                                <button class="button-help-reply button-comment-help" onclick="addHelpReply(event)">Reply</button>
+                            }
+                            else
+                            {
+                                <a class="a-redirect-login" href="/Identity/Account/Login"><button class="button-help-reply button-comment-help">Reply</button></a>
+                            }
+                            @if (Model.HelpReplyWithUsernames != null)
+                            {
                                 @foreach (EditViewLsModel.HelpReplyWithUsername helpReply in Model.HelpReplyWithUsernames)
                                 {
-                                    if(helpReply.RequestId)
-                                    
+                                    @if (helpReply.RequestId == helpRequest.Id)
+                                    {
+                                        <div class="div-each-help-reply">
+                                            <p class="p-help-reply">@helpReply.Body</p>
+                                        </div>
+                                    }
                                 }
-                                <div class="div-each-help-reply">
-                                    <p class="p-help-reply"></p>
-                                </div>
                             }
-
-
-
-
                         </div>
                     }
                 }
