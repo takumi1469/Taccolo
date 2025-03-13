@@ -151,7 +151,7 @@
                     {
                         <div class="div-each-help-request">
                             <h4 class="h4-help-request">@helpRequest.Body</h4>
-                            <p class="p-help-request-id no-display"></p>
+                            <p class="p-help-request-id no-display">@helpRequest.Id</p>
                             <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
                             @if (User.Identity?.IsAuthenticated == true)
                             {

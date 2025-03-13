@@ -572,6 +572,21 @@ function addHelpReply(event) {
         hour12: false
     });
 
+    // get RequestId of the HelpRequest
+    const divHelpRequest = event.target.closest(".div-each-help-request");
+    if (divHelpRequest) {
+        console.log("divHelpRequest is not null");
+        requestIdP = divHelpRequest.querySelector(".p-help-request-id");
+        requestId = requestIdP.textContent;
+        if (requestId) {
+            console.log("requestId is " + requestId);
+        }
+        else {
+            console.log("requestId is null");
+        }
+    }
+
+
     // update the view with added replys
     const button = event.target;
     const username = document.getElementById("p-username").textContent;
@@ -582,7 +597,7 @@ function addHelpReply(event) {
     else {
         newDivHelpReply.innerHTML = `
             <p class="p-help-reply-username">${username} <span class="span-date-time">(${dateTime})</span></p>
-            <p class="p-help-reply"${helpReply}</p>
+            <p class="p-help-reply">${helpReply}</p>
           `;
 
         button.insertAdjacentElement("afterend", newDivHelpReply);
@@ -591,7 +606,7 @@ function addHelpReply(event) {
         // Prepare the data to send
         const data = {
             Body: helpReply,
-            RequestId: lsId,
+            RequestId: requestId,
             Date: dateTime
         };
 
