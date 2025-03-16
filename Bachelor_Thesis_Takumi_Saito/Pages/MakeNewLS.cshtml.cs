@@ -64,6 +64,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public async Task<IActionResult> OnPostProcessAsync()
         {
+            string date = DateTime.Now.ToString("MMMM d, yyyy");
             if (SourceChoice == "not-chosen" || TargetChoice == "not-chosen")
             {
                 WarningMessage = "Please select both Source Language and Target Language";
@@ -83,7 +84,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 string toTranslate = await azureTranslator.AzTranslate(SourceLanguage.Item2, TargetLanguage.Item2, InputText);
                 Result = toTranslate;
 
-                TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, UserId);
+                TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, date,UserId);
 
                 //look up individual words by LibreTranslate
                 string cleanedInput = Regex.Replace(InputText, @"[^\w\s']", "");

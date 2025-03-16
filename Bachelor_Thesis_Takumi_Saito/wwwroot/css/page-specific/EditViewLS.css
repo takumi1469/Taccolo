@@ -116,9 +116,13 @@ textarea{
 
 /*from here down is for comments*/
 
-.div-comments-helps{
-    display:flex;
-    flex-direction:row;
+.div-comments-etc{
+    margin-top:2vw;
+}
+
+.div-comments-helps {
+    display: flex;
+    flex-direction: row;
 }
 
 .div-comments,.div-helps{

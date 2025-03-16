@@ -29,6 +29,8 @@
         <span class="span-basic-info"><strong>Title: </strong>@Model.LsToDisplay?.Title</span>
         <span class="span-basic-info"><strong>From: </strong>@Model.LsToDisplay?.SourceLanguage</span>
         <span class="span-basic-info"><strong>To: </strong>@Model.LsToDisplay?.TargetLanguage</span>
+        <span class="span-basic-info"><strong>User: </strong>@Model?.Username</span>
+        <span class="span-basic-info"><strong>Created on  </strong>@Model.LsToDisplay?.Date</span>
     </div>
     @if (Model.LsId == null)
     {
@@ -100,19 +102,27 @@
 
     <div class="div-comments-etc">
         <div class="div-description">
-            <h3 class="h3-description-title">Description</h3>
-            @if (Model.LsToDisplay.Description != null)
+            <h2 class="h2-description-title">Description</h2>
+            @if (Model.LsToDisplay?.Description != null)
             {
                 <p class="p-description">@Model.LsToDisplay.Description</p>
             }
             else
             {
-                <p class="p-description">There is no description for this Learning Set.</p>
+                @if (Model.IsOwner)
+                {
+                    <textarea class="textarea-description" id="textarea-description" placeholder="Add description to this Learning Set"></textarea>
+                    <button class="button-add-descrition button-comment-help" id="add description" onclick="addDescription">Add description</button>
+                }
+                else
+                {
+                    <p class="p-no-description">There is no description for this Learning Set/</p>
+                }
             }
         </div>
         <div class="div-comments-helps">
             <div class="div-comments">
-                <h3 class="h3-comments-title">Comments on Learning Set</h3>
+                <h2 class="h2-comments-title">Comments on Learning Set</h2>
                 <textarea class="textarea-comment textarea-comment-help" id="textarea-comment" placeholder="Add a comment"></textarea>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
@@ -123,7 +133,7 @@
                     <a class="a-redirect-login" href="/Identity/Account/Login"><button class="button-comment button-comment-help">Comment</button></a>
                 }
                 
-                @if(Model.LsToDisplay.Comments != null){
+                @if(Model.LsToDisplay?.Comments != null){
                     @foreach (EditViewLsModel.CommentWithUsername comment in Model.CommentWithUsernames)
                     {
                         <div class="div-each-comment">
@@ -138,7 +148,7 @@
                 }
             </div>
             <div class="div-helps">
-                <h3 class="h3-help-requrst-title">Help Requests and Replies</h3>
+                <h2 class="h2-help-requrst-title">Help Requests and Replies</h2>
                 @if (Model.IsOwner)
                 {
                     <textarea class="textarea-help-request textarea-comment-help" id="textarea-help-request" placeholder="Add a Help Request"></textarea>
