@@ -52,5 +52,30 @@ namespace Bachelor_Thesis_Takumi_Saito.Controllers
 
             return new JsonResult(new { success = true, message = "LearningSet updated successfully" });
         }
+
+        [HttpPost("UpdateLsDescription")]
+        [IgnoreAntiforgeryToken]
+        [AllowAnonymous]
+        public IActionResult UpdateLsDescription([FromBody] UpdateDescriptionDto updatedData)
+        {
+            _logger.LogInformation("***UpdateLsDescription Endpoint triggered***");
+
+            var currentLs = _context.LearningSets
+        .Include(ls => ls.WordMeaningPairs)
+        .FirstOrDefault(ls => ls.Id == updatedData.LsId);
+
+            if (currentLs == null)
+            {
+                return new JsonResult(new { success = false, message = "LearningSet not found" });
+            }
+
+            // Update description
+            currentLs.Description = updatedData.Description;
+
+            // Save changes to the database, after all the changes are made
+            _context.SaveChanges();
+
+            return new JsonResult(new { success = true, message = "Description updated successfully" });
+        }
     }
 }

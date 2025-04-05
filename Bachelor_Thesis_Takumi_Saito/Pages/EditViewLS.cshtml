@@ -106,18 +106,19 @@
             <h2 class="h2-description-title">Description</h2>
             @if (Model.LsToDisplay?.Description != null)
             {
-                <p class="p-description">@Model.LsToDisplay.Description</p>
+                <span class="span-description">@Model.LsToDisplay.Description</span>
+                <button class="button-edit-description button-comment-help" id="button-edit-description" onclick="editDescription(event)">Edit description</button>
             }
             else
             {
                 @if (Model.IsOwner)
                 {
                     <textarea class="textarea-description" id="textarea-description" placeholder="Add description to this Learning Set"></textarea>
-                    <button class="button-add-descrition button-comment-help" id="add description" onclick="addDescription">Add description</button>
+                    <button class="button-add-description button-comment-help" id="button-add-description" onclick="addDescription(event)">Add description</button>
                 }
                 else
                 {
-                    <p class="p-no-description">There is no description for this Learning Set/</p>
+                    <span class="span-no-description">There is no description for this Learning Set.</span>
                 }
             }
         </div>

@@ -448,8 +448,121 @@ function deleteMeaning(event) {
 // <<From here down is for Comments and Helps>>
 
 function addDescription(event) {
+    console.log("addDescription is called");
+    const button = event.target;
+    const divDescription = button.closest(".div-description");
+    const descriptionTextarea = document.getElementById("textarea-description");
+    const description = descriptionTextarea.value.trim(); // trim() removes white space at start or end
+    const spanDescription = document.createElement("span");
+    spanDescription.textContent = description;
+    if (description == "") { }
+    else {
+        divDescription.innerHTML = `
+        <h2 class="h2-description-title">Description</h2>
+    <span class="span-description">${description}</span>
+    <button class="button-edit-description button-comment-help" id="button-edit-description">Edit description</button>
+    `;
+        const buttonEdit = document.getElementById("button-edit-description");
+        buttonEdit.addEventListener("click", editDescription);
 
+            // Ajax request to save comments to database
+            // Prepare the data to send
+            const data = {
+                Description: description,
+                LsId: lsId
+            };
+
+        fetch(`/api/LearningSet/UpdateLsDescription`, {
+
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json" // Let the server know we're sending JSON
+                },
+                body: JSON.stringify(data) // Convert the data to JSON format
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        alert("Saving wasn't successful")
+                    }
+                    return response.json(); // Parse the JSON response
+                })
+                .then(result => {
+                    console.log("Description saved successfully TESTComment:", result);
+                })
+                .catch(error => {
+                    console.error("Error saving the learning set:", error);
+                    alert("An error occurred while saving the learning set.");
+                });
+        }
 }
+function editDescription(event) {
+    console.log("editDescription is called");
+    const button = event.target;
+    const buttonSave = document.createElement("button");
+    buttonSave.className = "button-save-description button-comment-help";
+    buttonSave.id = "button-save-description";
+    buttonSave.textContent = "Save change";
+    const divDescription = button.closest(".div-description");
+    const spanOldDescription = document.querySelector(".span-description");
+    const oldDescription = spanOldDescription.textContent;
+    const newDescriptionTextarea = document.createElement("textarea");
+    newDescriptionTextarea.value = oldDescription;
+    newDescriptionTextarea.className = "textarea-description";
+    newDescriptionTextarea.id = "textarea-description";
+    spanOldDescription.replaceWith(newDescriptionTextarea);
+    button.replaceWith(buttonSave);
+    buttonSave.addEventListener("click", addDescription);
+}
+
+function saveDescriptionChange(event) {
+    console.log("saveDescriptionChange is called");
+    const button = event.target;
+    const divDescription = button.closest(".div-description");
+    const descriptionTextarea = document.getElementById("textarea-description");
+    const description = descriptionTextarea.value.trim(); // trim() removes white space at start or end
+    const spanDescription = document.createElement("span");
+    spanDescription.textContent = description;
+    if (description == "") { }
+    else {
+        divDescription.innerHTML = `
+        <h2 class="h2-description-title">Description</h2>
+    <span class="span-description">${description}</span>
+    <button class="button-edit-description button-comment-help" id="button-edit-description">Edit description</button>
+    `;
+        const buttonEdit = document.getElementById("button-edit-description");
+        buttonEdit.addEventListener("click", editDescription);
+
+        // Ajax request to save comments to database
+        // Prepare the data to send
+        const data = {
+            Description: description,
+            LsId: lsId
+        };
+
+        fetch(`/api/LearningSet/UpdateLsDescription`, {
+
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json" // Let the server know we're sending JSON
+            },
+            body: JSON.stringify(data) // Convert the data to JSON format
+        })
+            .then(response => {
+                if (!response.ok) {
+                    alert("Saving wasn't successful")
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(result => {
+                console.log("Description saved successfully TESTComment:", result);
+            })
+            .catch(error => {
+                console.error("Error saving the learning set:", error);
+                alert("An error occurred while saving the learning set.");
+            });
+    }
+}
+
 function addComment(event) {
     let dateTime = new Date().toLocaleString('en-US', {
         year: 'numeric',
