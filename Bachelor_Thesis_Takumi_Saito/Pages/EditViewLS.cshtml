@@ -26,11 +26,12 @@
         </div>
     </div>
     <div class="div-basic-info">
-        <span class="span-basic-info"><strong>Title: </strong>@Model.LsToDisplay?.Title</span>
+        <span class="span-title"><strong>Title: @Model.LsToDisplay?.Title </strong></span>
+        <br>
         <span class="span-basic-info"><strong>From: </strong>@Model.LsToDisplay?.SourceLanguage</span>
         <span class="span-basic-info"><strong>To: </strong>@Model.LsToDisplay?.TargetLanguage</span>
         <span class="span-basic-info"><strong>User: </strong>@Model?.Username</span>
-        <span class="span-basic-info"><strong>Created on  </strong>@Model.LsToDisplay?.Date</span>
+        <span class="span-basic-info"><strong>Created on:  </strong>@Model.LsToDisplay?.Date</span>
     </div>
     @if (Model.LsId == null)
     {

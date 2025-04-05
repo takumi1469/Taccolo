@@ -1,5 +1,5 @@
 ﻿.div-main {
-    width: 96%;
+    width: 98%;
 }
 
 .no-display{
@@ -19,12 +19,12 @@ h1, h2, h3, h4 {
 }
 
 .div-basic-info {
-    display: flex;
+/*    display: flex;
     flex-direction: row;
     align-content: center;
-    align-items: center;
+    align-items: center;*/
     margin-bottom:1vw;
-    font-size:2vw;
+    font-size:1.4vw;
 }
 
 button {
@@ -34,6 +34,11 @@ button {
     background-color: #FFFFFF;
     border-radius: 5px;
     margin-left: 3vw;
+}
+
+.span-title {
+    font-size:1.8vw;
+    margin-right: 2vw;
 }
 
 .span-basic-info{
@@ -115,6 +120,17 @@ textarea{
 }
 
 /*from here down is for comments*/
+
+.div-description {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom:1vw;
+}
+
+.textarea-description {
+    height: 5vw;
+}
 
 .div-comments-etc{
     margin-top:2vw;

@@ -28,7 +28,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
         public List<HelpRequest> HelpRequests { get; set; }
 
         public LearningSet() { }
-        public LearningSet(string? title, string input, string translation, string sourceLanguage, string targetLanguage, string date, string? userId = null)
+        public LearningSet(string? title, string input, string translation, string sourceLanguage, string targetLanguage, string date, string? description = null, string? userId = null)
         {
             Title = title;
             Input = input;
@@ -37,6 +37,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages.Data
             TargetLanguage = targetLanguage;
             UserId = userId;
             Date = date;
+            Description = description;
         }
     }
 }

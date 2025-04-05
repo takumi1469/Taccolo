@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace Bachelor_Thesis_Takumi_Saito.Pages
 {
@@ -64,7 +65,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
 
         public async Task<IActionResult> OnPostProcessAsync()
         {
-            string date = DateTime.Now.ToString("MMMM d, yyyy");
+            string dateCreation = DateTime.Now.ToString("MMMM d, yyyy", CultureInfo.InvariantCulture);
             if (SourceChoice == "not-chosen" || TargetChoice == "not-chosen")
             {
                 WarningMessage = "Please select both Source Language and Target Language";
@@ -84,7 +85,16 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 string toTranslate = await azureTranslator.AzTranslate(SourceLanguage.Item2, TargetLanguage.Item2, InputText);
                 Result = toTranslate;
 
-                TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, date,UserId);
+                //TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, date, UserId);
+                TempLearningSet = new LearningSet
+                    (title: Title,
+                    input: InputText,
+                    translation: Result,
+                    sourceLanguage: SourceChoice,
+                    targetLanguage: TargetChoice,
+                    date: dateCreation,
+                    userId: UserId) ;
+
 
                 //look up individual words by LibreTranslate
                 string cleanedInput = Regex.Replace(InputText, @"[^\w\s']", "");
