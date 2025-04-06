@@ -1,0 +1,104 @@
+﻿@page
+@using Taccolo.Areas.Identity.Pages.Account
+@model MyPageEditModel
+@{
+    Layout = "/Pages/Shared/_LoginRegisterLayout.cshtml";
+}
+
+<h2 class="h2-instruction">Please edit your information here.<br />After editing, please click the SUBMIT button.</h2>
+<p class="p-note">*If you change the email, you will be required to verify the new email address</p>
+<form method="post" class="form-mypageedit">
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Username</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <input class="input-mypageedit" value="@Model.CurrentUser?.UserName" asp-for="Input.UserName"/>
+        </div>
+    </div>
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Email address</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <input class="input-mypageedit" type="email" value="@Model.CurrentUser?.Email" asp-for="Input.Email" />
+        </div>
+    </div>
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Languages you want to learn</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <select class="select-multiple" id="select-desired-language" multiple asp-for="Input.DesiredLanguages">
+                <option value="">(select)</option>
+                @{
+                    for (int i = 0; i < Model.CurrentUser?.DesiredLanguages?.Count(); i++)
+                    {
+                        <option selected value="@Model.CurrentUser?.DesiredLanguages[i]">@Model.CurrentUser?.DesiredLanguages[i]</option>
+                    }
+                }
+                @{
+                    for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                    {
+                        <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                    }
+                }
+                <script>
+                    $(document).ready(function () {
+                        $('#select-desired-language').select2({
+                            placeholder: "Select languages",
+                            allowClear: true,
+                            tags: true,
+                        });
+                        $('#select-desired-language').on('change', updateSelectedTags);
+                    });
+                </script>
+            </select>
+        </div>
+    </div>
+
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Languages you know</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <select class="select-multiple" id="select-known-language" multiple asp-for="Input.KnownLanguages">
+                <option value="">(select)</option>
+                @{
+                    for (int i = 0; i < Model.CurrentUser?.KnownLanguages?.Count(); i++)
+                    {
+                        <option selected value="@Model.CurrentUser?.KnownLanguages[i]">@Model.CurrentUser?.KnownLanguages[i]</option>
+                    }
+                }
+                @{
+                    for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                    {
+                        <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                    }
+                }
+                <script>
+                    $(document).ready(function () {
+                        $('#select-known-language').select2({
+                            placeholder: "Select languages",
+                            allowClear: true,
+                            tags: true,
+                        });
+                        $('#select-known-language').on('change', updateSelectedTags);
+                    });
+                </script>
+            </select>
+        </div>
+    </div>
+    <div class="div-mypageedit-item">
+        <div class="div-mypageedit-key">
+            <p class="p-mypageedit-key">Bio</p>
+        </div>
+        <div class="div-mypageedit-value">
+            <textarea class="textarea-bio" asp-for="Input.Bio">@Model.CurrentUser?.Bio</textarea>
+        </div>
+    </div>
+    <div class="div-buttons">
+        <a class="a-cancel-button button-submit button-edit" href="/Identity/Account/MyPage">cancel</a>
+        <button id="updateSubmit" type="submit" class="button button-submit button-edit">submit</button>
+    </div>
+</form>

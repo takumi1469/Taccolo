@@ -1,0 +1,15 @@
+﻿@page
+@model Taccolo.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@{
+    Layout = "_taccoloLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/top.css" />
+}
+
+<div class="div-top-all">
+    <p>You're logged in as @User.Identity.Name</p>
+</div>

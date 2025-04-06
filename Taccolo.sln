@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taccolo", "Taccolo\Taccolo.csproj", "{8411F552-CE27-4B6F-8952-AB2DF69B36F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8411F552-CE27-4B6F-8952-AB2DF69B36F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8411F552-CE27-4B6F-8952-AB2DF69B36F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8411F552-CE27-4B6F-8952-AB2DF69B36F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8411F552-CE27-4B6F-8952-AB2DF69B36F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F3540FB-DB3A-46D2-AA38-2B15BEFD3248}
+	EndGlobalSection
+EndGlobal
