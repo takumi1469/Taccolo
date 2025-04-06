@@ -72,7 +72,7 @@ namespace Bachelor_Thesis_Takumi_Saito.Pages
                 if (user != null && user.Id == LsToDisplay.UserId)
                     IsOwner = true; // otherwise default is false
 
-                //Reorder WordMeaningPair accorging to Order
+                // Reorder WordMeaningPair accorging to Order
                     LsToDisplay.WordMeaningPairs = LsToDisplay.WordMeaningPairs.OrderBy(wmp => wmp.Order).ToList();
                 
                 // Prepare CommentWithUsernames for Razor Page to show username

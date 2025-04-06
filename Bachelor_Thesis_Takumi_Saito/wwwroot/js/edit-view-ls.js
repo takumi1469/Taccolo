@@ -628,29 +628,12 @@ function addHelpRequest(event) {
     const helpRequest = document.getElementById("textarea-help-request").value.trim(); // trim() removes white space at start or end
     const newDivHelpRequest = document.createElement("div");
     newDivHelpRequest.className = "div-each-help-request";
+
+    let currentRequestId;
+
     if (helpRequest == "") { }
     else {
-        if (isAuthenticated) {
-            newDivHelpRequest.innerHTML = `
-            <h4 class="h4-help-request">${helpRequest}</h4>
-            <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
-            <button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button>
-          `;
-        }
-        else {
-            newDivHelpRequest.innerHTML = `
-            <h4 class="h4-help-request">${helpRequest}</h4>
-            <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
-            <a class="a-redirect-login" href="/Identity/Account/Login"><button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button></a>
-          `;
-        }
-
-        button.insertAdjacentElement("afterend", newDivHelpRequest);
-        document.getElementById("button-add-help-reply").addEventListener("click", addHelpReply);
-        document.getElementById("p-no-help-request")?.remove(); //will not happen if p-no-help-request doesn't exist
-
-
-        // Ajax request to save comments to database
+        // Ajax request to save comments to database and receive RequestId
         // Prepare the data to send
         const data = {
             Body: helpRequest,
@@ -673,13 +656,33 @@ function addHelpRequest(event) {
             })
             .then(result => {
                 console.log("Comment saved successfully TESTHelpRequest:", result);
+                currentRequestId = result.requestId;
+                console.log("Request ID is " + currentRequestId); 
+                newDivHelpRequest.innerHTML = `
+            <h4 class="h4-help-request">${helpRequest}</h4>
+            <p class="p-help-request-id no-display">${currentRequestId}</p>
+            <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
+            <button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button>
+          `;
+                button.insertAdjacentElement("afterend", newDivHelpRequest);
+                document.getElementById("button-add-help-reply").addEventListener("click", addHelpReply);
+                document.getElementById("p-no-help-request")?.remove(); //will not happen if p-no-help-request doesn't exist
+                document.getElementById("textarea-help-request").value = "";
             })
             .catch(error => {
                 console.error("Error saving the learning set:", error);
                 alert("An error occurred while saving the learning set.");
             });
     }
-    document.getElementById("textarea-help-request").value = "";
+
+          //  newDivHelpRequest.innerHTML = `
+          //  <h4 class="h4-help-request">${helpRequest}</h4>
+          //  <p class="p-help-request-id no-display">${currentRequestId}</p>
+          //  <textarea class="textarea-help-reply textarea-comment-help" id="textarea-help-reply" placeholder="Reply to this Help Request"></textarea>
+          //  <button id="button-add-help-reply" class="button-add-help-reply button-comment-help">Reply</button>
+          //`;
+
+    
 }
 
 function addHelpReply(event) {
@@ -709,7 +712,10 @@ function addHelpReply(event) {
     // update the view with added replys
     const button = event.target;
     const username = document.getElementById("p-username").textContent;
-    const helpReply = document.getElementById("textarea-help-reply").value.trim(); // trim() removes white space at start or end
+    const parentDiv = button.closest(".div-each-help-request");
+    const replyTextArea = parentDiv.querySelector(".textarea-help-reply");
+    const helpReply = replyTextArea.value.trim(); // trim() removes white space at start or end
+
     const newDivHelpReply = document.createElement("div");
     newDivHelpReply.className = "div-each-help-reply";
     if (helpReply == "") { }
@@ -750,5 +756,5 @@ function addHelpReply(event) {
                 alert("An error occurred while saving the learning set.");
             });
     }
-    document.getElementById("textarea-help-reply").value = "";
+    replyTextArea.value = "";
 }

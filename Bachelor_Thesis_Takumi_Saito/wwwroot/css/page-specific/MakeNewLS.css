@@ -72,6 +72,14 @@ button, select {
     height:3vw;
 }
 
+.button-save-login {
+    margin-left: 3vw;
+    width: 30vw;
+    font-size: 1.6vw;
+    height: 3vw;
+}
+
+
 .output-field {
     display: flex;
     height: 0.1vw;

@@ -134,8 +134,9 @@
                 {
                     <a class="a-redirect-login" href="/Identity/Account/Login"><button class="button-comment button-comment-help">Comment</button></a>
                 }
-                
-                @if(Model.LsToDisplay?.Comments != null){
+
+                @if (Model.LsToDisplay?.Comments != null)
+                {
                     @foreach (EditViewLsModel.CommentWithUsername comment in Model.CommentWithUsernames)
                     {
                         <div class="div-each-comment">
@@ -157,7 +158,7 @@
                     <button class="button-help-request button-comment-help" onclick="addHelpRequest(event)">Add Help Request</button>
                 }
 
-                @if (Model.CurrentHelpRequests != null)
+                @if (Model.CurrentHelpRequests.Count != 0)
                 {
                     @foreach (HelpRequest helpRequest in Model.CurrentHelpRequests)
                     {
@@ -180,6 +181,7 @@
                                     @if (helpReply.RequestId == helpRequest.Id)
                                     {
                                         <div class="div-each-help-reply">
+                                            <p class="p-help-reply-username">@helpReply.Username<span class="span-date-time">(@helpReply.Date)</span></p>
                                             <p class="p-help-reply">@helpReply.Body</p>
                                         </div>
                                     }

@@ -76,9 +76,18 @@
         <h2>RESULT</h2>
         @if (Model.ShowOutputField)
         {
-            <form method="post">
-            <button class="button-save" asp-page-handler="Save" type="submit" >Save this Learning Set</button>
-            </form>
+            if (User.Identity?.IsAuthenticated == true)
+            {
+                <form method="post">
+                    <button class="button-save" asp-page-handler="Save" type="submit">Save this Learning Set</button>
+                </form>
+            }
+            else
+            {
+                <a href="/Identity/Account/Login">
+                    <button class="button-save-login">Save this Learning Set(go to login)</button>
+                </a>
+            }
         }
     </div>
     @if (Model.ShowOutputField)

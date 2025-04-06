@@ -167,3 +167,14 @@ textarea{
     font-size:1vw;
 }
 
+.p-help-reply-username, .p-help-reply{
+    margin:0.5vw 0 0.5vw 1vw;
+}
+
+.p-comment-username, .p-comment {
+    margin: 0.5vw 0 0.5vw 0;
+}
+
+.h4-help-request {
+    margin: 0.5vw 0 0.5vw 0;
+}
