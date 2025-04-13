@@ -94,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/FavoriteLS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmF2b3JpdGVMUy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/MakeNewLs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFrZU5ld0xzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/OwnLS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3duTFMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Privacy.cshtml]

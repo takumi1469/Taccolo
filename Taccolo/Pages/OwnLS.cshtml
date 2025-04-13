@@ -1,0 +1,47 @@
+﻿@page
+@model Taccolo.Pages.OwnLSModel
+@using Taccolo.Pages.Data
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "OwnLS";
+}
+@{
+    Layout = "_taccoloLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/OwnLs.css" />
+}
+
+<div class="div-main">
+    @foreach ( LearningSet ls in Model.OwnLearningSets)
+    {
+        <div class="div-each-ls">
+            <div class="div-h2-picture">
+                @{
+                    string firstWords = string.Join(" ", ls.Input.Split(" ").Take(10));
+                }
+                <h2 class="h2-first-words">@firstWords</h2>
+
+
+            </div>
+
+            @if (ls.Title is null || ls.Title == "")
+            {
+                <h3 class="h3-title">(No title)</h3>
+
+            }
+            else
+            {
+                <h3 class="h3-title">@ls.Title</h3>
+            }
+            @if (ls.Date == null)
+            {
+                <span class="span-date">(This LS has no date)</span>
+            }
+            else
+            {
+                <span class="span-date">@ls.Date</span>
+            }
+        </div>
+    }
+</div>

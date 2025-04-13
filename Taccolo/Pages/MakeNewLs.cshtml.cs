@@ -21,6 +21,7 @@ namespace Taccolo.Pages
 
         [BindProperty]
         public string Title { get; set; }
+
         [BindProperty]
         public string InputText { get; set; }
 

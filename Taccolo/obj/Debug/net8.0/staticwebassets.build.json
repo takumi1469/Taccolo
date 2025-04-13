@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zm37oRcDMYddxPq7hIj/Cret2MryfclZt06uTVT967s=",
+  "Hash": "IvBEXFiCZ2WxqpwgoPCS9YZxgt7cUGnmTSGffZ6+umI=",
   "Source": "Taccolo",
   "BasePath": "_content/Taccolo",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\page-specific\\MakeNewLs.css"
+    },
+    {
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\OwnLs.css",
+      "SourceId": "Taccolo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\",
+      "BasePath": "_content/Taccolo",
+      "RelativePath": "css/page-specific/OwnLs.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\page-specific\\OwnLs.css"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\top.css",

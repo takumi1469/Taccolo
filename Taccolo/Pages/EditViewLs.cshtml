@@ -17,13 +17,15 @@
     <p id="p-username" class="p-username no-display">@User.Identity.Name</p>
 }
 
-
 <div class="div-main">
     <div class="div-title">
         <h1 class="h1-title">Edit and View Learning Set</h1>
-        <div class="div-buttons" id="div-buttons">
-            <button class="button-edit" id="button-edit" onclick="switchToEdit()">EDIT</button>
-        </div>
+        @if (Model.IsOwner)
+        {
+            <div class="div-buttons" id="div-buttons">
+                <button class="button-edit" id="button-edit" onclick="switchToEdit()">EDIT</button>
+            </div>
+        }
     </div>
     <div class="div-basic-info">
         <span class="span-title"><strong>Title: @Model.LsToDisplay?.Title </strong></span>
