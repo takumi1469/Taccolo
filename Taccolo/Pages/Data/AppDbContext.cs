@@ -16,6 +16,8 @@ namespace Taccolo.Pages.Data
         public DbSet<Comment> Comments { get; set; } // Table in the database
         public DbSet<HelpRequest> HelpRequests { get; set; } // Table in the database
         public DbSet<HelpReply> HelpReplys { get; set; } // Table in the database
+        public DbSet<FavoriteSet> FavoriteSets { get; set; } // Table in the database
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -44,6 +46,21 @@ namespace Taccolo.Pages.Data
                 .WithMany(helpRequest => helpRequest.HelpReplys)
                 .HasForeignKey(helpReply => helpReply.RequestId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<FavoriteSet>()
+                    .HasKey(f => f.Id);  // Primary key
+
+            modelBuilder.Entity<FavoriteSet>()
+                .HasOne(favorite => favorite.User)  // Navigation property for User
+                .WithMany()  // Each User can have many favorites
+                .HasForeignKey(favorite => favorite.UserId)  // Foreign key in FavoriteLearningSet
+                .OnDelete(DeleteBehavior.Cascade);  // Optional: specify the delete behavior
+
+            modelBuilder.Entity<FavoriteSet>()
+                .HasOne(favorite => favorite.LearningSet)  // Navigation property for LearningSet
+                .WithMany()  // Each LearningSet can be added to many favorites
+                .HasForeignKey(favorite => favorite.LsId)  // Foreign key in FavoriteLearningSet
+                .OnDelete(DeleteBehavior.Cascade);  // Optional: specify the delete behavior
 
         }
     }

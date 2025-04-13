@@ -758,3 +758,5 @@ function addHelpReply(event) {
     }
     replyTextArea.value = "";
 }
+
+//From here down is for Adding to Favorite                    
