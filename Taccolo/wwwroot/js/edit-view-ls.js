@@ -759,4 +759,55 @@ function addHelpReply(event) {
     replyTextArea.value = "";
 }
 
-//From here down is for Adding to Favorite                    
+//From here down is for Adding to Favorite
+function addToFavorite(event) {
+    const data = {
+        LsId: lsId
+    };
+    fetch(`/api/Favorite/AddFavorite`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" // Let the server know we're sending JSON
+        },
+        body: JSON.stringify(data) // Convert the data to JSON format
+    })
+        .then(response => {
+            if (!response.ok) {
+                alert("Saving wasn't successful")
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(result => {
+            console.log("Favorite added successfully JS:", result);
+        })
+        .catch(error => {
+            console.error("Error saving the learning set:", error);
+            alert("An error occurred while saving the learning set.");
+        });
+}
+
+function removeFromFavorite(event) {
+    const data = {
+        LsId: lsId
+    };
+    fetch(`/api/Favorite/RemoveFavorite`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" // Let the server know we're sending JSON
+        },
+        body: JSON.stringify(data) // Convert the data to JSON format
+    })
+        .then(response => {
+            if (!response.ok) {
+                alert("Saving wasn't successful")
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(result => {
+            console.log("Favorite removed successfully JS:", result);
+        })
+        .catch(error => {
+            console.error("Error saving the learning set:", error);
+            alert("An error occurred while saving the learning set.");
+        });
+}

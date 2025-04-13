@@ -26,6 +26,7 @@ namespace Taccolo.Pages
         public List<HelpRequest> CurrentHelpRequests { get; set; }
 
         public bool IsOwner { get; set; } = false;
+        public bool IsFavorite { get; set; } = false;
         public bool IsAuthenticated { get; set; } = false;
 
         public EditViewLsModel(UserManager<ApplicationUser> userManager,
@@ -72,6 +73,11 @@ namespace Taccolo.Pages
                 if (user != null && user.Id == LsToDisplay.UserId)
                     IsOwner = true; // otherwise default is false
 
+                if (_context.FavoriteSets.Any(fav => fav.UserId == user.Id && fav.LsId == LsId))
+                {
+                    IsFavorite = true;
+                }
+
                 // Reorder WordMeaningPair accorging to Order
                     LsToDisplay.WordMeaningPairs = LsToDisplay.WordMeaningPairs.OrderBy(wmp => wmp.Order).ToList();
                 
@@ -104,6 +110,9 @@ namespace Taccolo.Pages
                     Date = r.Date,
                     RequestId = r.RequestId
                 }).ToList();
+
+                // Determine 
+
                 return Page();
             }
         }

@@ -45,7 +45,6 @@ namespace Taccolo
                 using JsonDocument doc = JsonDocument.Parse(jsonResult);
                 string translatedText = doc.RootElement[0].GetProperty("translations")[0].GetProperty("text").GetString();
                 return translatedText;
-
             }
         }
     }

@@ -14,9 +14,8 @@ namespace Taccolo.Pages.Data
         [NotMapped]
         public ApplicationUser User { get; set; }
 
-        public FavoriteSet(Guid id, Guid lsId, string userId)
+        public FavoriteSet(Guid lsId, string userId)
         {
-            Id = id;
             LsId = lsId;
             UserId = userId;
         }

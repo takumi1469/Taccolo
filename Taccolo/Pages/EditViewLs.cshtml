@@ -34,7 +34,15 @@
         <span class="span-basic-info"><strong>To: </strong>@Model.LsToDisplay?.TargetLanguage</span>
         <span class="span-basic-info"><strong>User: </strong>@Model?.Username</span>
         <span class="span-basic-info"><strong>Created on:  </strong>@Model.LsToDisplay?.Date</span>
-        <button class="button-add-favorite">Add to Favorite</button>
+        @if (Model.IsAuthenticated && Model.IsFavorite == false)
+        {
+            <button class="button-favorite" id="button-add-favorite" onclick="addToFavorite(event)">Add to Favorite</button>
+        }
+        else if (Model.IsAuthenticated && Model.IsFavorite == true)
+        {
+            <button class="button-favorite" id="button-remove-favorite" onclick="removeFromFavorite(event)">Remove from Favorite</button>
+        }
+        else{}
     </div>
     @if (Model.LsId == null)
     {

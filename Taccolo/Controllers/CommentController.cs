@@ -25,10 +25,10 @@ namespace Taccolo.Controllers
             _logger = logger;
         }
 
-        [HttpPost("AddComment")]
+        [HttpPost("AddFavorite")]
         [IgnoreAntiforgeryToken]
         [AllowAnonymous]
-        public IActionResult AddComment([FromBody] CommentDto updatedData)
+        public IActionResult AddFavorite([FromBody] CommentDto updatedData)
         {
             _logger.LogInformation("***AddComment Endpoint triggered***");
             
@@ -40,10 +40,6 @@ namespace Taccolo.Controllers
             _context.SaveChanges();
 
             return new JsonResult(new { success = true, message = "LearningSet updated successfully" });
-
-
         }
-
-
     }
 }
