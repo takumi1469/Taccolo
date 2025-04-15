@@ -22,6 +22,12 @@ namespace Taccolo.Pages.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            //LearningSet and User
+            modelBuilder.Entity<LearningSet>()
+           .HasOne(ls => ls.User)  // LearningSet has one User
+           .WithMany()              // A User can have many LearningSets
+           .HasForeignKey(ls => ls.UserId); // Foreign key in LearningSet to UserId
+
             // Configure one-to-many relationship between LearningSet and WordMeaningPair
             modelBuilder.Entity<WordMeaningPair>()
                 .HasOne(wmp => wmp.LearningSet) // Each WordMeaningPair has one LearningSet

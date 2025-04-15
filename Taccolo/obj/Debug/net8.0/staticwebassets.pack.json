@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\js\\edit-view-ls.js"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\make-new-ls.js",
       "PackagePath": "staticwebassets\\js\\make-new-ls.js"
     },

@@ -831,3 +831,4 @@ function removeFromFavorite(event) {
 
     button.replaceWith(addFavoriteButton);
 }
+

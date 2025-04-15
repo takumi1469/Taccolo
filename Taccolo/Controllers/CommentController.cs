@@ -25,10 +25,10 @@ namespace Taccolo.Controllers
             _logger = logger;
         }
 
-        [HttpPost("AddFavorite")]
+        [HttpPost("AddComment")]
         [IgnoreAntiforgeryToken]
         [AllowAnonymous]
-        public IActionResult AddFavorite([FromBody] CommentDto updatedData)
+        public IActionResult AddComment([FromBody] CommentDto updatedData)
         {
             _logger.LogInformation("***AddComment Endpoint triggered***");
             

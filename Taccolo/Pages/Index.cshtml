@@ -1,5 +1,7 @@
 ﻿@page
 @model Taccolo.Pages.IndexModel
+@using Taccolo.Pages.Data
+@using System.Security.Claims
 @{
     ViewData["Title"] = "Home page";
 }
@@ -7,9 +9,73 @@
     Layout = "_taccoloLayout";
 }
 @section Styles {
-    <link rel="stylesheet" href="/css/page-specific/top.css" />
+    <link rel="stylesheet" href="/css/page-specific/OwnLs.css" />
 }
 
-<div class="div-top-all">
-    <p>You're logged in as @User.Identity.Name</p>
+<div class="div-main">
+    <div class="div-language-selection div-margin-bottom">
+        <button onclick="getAllLearningSets()"> TEST GETTING ALL LS</button>
+        <div class="div-choose-language">
+            <label for="from-language">From</label>
+            <select id="select-from-language">
+                <option value="not-chosen">(select one)</option>
+                @{
+                    for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                    {
+                        <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="div-choose-language">
+            <label for="select-or-and"></label>
+            <select id="select-or-and">
+                <option value="OR">OR</option>
+                <option value="AND">AND</option>
+            </select>
+        </div>
+        <div class="div-choose-language">
+            <label for="to-language">To</label>
+            <select id="select-to-language">
+                <option value="not-chosen">(select one)</option>
+                @{
+                    for (int i = 0; i < Languages.LanguageList.Count(); i++)
+                    {
+                        <option value="@Languages.LanguageList[i]">@Languages.LanguageList[i]</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="div-learning-sets">
+    @foreach (LearningSet ls in Model.AllLearningSets)
+    {
+        <a class="a-each-ls" href="EditViewLs/@ls.Id">
+            <div class="div-each-ls">
+                <div class="div-h2-picture">
+                    <h2 class="h2-first-words">@ls.Input</h2>
+                </div>
+
+                @if (ls.Title is null || ls.Title == "")
+                {
+                    <h3 class="h3-title">(No title)</h3>
+                }
+                else
+                {
+                    <h3 class="h3-title">@ls.Title</h3>
+                }
+                @if (ls.Date == "")
+                {
+                    <span class="span-date">(This LS has no date)</span>
+                }
+                else
+                {
+                    <span class="span-date">@ls.Date</span>
+                }
+            </div>
+        </a>
+    }
+    </div>
 </div>
+<script src="/js/index.js"></script>

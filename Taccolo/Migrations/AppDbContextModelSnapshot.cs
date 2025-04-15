@@ -252,7 +252,7 @@ namespace Taccolo.Migrations
 
                     b.HasIndex("LsId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("Taccolo.Pages.Data.FavoriteSet", b =>
@@ -273,7 +273,7 @@ namespace Taccolo.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("FavoriteSets");
+                    b.ToTable("FavoriteSets", (string)null);
                 });
 
             modelBuilder.Entity("Taccolo.Pages.Data.HelpReply", b =>
@@ -300,7 +300,7 @@ namespace Taccolo.Migrations
 
                     b.HasIndex("RequestId");
 
-                    b.ToTable("HelpReplys");
+                    b.ToTable("HelpReplys", (string)null);
                 });
 
             modelBuilder.Entity("Taccolo.Pages.Data.HelpRequest", b =>
@@ -319,7 +319,7 @@ namespace Taccolo.Migrations
 
                     b.HasIndex("LsId");
 
-                    b.ToTable("HelpRequests");
+                    b.ToTable("HelpRequests", (string)null);
                 });
 
             modelBuilder.Entity("Taccolo.Pages.Data.LearningSet", b =>
@@ -359,7 +359,7 @@ namespace Taccolo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("LearningSets");
+                    b.ToTable("LearningSets", (string)null);
                 });
 
             modelBuilder.Entity("Taccolo.WordMeaningPair", b =>
@@ -387,7 +387,7 @@ namespace Taccolo.Migrations
 
                     b.HasIndex("LsId");
 
-                    b.ToTable("WordMeaningPairs");
+                    b.ToTable("WordMeaningPairs", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

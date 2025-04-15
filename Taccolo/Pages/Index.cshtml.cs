@@ -1,32 +1,29 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Taccolo.Pages.Data;
 
 namespace Taccolo.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly AppDbContext _context;
+        private readonly ILogger<EditViewLsModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public List<LearningSet> AllLearningSets { get; set; } = new List<LearningSet>();
+
+        public IndexModel(UserManager<ApplicationUser> userManager, AppDbContext context, ILogger<EditViewLsModel> logger)
         {
-            _logger = logger;
             _userManager = userManager;
-            _signInManager = signInManager;
-
+            _context = context;
+            _logger = logger;
         }
 
         public async Task OnGetAsync()
         {
-            ApplicationUser? user = await _userManager.GetUserAsync(User); //Gets user information from DI
-        }
-
-        public async Task<IActionResult> OnGetLogoutAsync()
-{
-            await _signInManager.SignOutAsync();
-            return RedirectToPage("/Index"); // Get back to top after logging out
+            AllLearningSets = _context.LearningSets.ToList();
+            AllLearningSets.Reverse();
         }
     }
 }
