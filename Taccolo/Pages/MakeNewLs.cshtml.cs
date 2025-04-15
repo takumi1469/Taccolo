@@ -130,9 +130,6 @@ namespace Taccolo.Pages
             if (HttpContext.Session.GetString("tempLearningSetString") is string serializedSet)
             {
                 // Deserialize the TempLearningSet from TempData
-                // TempData might need to be avoided
-                //TempLearningSet = JsonSerializer.Deserialize<LearningSet>(serializedSet);
-
                 TempLearningSet = JsonSerializer.Deserialize<LearningSet>(serializedSet);
 
                 if (TempLearningSet is not null)
