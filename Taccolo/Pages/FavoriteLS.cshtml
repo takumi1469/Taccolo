@@ -1,5 +1,7 @@
 ﻿@page
 @model Taccolo.Pages.FavoriteLSModel
+@using Taccolo.Pages.Data
+@using System.Security.Claims
 @{
     ViewData["Title"] = "FavoriteLS";
 }
@@ -7,5 +9,36 @@
     Layout = "_taccoloLayout";
 }
 @section Styles {
-    <link rel="stylesheet" href="/css/page-specific/FavoriteLs.css" />
+    <link rel="stylesheet" href="/css/page-specific/OwnLs.css" />
 }
+
+
+<div class="div-main">
+    @foreach (LearningSet ls in Model.FavoriteLearningSets)
+    {
+        <a class="a-each-ls" href="EditViewLs/@ls.Id">
+            <div class="div-each-ls">
+                <div class="div-h2-picture">
+                    <h2 class="h2-first-words">@ls.Input</h2>
+                </div>
+
+                @if (ls.Title is null || ls.Title == "")
+                {
+                    <h3 class="h3-title">(No title)</h3>
+                }
+                else
+                {
+                    <h3 class="h3-title">@ls.Title</h3>
+                }
+                @if (ls.Date == "")
+                {
+                    <span class="span-date">(This LS has no date)</span>
+                }
+                else
+                {
+                    <span class="span-date">@ls.Date</span>
+                }
+            </div>
+        </a>
+    }
+</div>

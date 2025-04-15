@@ -36,6 +36,7 @@ button, select {
     height: 1.8vw;
     font-size: 1.1vw;
     font-family: Nunito;
+    cursor:pointer;
 }
 
 .input-text{

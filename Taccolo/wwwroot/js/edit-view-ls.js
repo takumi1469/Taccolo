@@ -761,6 +761,8 @@ function addHelpReply(event) {
 
 //From here down is for Adding to Favorite
 function addToFavorite(event) {
+    const button = event.target;
+
     const data = {
         LsId: lsId
     };
@@ -784,9 +786,19 @@ function addToFavorite(event) {
             console.error("Error saving the learning set:", error);
             alert("An error occurred while saving the learning set.");
         });
+
+    const removeFavoriteButton = document.createElement("button");
+    removeFavoriteButton.textContent = "Remove from Favorite";
+    removeFavoriteButton.className = "button-favorite";
+    removeFavoriteButton.id = "button-remove-favorite";
+    removeFavoriteButton.addEventListener("click", removeFromFavorite);
+
+    button.replaceWith(removeFavoriteButton);
 }
 
 function removeFromFavorite(event) {
+    const button = event.target;
+
     const data = {
         LsId: lsId
     };
@@ -810,4 +822,12 @@ function removeFromFavorite(event) {
             console.error("Error saving the learning set:", error);
             alert("An error occurred while saving the learning set.");
         });
+
+    const addFavoriteButton = document.createElement("button");
+    addFavoriteButton.textContent = "Add to Favorite";
+    addFavoriteButton.className = "button-favorite";
+    addFavoriteButton.id = "button-add-favorite";
+    addFavoriteButton.addEventListener("click", addToFavorite);
+
+    button.replaceWith(addFavoriteButton);
 }

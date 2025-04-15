@@ -41,6 +41,7 @@ namespace Taccolo.Controllers
 
             return new JsonResult(new { success = true, message = "Favorite added successfully" });
         }
+
         [HttpPost("RemoveFavorite")]
         [IgnoreAntiforgeryToken]
         [AllowAnonymous]
@@ -62,7 +63,7 @@ namespace Taccolo.Controllers
 
             _context.SaveChanges();
 
-            return new JsonResult(new { success = true, message = "Favorite added successfully" });
+            return new JsonResult(new { success = true, message = "Favorite removed successfully" });
         }
 
     }

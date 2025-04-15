@@ -23,12 +23,13 @@ namespace Taccolo.Areas.Identity.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger, UserManager<ApplicationUser> userManager)
+        public LoginModel(SignInManager<ApplicationUser> signInManager,
+            ILogger<LoginModel> logger,
+            UserManager<ApplicationUser> userManager)
         {
             _signInManager = signInManager;
             _logger = logger;
             _userManager = userManager;
-
         }
 
         [BindProperty]

@@ -28,11 +28,7 @@ namespace Taccolo.Pages
             {
                 OwnLearningSets = _context.LearningSets.Where(ls => ls.UserId == user.Id).ToList();
                 OwnLearningSets.Reverse();
-            } 
-            
-            
+            }    
         }
-
-
     }
 }
