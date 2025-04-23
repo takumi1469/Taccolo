@@ -7,7 +7,6 @@ namespace Taccolo
     {
         public Guid Id { get; set; } = Guid.NewGuid();// Primary key
         public Guid? LsId { get; set; } // Foreign key to LearningSet
-
         public string? Word { get; set; }
         public string? TranslatedText { get; set; }
         public List<string>? Alternatives { get; set; } = new List<string>();

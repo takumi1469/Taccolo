@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Taccolo.Pages.Data;
@@ -12,9 +13,11 @@ using Taccolo.Pages.Data;
 namespace Taccolo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250423203558_CommentedOut")]
+    partial class CommentedOut
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -387,8 +390,6 @@ namespace Taccolo.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LsId");
-
                     b.ToTable("WordMeaningPairs");
                 });
 
@@ -503,16 +504,6 @@ namespace Taccolo.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Taccolo.WordMeaningPair", b =>
-                {
-                    b.HasOne("Taccolo.Pages.Data.LearningSet", "LearningSet")
-                        .WithMany("WordMeaningPairs")
-                        .HasForeignKey("LsId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("LearningSet");
-                });
-
             modelBuilder.Entity("Taccolo.ApplicationUser", b =>
                 {
                     b.Navigation("LearningSets");
@@ -528,8 +519,6 @@ namespace Taccolo.Migrations
                     b.Navigation("Comments");
 
                     b.Navigation("HelpRequests");
-
-                    b.Navigation("WordMeaningPairs");
                 });
 #pragma warning restore 612, 618
         }

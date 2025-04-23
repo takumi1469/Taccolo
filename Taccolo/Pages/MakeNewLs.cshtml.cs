@@ -107,7 +107,8 @@ namespace Taccolo.Pages
                 {
                     Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(word));
 
-                    WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id, word, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
+                    WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id, 
+                        word, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
                     TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
                     tempOrder++;
                 }

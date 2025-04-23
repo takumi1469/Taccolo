@@ -18,7 +18,7 @@ namespace Taccolo.Pages.Data
         [NotMapped]
         public List<WordMeaningPair> WordMeaningPairs { get; set; } = new List<WordMeaningPair>(); // Navigation property
 
-        [NotMapped]
+       // [NotMapped]
         public ApplicationUser? User { get; set; }
 
         [NotMapped]

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Taccolo.Pages.Data;
 
 namespace Taccolo.Pages
@@ -22,7 +23,7 @@ namespace Taccolo.Pages
 
         public async Task OnGetAsync()
         {
-            AllLearningSets = _context.LearningSets.ToList();
+            AllLearningSets = _context.LearningSets.Include(ls => ls.User).ToList();
             AllLearningSets.Reverse();
         }
     }
