@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Taccolo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4301f689b9dc659aecb277e27d00bc6e7d56853")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4942d24af8508b62552d4fff121d506b075728d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Taccolo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Taccolo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

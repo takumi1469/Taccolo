@@ -1,0 +1,34 @@
+﻿@page
+@model Taccolo.Pages.FlashcardModel
+@{
+    ViewData["Title"] = "Flashcard";
+}
+@{
+    Layout = "_taccoloLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/Flashcard.css" />
+}
+
+<div class="div-main">
+    <h1 class="h1-title">Flashcard</h1>
+    <div class="div-question">
+        <div class="div-left-card">
+            <div class="div-card">WORD</div>
+        </div>
+        <div class="div-left-choices">
+            <label>
+            <input class="input-choice" type="radio" name="input-choice" value="A"> A
+            </label>
+            <label>
+                <input class="input-choice" type="radio" name="input-choice" value="B"> B
+            </label>
+            <label>
+                <input class="input-choice" type="radio" name="input-choice" value="C"> C
+            </label>
+            <label>
+                <input class="input-choice" type="radio" name="input-choice" value="D"> D
+            </label>
+        </div>
+    </div>
+</div>

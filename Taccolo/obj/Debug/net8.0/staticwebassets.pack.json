@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\page-specific\\EditViewLs.css"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\Flashcard.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\Flashcard.css"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\MakeNewLs.css",
       "PackagePath": "staticwebassets\\css\\page-specific\\MakeNewLs.css"
     },

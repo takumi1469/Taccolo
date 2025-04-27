@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZzYIHZb9cav5OU4qgiB9pP+V4Rmjrd/lnRgc1/vkYm4=",
+  "Hash": "RMZG8Ik7IBinTnSpX5OPHJzP77M1lxwEYMPaAxRMrw8=",
   "Source": "Taccolo",
   "BasePath": "_content/Taccolo",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\page-specific\\EditViewLs.css"
+    },
+    {
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\Flashcard.css",
+      "SourceId": "Taccolo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\",
+      "BasePath": "_content/Taccolo",
+      "RelativePath": "css/page-specific/Flashcard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\page-specific\\Flashcard.css"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\MakeNewLs.css",

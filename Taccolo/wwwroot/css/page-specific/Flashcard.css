@@ -1,0 +1,21 @@
+﻿body {
+}
+
+.div-question {
+    display:flex;
+    flex-direction:row;
+    width:90%;
+    height:50%;
+}
+
+.div-left-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.div-left-choices{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
