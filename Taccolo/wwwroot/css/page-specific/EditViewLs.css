@@ -18,13 +18,17 @@ h1, h2, h3, h4 {
     height:5vw;
 }
 
+.form-flashcard{
+    display:inline;
+}
+
 .div-basic-info {
-/*    display: flex;
+    /*    display: flex;
     flex-direction: row;
     align-content: center;
     align-items: center;*/
-    margin-bottom:1vw;
-    font-size:1.4vw;
+    margin-bottom: 1vw;
+    font-size: 1.4vw;
 }
 
 button {

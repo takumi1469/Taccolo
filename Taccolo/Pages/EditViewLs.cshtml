@@ -29,6 +29,9 @@
     </div>
     <div class="div-basic-info">
         <span class="span-title"><strong>Title: @Model.LsToDisplay?.Title </strong></span>
+        <form method="post" class="form-flashcard">
+            <button class="button-flashcard" asp-page-handler="Flashcard" type="submit">Go to Flashcard</button>
+        </form>
         <br>
         <span class="span-basic-info"><strong>From: </strong>@Model.LsToDisplay?.SourceLanguage</span>
         <span class="span-basic-info"><strong>To: </strong>@Model.LsToDisplay?.TargetLanguage</span>

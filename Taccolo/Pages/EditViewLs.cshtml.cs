@@ -61,7 +61,6 @@ namespace Taccolo.Pages
             }
             else
             {
-                RedirectToPage("List");
                 _logger.LogInformation("***LsToDisplay is NOT NULL***");
                 ApplicationUser? user = await _userManager.GetUserAsync(User);
                 if (user != null)
@@ -117,6 +116,16 @@ namespace Taccolo.Pages
             }
         }
 
+        public async Task<IActionResult> OnPostFlashcard()
+        {
+            LsToDisplay = await _context.LearningSets
+               .FirstOrDefaultAsync(ls => ls.Id == LsId);
+           
+            if (LsToDisplay is not null)
+                return RedirectToPage("Flashcard", new { lsid = LsToDisplay.Id });
+            else
+                return RedirectToPage("Error");
+        }
 
 
         public class CommentWithUsername()
@@ -133,8 +142,5 @@ namespace Taccolo.Pages
             public string? Date { get; set; }
             public Guid RequestId { get; set; }
         }
-
-
-        
     }
 }

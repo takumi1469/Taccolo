@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RMZG8Ik7IBinTnSpX5OPHJzP77M1lxwEYMPaAxRMrw8=",
+  "Hash": "gljorT9qbYMT4CSpqoSOM3ZzQ5CHTE9Cs6itRp3tdow=",
   "Source": "Taccolo",
   "BasePath": "_content/Taccolo",
   "Mode": "Default",
@@ -397,6 +397,25 @@
       "OriginalItemSpec": "wwwroot\\js\\edit-view-ls.js"
     },
     {
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\flashcard.js",
+      "SourceId": "Taccolo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\",
+      "BasePath": "_content/Taccolo",
+      "RelativePath": "js/flashcard.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\flashcard.js"
+    },
+    {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\index.js",
       "SourceId": "Taccolo",
       "SourceType": "Discovered",
@@ -433,25 +452,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\make-new-ls.js"
-    },
-    {
-      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\site.js",
-      "SourceId": "Taccolo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\",
-      "BasePath": "_content/Taccolo",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

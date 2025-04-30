@@ -11,12 +11,13 @@
 }
 
 <div class="div-main">
+    <p class="p-lsid no-display" id="p-lsid">@Model.LsId</p> 
     <h1 class="h1-title">Flashcard</h1>
     <div class="div-question">
         <div class="div-left-card">
-            <div class="div-card">WORD</div>
+            <span class="span-word">WORD</span>
         </div>
-        <div class="div-left-choices">
+        <div class="div-right-choices">
             <label>
             <input class="input-choice" type="radio" name="input-choice" value="A"> A
             </label>
@@ -32,3 +33,4 @@
         </div>
     </div>
 </div>
+<script src="/js/flashcard.js"></script>

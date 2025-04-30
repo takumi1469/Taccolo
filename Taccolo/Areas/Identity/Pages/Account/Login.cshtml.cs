@@ -84,7 +84,6 @@ namespace Taccolo.Areas.Identity.Pages.Account
                 return Page();
             }
 
-
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             if (ModelState.IsValid && user is not null)
