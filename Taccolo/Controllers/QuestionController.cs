@@ -42,7 +42,10 @@ namespace Taccolo.Controllers
             if (CurrentLs == null)
                 _logger.LogWarning("LearningSet not found for LsId: {LsId}", LsId);
 
-            CurrentWmp = CurrentLs?.WordMeaningPairs;
+            CurrentWmp = CurrentLs?.WordMeaningPairs
+                .OrderBy(wmp => wmp.Order)
+                .ToList();
+
             if (CurrentWmp == null)
                 _logger.LogWarning("CurrentWmp is null");
         }

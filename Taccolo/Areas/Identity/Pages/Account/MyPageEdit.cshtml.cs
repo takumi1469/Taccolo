@@ -82,7 +82,7 @@ namespace Taccolo.Areas.Identity.Pages.Account
                 {
                     // Redirect or show a success message
                     await _signInManager.RefreshSignInAsync(CurrentUser); //This is for updating authentication cookie, where @User.Identity.Name comes from
-                    return RedirectToPage("/List");
+                    return RedirectToPage("MyPage");
                 }
                 else
                 {
@@ -92,7 +92,7 @@ namespace Taccolo.Areas.Identity.Pages.Account
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
 
-                    return RedirectToPage("/Words");
+                    return RedirectToPage("/Index");
                 }
             }
 

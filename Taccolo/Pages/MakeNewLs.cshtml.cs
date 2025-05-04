@@ -96,6 +96,11 @@ namespace Taccolo.Pages
                     date: dateCreation,
                     userId: UserId) ;
 
+                //Tokenize Japanese
+                if(SourceChoice == "Japanese")
+                {
+                    InputText = Tokenizer.TokenizeJapanese(InputText);
+                }
 
                 //look up individual words by LibreTranslate
                 string cleanedInput = Regex.Replace(InputText, @"[^\w\s']", "");

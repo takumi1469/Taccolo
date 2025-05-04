@@ -13,6 +13,5 @@
             CorrectChoice = correctChoice;
             WrongChoices = wrongChoices;
         }
-
     }
 }

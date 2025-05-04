@@ -13,7 +13,10 @@
 <div class="div-main">
     <p class="p-lsid no-display" id="p-lsid">@Model.LsId</p> 
     <h1 class="h1-title">Flashcard</h1>
-    <div class="div-question">
+    <div class="div-result">
+        <p class="p-result" id="p-result"></p>
+    </div>
+    <div class="div-question" id="div-question">
         <div class="div-left-card">
             <span class="span-word">WORD</span>
         </div>
@@ -31,6 +34,9 @@
                 <input class="input-choice" type="radio" name="input-choice" value="D"> D
             </label>
         </div>
+    </div>
+    <div class="div-next-button">
+        <button class="button-next" onclick="goNext(event)">Next</button>
     </div>
 </div>
 <script src="/js/flashcard.js"></script>
