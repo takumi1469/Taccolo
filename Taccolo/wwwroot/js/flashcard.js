@@ -6,7 +6,6 @@ const result = document.getElementById("p-result");
 let correctAnswer = 0;
 let wrongAnswer = 0;
 
-
 // Call getQuestions after the page is loaded
 document.addEventListener("DOMContentLoaded", getQuestions); 
 function getQuestions() {
@@ -77,7 +76,6 @@ function showQuestions() {
 function checkCorrectOrWrong(event) {
     const radio = event.target;
     const radios = document.querySelectorAll(".input-choice");
-    //const result = document.getElementById("p-result");
     correctOrWrong = radio.getAttribute("data-correct");
 
     // Clear styling of all labels first
