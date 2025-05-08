@@ -6,7 +6,7 @@
         public string? SourceLanguage { get; set; }
         public string? TargetLanguage { get; set; }
 
-        public string? matchAndOr {  get; set; }
+        public string? MatchAndOr {  get; set; }
 
     }
 }

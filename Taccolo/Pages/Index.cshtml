@@ -29,13 +29,13 @@
         <div class="div-choose-language">
             <label for="select-or-and"></label>
             <select id="select-or-and">
-                <option value="or">OR</option>
-                <option value="and">AND</option>
+                <option value="OR">OR</option>
+                <option value="AND">AND</option>
             </select>
         </div>
         <div class="div-choose-language">
             <label for="to-language">To</label>
-            <select id="select-to-language">
+            <select id="select-to-language" >
                 <option value="not-chosen">(select one)</option>
                 @{
                     for (int i = 0; i < Languages.LanguageList.Count(); i++)
@@ -45,9 +45,12 @@
                 }
             </select>
         </div>
+        <input type="text" class="input-narrow-search" id="input-narrow-search" name="input-narrow-search" placeholder=" Enter keyword to narrow down results" />
+        <button class="button-search" onclick="getSearchResult()">search</button>
+
     </div>
 
-    <div class="div-learning-sets">
+    <div class="div-learning-sets" id="div-learning-sets">
         @foreach (LearningSet ls in Model.AllLearningSets)
         {
             <a class="a-each-ls" href="EditViewLs/@ls.Id">
@@ -85,4 +88,4 @@
         }
     </div>
 </div>
-<script src="/js/index.js"></script>
+<script src="/js/search.js"></script>

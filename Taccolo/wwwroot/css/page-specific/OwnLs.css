@@ -4,20 +4,36 @@
 .div-main{
     display:flex;
     flex-direction:column;
-    margin-top:2vw;
+    margin-top:1vw;
 }
 
 button, select {
     height: 1.8vw;
-    font-size: 1.1vw;
+    font-size: 1.4vw;
     font-family: Nunito;
     cursor: pointer;
+    background-color:white;
+    border-radius:10px;
+    height:2.5vw;
+}
+
+.input-narrow-search {
+    width: 20vw;
+    height: 2.5vw;
+    border: none;
+    border-bottom:solid;
+    /*border-radius: 100px;*/
+    margin: 0; /* Reset any browser-specific margin */
+    vertical-align: middle; /* Aligns the input field inline with the image */
+    font-size: 1.2vw;
+    padding: 0 1vw 0 1vw;
 }
 
 .div-language-selection {
     display: flex;
     flex-direction: row;
     gap: 40px;
+    margin-left:10vw;
 }
 
 .div-learning-sets {
@@ -31,7 +47,7 @@ button, select {
     width: 25vw;
     height: 18vw;
     margin: 0 2% 2% 0;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
 }
 
@@ -57,4 +73,8 @@ button, select {
     margin: 0 2% 4% 0;
     display: flex;
     flex-direction: column;
+}
+
+span {
+    display:inline;
 }

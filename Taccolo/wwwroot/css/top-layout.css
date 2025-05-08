@@ -47,6 +47,7 @@ a {
     margin: 0; /* Reset any browser-specific margin */
     vertical-align: middle; /* Aligns the input field inline with the image */
     font-size: 1.2vw;
+    padding: 0 1vw 0 1vw;
 }
 
 .input-search-button {
