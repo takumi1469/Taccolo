@@ -1,6 +1,17 @@
-﻿let matchedSets;
+﻿// Call getSearchResult after the page is loaded
+/*document.addEventListener("DOMContentLoaded", getSearchResultTop);*/
 
-function getSearchResult(event) {
+if (window.location.pathname == "/") {
+    document.addEventListener("DOMContentLoaded", getSearchResultTop);
+}
+else if (window.location.pathname == "/OwnLS") {
+    document.addEventListener("DOMContentLoaded", getSearchResultOwn);
+}
+else if (window.location.pathname == "/FavoriteLS") {
+    document.addEventListener("DOMContentLoaded", getSearchResultFavorite);
+}
+
+function getSearchResult(event, endpoint) {
 
     const keywords = document.getElementById("input-narrow-search").value;
     const sourceLanguage = document.getElementById("select-from-language").value;
@@ -14,7 +25,7 @@ function getSearchResult(event) {
         MatchAndOr : matchAndOr
      }
 
-    fetch(`/api/Search/SearchLsTop`, {
+    fetch(endpoint, {
         method: "POST",
         headers: {
             "Content-Type": "application/json" // Let the server know we're sending JSON
@@ -35,6 +46,19 @@ function getSearchResult(event) {
             console.error("Error getting Learning Sets:", error);
             alert("An error occurred while getting Learning Sets.");
         });
+}
+
+function getSearchResultTop(event) {
+    getSearchResult(event, `/api/Search/SearchLsTop`);
+}
+
+function getSearchResultOwn(event) {
+    console.log("getSearchResultOwn has been called");
+    getSearchResult(event, `/api/Search/SearchLsOwn`);
+}
+function getSearchResultFavorite(event) {
+    console.log("getSearchResultOwn has been called");
+    getSearchResult(event, `/api/Search/SearchLsFavorite`);
 }
 
 function showLearningSets(sets) {
@@ -71,4 +95,23 @@ function showLearningSets(sets) {
 
         divLearningSets.appendChild(link);
     });
+}
+
+function clearSearchParameters(event) {
+    document.getElementById("input-narrow-search").value = "";
+    document.getElementById("select-from-language").value = "not-chosen";
+    document.getElementById("select-to-language").value = "not-chosen";
+    document.getElementById("select-or-and").value = "OR";
+
+    if (window.location.pathname == "/") {
+        getSearchResultTop();
+    }
+    else if (window.location.pathname == "/OwnLS") {
+        getSearchResultOwn();
+    }
+    else if (window.location.pathname == "/FavoriteLS") {
+        getSearchResultFavorite();
+    }
+
+
 }

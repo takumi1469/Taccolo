@@ -33,7 +33,7 @@ button, select {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    margin-left:10vw;
+    margin-left:6vw;
 }
 
 .div-learning-sets {
