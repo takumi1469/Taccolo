@@ -62,7 +62,16 @@ a {
 }
 
 h2 {
-    margin-top: 0;
+    margin: 0;
+}
+
+.h3-register-here{
+    margin:0 0 1vw 0;
+    color:blue;
+}
+
+.a-register-from-here{
+    color:blue;
 }
 
 .form-control {
@@ -122,9 +131,28 @@ h2 {
     margin:0;
 }
 
+
+/*form Register page*/
+.div-slug-check{
+    display:flex;
+    flex-direction:row;
+}
+
+.button-check-slug{
+    background-color:#EEDDEE;
+    font-size:1.3vw;
+    font-family:Nunito;
+    margin-left: 1vw;
+}
+
+
+
+
+
+
 /*for MyPageEdit*/
-.p-note{
-    margin:0;
+.p-note {
+    margin: 0;
 }
 
 .form-mypageedit {

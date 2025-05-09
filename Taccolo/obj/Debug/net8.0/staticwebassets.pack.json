@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\page-specific\\OwnLs.css"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\UserPage.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\UserPage.css"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\top.css",
       "PackagePath": "staticwebassets\\css\\page-specific\\top.css"
     },
@@ -91,6 +95,10 @@
     {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\make-new-ls.js",
       "PackagePath": "staticwebassets\\js\\make-new-ls.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\register.js",
+      "PackagePath": "staticwebassets\\js\\register.js"
     },
     {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\search.js",

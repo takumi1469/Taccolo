@@ -1,0 +1,70 @@
+﻿@page
+@model Taccolo.Pages.UserPageModel
+@using Taccolo.Pages.Data
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "UserPage";
+}
+@{
+    Layout = "_taccoloLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/UserPage.css" />
+}
+
+<div class="div-main">
+    <h2 class="h2-title">User Information</h2>
+    <div class="div-basic-info">
+        <div class="div-mypage-item">
+            <div class="div-mypage-key">
+                <p class="p-mypage-key">Username</p>
+            </div>
+            <div class="div-mypage-value">
+                <p class="p-mypage-value">
+                    @Model.UserToDisplay.UserName
+                </p>
+            </div>
+        </div>
+        <div class="div-mypage-item">
+            <div class="div-mypage-key">
+                <p class="p-mypage-key">Languages I'm learning</p>
+            </div>
+            <div class="div-mypage-value">
+                @{
+                    for (int i = 0; i < Model.UserToDisplay.DesiredLanguages?.Count(); i++)
+                    {
+                        <p class="p-language">@Model.UserToDisplay.DesiredLanguages[i] </p>
+                    }
+                }
+            </div>
+        </div>
+        <div class="div-mypage-item">
+            <div class="div-mypage-key">
+                <p class="p-mypage-key">Languages I know</p>
+            </div>
+            <div class="div-mypage-value">
+                @{
+                    for (int i = 0; i < Model.UserToDisplay.KnownLanguages?.Count(); i++)
+                    {
+                        <p class="p-language">@Model.UserToDisplay.KnownLanguages[i] </p>
+                    }
+                }
+            </div>
+        </div>
+        <div class="div-mypage-item">
+            <div class="div-mypage-key">
+                <p class="p-mypage-key">Bio</p>
+            </div>
+            <div class="div-mypage-value">
+                <p class="p-mypage-value">
+                    @Model.UserToDisplay.Bio
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-learning-sets" id="div-learning-sets">
+
+    </div>
+
+</div>

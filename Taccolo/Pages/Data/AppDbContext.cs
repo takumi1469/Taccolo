@@ -69,6 +69,11 @@ namespace Taccolo.Pages.Data
                 .HasForeignKey(favorite => favorite.LsId)  // Foreign key in FavoriteLearningSet
                 .OnDelete(DeleteBehavior.Cascade);  // Optional: specify the delete behavior
 
+            modelBuilder.Entity<ApplicationUser>()
+                .HasIndex(u => u.PublicSlug)
+                .IsUnique();
+            
+
         }
     }
 }

@@ -16,11 +16,6 @@ namespace Taccolo.Controllers
         private readonly AppDbContext _context;
         private readonly ILogger<EditViewLsModel> _logger;
 
-        //public string? Keywords { get; set; } = new List<string>();
-        //public string? SourceLanguage {  get; set; } 
-        //public string? TargetLanguage { get; set; }
-        //public string? MatchAndOr { get; set; }
-
         public SearchController(UserManager<ApplicationUser> userManager, AppDbContext context, ILogger<EditViewLsModel> logger)
         {
             _userManager = userManager;
@@ -32,8 +27,8 @@ namespace Taccolo.Controllers
         {
             _logger.LogInformation("***SearchLs Endpoint triggered***");
 
-            // First populate the properties from Dto.
-            // Keywords from JavaScript is just one string split it into words and put words in list
+            // First turn the keywords into List<string>.
+            // Keywords from JavaScript is just one string.
             List<string> Keywords = new List<string>();
             if (parameters.Keywords is null || parameters.Keywords == string.Empty)
             {
@@ -42,11 +37,12 @@ namespace Taccolo.Controllers
             else
             {
                 Keywords = parameters.Keywords.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList();
+                Keywords = Keywords.Select(k => k.ToLower()).ToList(); //normalize Keywords to lower case
             }
+
             string SourceLanguage = parameters.SourceLanguage;
             string TargetLanguage = parameters.TargetLanguage;
             string MatchAndOr = parameters.MatchAndOr;
-
 
             // Second, search LearningSets by keyword matching
             var allSets = _context.LearningSets.Include(ls => ls.User).ToList();
@@ -66,33 +62,16 @@ namespace Taccolo.Controllers
                     .ToList();
             }
 
-            // Use anonymous object because including User and returning JSON of LS and User directly
-            // causes circular reference
-            //var allSets = originalSets.Select(ls => new
-            //{
-            //    ls.Title,
-            //    ls.Id,
-            //    ls.Input,
-            //    ls.Translation,
-            //    ls.SourceLanguage,
-            //    ls.TargetLanguage,
-            //    UserName = ls.User.UserName,
-            //    ls.Date,
-            //    ls.Description
-            //}).ToList();
-
-
-
             allSets.Reverse();
 
             if (Keywords is not null)
             {
                 var keywordSets = allSets.Where(ls => Keywords.Any(k =>
-                    (ls.Title?.Contains(k) ?? false) ||
-                    (ls.Input?.Contains(k) ?? false) ||
-                    (ls.Translation?.Contains(k) ?? false) ||
-                    (ls.Description?.Contains(k) ?? false) ||
-                    (ls.User?.UserName?.Contains(k) ?? false)))
+                    (ls.Title?.ToLower().Contains(k) ?? false) ||
+                    (ls.Input?.ToLower().Contains(k) ?? false) ||
+                    (ls.Translation?.ToLower().Contains(k) ?? false) ||
+                    (ls.Description?.ToLower().Contains(k) ?? false) ||
+                    (ls.User?.UserName?.ToLower().Contains(k) ?? false)))
                .ToList();
 
                 // Rank LearningSets according to match counts
@@ -112,7 +91,6 @@ namespace Taccolo.Controllers
 
                 allSets = rankedSets;
             }
-
 
             // Third, check if the Source Language and Target Language are both used for search or only one or none
             // Both used
@@ -148,123 +126,7 @@ namespace Taccolo.Controllers
             // or else none is used, in that case nothing needs to be done
 
             return allSets;
-
         }
-
-        //[HttpPost("SearchLsTop")]
-        //[IgnoreAntiforgeryToken]
-        //[AllowAnonymous]
-        //public IActionResult SearchLsTop([FromBody] SearchQueryDto searchQuery, string? userId = null, bool? favorite = false)
-        //{
-        //    _logger.LogInformation("***SearchLs Endpoint triggered***");
-
-        //    // First populate the properties from Dto.
-        //    // Keywords from JavaScript is just one string split it into words and put words in list
-        //    if(searchQuery.Keywords is null || searchQuery.Keywords == string.Empty)
-        //    {
-        //        Keywords = null;
-        //    }
-        //    else
-        //    {
-        //        Keywords = searchQuery.Keywords.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList();
-        //    }
-        //    SourceLanguage = searchQuery.SourceLanguage;
-        //    TargetLanguage = searchQuery.TargetLanguage;
-        //    MatchAndOr = searchQuery.MatchAndOr;
-
-
-        //    // Second, search LearningSets by keyword matching
-
-
-        //    var originalSets = _context.LearningSets.Include(ls => ls.User).ToList();
-        //    if (userId is not null)
-        //    {
-        //        _logger.LogInformation($"***userId is not null, it is {userId}***");
-        //        originalSets = originalSets.Where(ls => ls.UserId == userId).ToList();
-        //        _logger.LogInformation("*** Length of originalSets is " + originalSets.Count().ToString() + "***");
-        //    }
-
-        //    // Use anonymous object because including User and returning JSON of LS and User directly
-        //    // causes circular reference
-        //    var allSets = originalSets.Select(ls => new
-        //    {
-        //        ls.Title,
-        //        ls.Id,
-        //        ls.Input,
-        //        ls.Translation,
-        //        ls.SourceLanguage,
-        //        ls.TargetLanguage,
-        //        UserName = ls.User.UserName,
-        //        ls.Date,
-        //        ls.Description
-        //    }).ToList();
-
-        //    allSets.Reverse();
-
-        //    if (Keywords is not null)
-        //    {
-        //        var keywordSets = allSets.Where(ls => Keywords.Any(k =>
-        //            (ls.Title?.Contains(k) ?? false) ||
-        //            (ls.Input?.Contains(k) ?? false) ||
-        //            (ls.Translation?.Contains(k) ?? false) ||
-        //            (ls.Description?.Contains(k) ?? false) ||
-        //            (ls.UserName?.Contains(k) ?? false)))
-        //       .ToList();
-
-        //        // Rank LearningSets according to match counts
-        //        var rankedSets = keywordSets.Select(ls => new {
-        //            LearningSetAnonymous = ls,
-        //            MatchCount = Keywords.Count(k =>
-        //             (ls.Title?.Contains(k) ?? false) ||
-        //             (ls.Description?.Contains(k) ?? false) ||
-        //             (ls.Input?.Contains(k) ?? false) ||
-        //             (ls.Translation?.Contains(k) ?? false) ||
-        //             (ls.UserName?.Contains(k) ?? false))
-        //        })
-        //       .OrderByDescending(x => x.MatchCount)
-        //       .Select(x => x.LearningSetAnonymous)
-        //       .ToList();
-
-        //        allSets = rankedSets;
-        //    }
-
-
-        //    // Third, check if the Source Language and Target Language are both used for search or only one or none
-        //    // Both used
-        //    if (SourceLanguage != "not-chosen" && TargetLanguage != "not-chosen")
-        //    {
-        //        if (MatchAndOr == "AND")
-        //        {
-        //            _logger.LogInformation("***CASE 1***");
-        //            var sourceAndTargetSets = allSets.Where(ls => ls.SourceLanguage ==  SourceLanguage && ls.TargetLanguage == TargetLanguage).ToList();
-        //            allSets = sourceAndTargetSets;
-        //        }
-        //        else //OR
-        //        {
-        //            _logger.LogInformation("***CASE 2***");
-        //            var sourceOrTargetSets = allSets.Where(ls => ls.SourceLanguage == SourceLanguage || ls.TargetLanguage == TargetLanguage).ToList();
-        //            allSets = sourceOrTargetSets;
-        //        }
-        //    }
-        //    //only source is used
-        //    else if (SourceLanguage != "not-chosen" && TargetLanguage == "not-chosen")
-        //    {
-        //        _logger.LogInformation("***CASE3***");
-        //        var sourceSets = allSets.Where(ls => ls.SourceLanguage == SourceLanguage).ToList();
-        //        allSets = sourceSets;
-        //    }
-        //    //only target is used
-        //    else if (SourceLanguage == "not-chosen" && TargetLanguage != "not-chosen")
-        //    {
-        //        _logger.LogInformation("***CASE 4***");
-        //        var targetSets = allSets.Where(ls => ls.TargetLanguage == TargetLanguage).ToList();
-        //        allSets = targetSets;
-        //    }
-        //    // or else none is used, in that case nothing needs to be done
-
-        //    return Ok(allSets);
-        //}
-
 
         [HttpPost("SearchLsTop")]
         [IgnoreAntiforgeryToken]
@@ -292,24 +154,8 @@ namespace Taccolo.Controllers
                 ls.Description
             }).ToList();
 
-            //var allSets = originalSets.Select(ls => new
-            //{
-            //    ls.Title,
-            //    ls.Id,
-            //    ls.Input,
-            //    ls.Translation,
-            //    ls.SourceLanguage,
-            //    ls.TargetLanguage,
-            //    UserName = ls.User.UserName,
-            //    ls.Date,
-            //    ls.Description
-            //}).ToList();
-
-            return Ok(MatchingSets);
-
+           return Ok(MatchingSets);
         }
-
-
 
 
         [HttpPost("SearchLsOwn")]
@@ -319,7 +165,6 @@ namespace Taccolo.Controllers
         {
             _logger.LogInformation("***SearchLsOwn has been called***");
 
-            //string userId = _userManager.GetUserId(User);
             ApplicationUser? user = await _userManager.GetUserAsync(User);
             string userId = "default-id";
             if (user != null)
@@ -351,8 +196,6 @@ namespace Taccolo.Controllers
 
             return Ok(MatchingSets);
         }
-
-
 
         [HttpPost("SearchLsFavorite")]
         [IgnoreAntiforgeryToken]
@@ -393,13 +236,6 @@ namespace Taccolo.Controllers
 
             return Ok(MatchingSets);
         }
-
-
-
-
-
-
-
 
         public class Parameters
         {

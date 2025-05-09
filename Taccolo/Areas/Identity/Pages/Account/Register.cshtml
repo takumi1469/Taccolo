@@ -21,7 +21,16 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <label class ="form-label" asp-for="Input.Email">Email</label>
+                <label class="form-label" asp-for="Input.Slug">Slug (codename of user, must be unique, internal purpose only)</label>
+                <div class="div-slug-check">
+                    <input asp-for="Input.Slug" id="input-slug" class="form-control" aria-required="true" placeholder="can be same as username" />
+                    <button class="button-check-slug" id="button-check-slug">check if slug is not taken</button>
+                </div>
+                <span id="span-slug-check-result" class="span-slug-check-result"></span>
+
+            </div>
+            <div class="form-floating mb-3">
+                <label class="form-label" asp-for="Input.Email">Email</label>
                 <input asp-for="Input.Email" class="form-control" autocomplete="email" aria-required="true" placeholder="name@example.com" />
                 <div class="div-confirm-error">
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
@@ -41,7 +50,7 @@
                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                 </div>
             </div>
-                <button id="registerSubmit" type="submit" class="button-register button-submit">Register</button>
+            <button id="registerSubmit" type="submit" class="button-register button-submit">Register</button>
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="div-password-guide">
                 <p class="p-password-guide">
@@ -56,6 +65,7 @@
         </form>
     </div>
 </div>
+<script src="~/js/register.js"></script>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

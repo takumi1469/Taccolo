@@ -8,6 +8,7 @@ using NuGet.Packaging;
 using System.Collections.Generic;
 using System.Security.Claims;
 using static Taccolo.Pages.EditViewLsModel;
+using Taccolo.Controllers;
 
 namespace Taccolo.Pages
 {
@@ -120,13 +121,44 @@ namespace Taccolo.Pages
         {
             LsToDisplay = await _context.LearningSets
                .FirstOrDefaultAsync(ls => ls.Id == LsId);
-           
+
+            _logger.LogInformation($"***LsId is {LsId}***");
+
             if (LsToDisplay is not null)
                 return RedirectToPage("Flashcard", new { lsid = LsToDisplay.Id });
             else
                 return RedirectToPage("Error");
         }
 
+        public async Task<IActionResult> OnPostUserPage()
+        {
+            LsToDisplay = await _context.LearningSets
+   .FirstOrDefaultAsync(ls => ls.Id == LsId);
+
+            _logger.LogInformation($"***LsId is {LsId}***");
+
+            ApplicationUser user = _context.Users.FirstOrDefault(u => u.Id == LsToDisplay.UserId);
+            string slugToPass = user?.PublicSlug;
+
+            _logger.LogInformation($"***slugToPass is {slugToPass}***");
+
+            if (slugToPass is not null)
+                return RedirectToPage("UserPage", new { slug = slugToPass });
+            else
+                return RedirectToPage("Error");
+
+
+            //LsToDisplay = await _context.LearningSets
+            //   .Include(ls => ls.User)
+            //   .FirstOrDefaultAsync(ls => ls.Id == LsId);
+
+            //_logger.LogInformation($"***LsId is {LsId}***" );
+               
+            //if (LsToDisplay is not null)
+            //    return RedirectToPage("Flashcard", new { slug = LsToDisplay.User.PublicSlug });
+            //else
+            //    return RedirectToPage("Error");
+        }
 
         public class CommentWithUsername()
         {

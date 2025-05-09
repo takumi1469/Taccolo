@@ -112,6 +112,4 @@ function clearSearchParameters(event) {
     else if (window.location.pathname == "/FavoriteLS") {
         getSearchResultFavorite();
     }
-
-
-}
+ }

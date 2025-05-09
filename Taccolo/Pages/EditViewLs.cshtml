@@ -32,10 +32,14 @@
         <form method="post" class="form-flashcard">
             <button class="button-flashcard" asp-page-handler="Flashcard" type="submit">Go to Flashcard</button>
         </form>
+        <form method="post" class="form-user-page">
+            <input type="hidden" name="lsid" value="@Model.LsId" />
+            <button class="button-user-page" asp-page-handler="UserPage" type="submit">Go to Author's Page'</button>
+        </form>
         <br>
         <span class="span-basic-info"><strong>From: </strong>@Model.LsToDisplay?.SourceLanguage</span>
         <span class="span-basic-info"><strong>To: </strong>@Model.LsToDisplay?.TargetLanguage</span>
-        <span class="span-basic-info"><strong>User: </strong>@Model?.Username</span>
+        <span class="span-basic-info"><strong>Author: </strong>@Model?.Username</span>
         <span class="span-basic-info"><strong>Created on:  </strong>@Model.LsToDisplay?.Date</span>
         @if (Model.IsAuthenticated && Model.IsFavorite == false)
         {

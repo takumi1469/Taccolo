@@ -18,8 +18,12 @@ h1, h2, h3, h4 {
     height:5vw;
 }
 
-.form-flashcard{
-    display:inline;
+.form-flashcard,form-user-page {
+    display: inline;
+}
+
+.form-user-page {
+    display: inline;
 }
 
 .div-basic-info {
@@ -32,8 +36,8 @@ h1, h2, h3, h4 {
 }
 
 button {
-    height: 3vw;
-    font-size: 1.8vw;
+    height: 2.5vw;
+    font-size: 1.6vw;
     font-family: Nunito;
     background-color: #FFFFFF;
     border-radius: 5px;
@@ -43,7 +47,6 @@ button {
 
 .span-title {
     font-size:1.8vw;
-    margin-right: 2vw;
 }
 
 .span-basic-info{

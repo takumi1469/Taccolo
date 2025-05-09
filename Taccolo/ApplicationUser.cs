@@ -13,5 +13,7 @@ namespace Taccolo
         public List<string>? DesiredLanguages { get; set; } = new List<string>();
         public List<string>? KnownLanguages { get; set; } = new List<string>();
         public string? Bio { get; set; }
+        
+        public string PublicSlug { get; set; }
     }
 }

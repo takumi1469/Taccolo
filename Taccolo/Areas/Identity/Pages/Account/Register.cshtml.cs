@@ -63,6 +63,10 @@ namespace Taccolo.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
+            [Required]
+            [Display(Name = "Slug")]
+            public string Slug { get; set; }
+
 
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and maximum {1} characters long.", MinimumLength = 6)]
@@ -94,6 +98,7 @@ namespace Taccolo.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                user.PublicSlug = Input.Slug;
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
