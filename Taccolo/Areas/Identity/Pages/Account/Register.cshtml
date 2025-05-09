@@ -21,7 +21,8 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <label class="form-label" asp-for="Input.Slug">Slug (codename of user, must be unique, internal purpose only)</label>
+                <label class="form-label" asp-for="Input.Slug">Slug (Codename of user, must be unique, internal purpose only)</label>
+                <span class="span-slug-instruction">*Please check if your slug is not taken before submitting.</span>
                 <div class="div-slug-check">
                     <input asp-for="Input.Slug" id="input-slug" class="form-control" aria-required="true" placeholder="can be same as username" />
                     <button class="button-check-slug" id="button-check-slug">check if slug is not taken</button>

@@ -1,11 +1,21 @@
-﻿document.getElementById("button-check-slug").addEventListener("click", function (e) {
+﻿let slugAvailable = false;
+
+document.getElementById("registerSubmit").addEventListener("click", checkSlug());
+document.getElementById("button-check-slug").addEventListener("click", function (e) {
     e.preventDefault(); // <- This stops the form from submitting
     checkSlug(); // Call your function that checks if the slug is unique
 });
 
+const form = document.getElementById("registerForm");
+form.addEventListener("submit", function (e) {
+    if (!slugAvailable) {
+        e.preventDefault(); // Stop the form from submitting
+        alert("Slug is not available. Please choose a different one.");
+    }
+});
+
 function checkSlug() {
     const slug = document.getElementById("input-slug").value;
-
     const data = {
         Slug: slug
     }
@@ -26,7 +36,8 @@ function checkSlug() {
             return response.json(); // Parse the JSON response
         })
         .then(result => {
-            console.log("Slug was checked searched successfully:", result);
+            console.log("Slug was checked successfully:", result);
+            slugAvailable = !result;
             showCheckResult(result);
         })
         .catch(error => {
