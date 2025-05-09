@@ -27,6 +27,16 @@
         </div>
         <div class="div-mypage-item">
             <div class="div-mypage-key">
+                <p class="p-mypage-key">Bio</p>
+            </div>
+            <div class="div-mypage-value">
+                <p class="p-mypage-value">
+                    @Model.UserToDisplay.Bio
+                </p>
+            </div>
+        </div>
+        <div class="div-mypage-item">
+            <div class="div-mypage-key">
                 <p class="p-mypage-key">Languages I'm learning</p>
             </div>
             <div class="div-mypage-value">
@@ -49,16 +59,6 @@
                         <p class="p-language">@Model.UserToDisplay.KnownLanguages[i] </p>
                     }
                 }
-            </div>
-        </div>
-        <div class="div-mypage-item">
-            <div class="div-mypage-key">
-                <p class="p-mypage-key">Bio</p>
-            </div>
-            <div class="div-mypage-value">
-                <p class="p-mypage-value">
-                    @Model.UserToDisplay.Bio
-                </p>
             </div>
         </div>
     </div>
