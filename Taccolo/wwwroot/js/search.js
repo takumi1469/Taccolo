@@ -11,19 +11,31 @@ else if (window.location.pathname == "/FavoriteLS") {
     document.addEventListener("DOMContentLoaded", getSearchResultFavorite);
 }
 
+else if (window.location.pathname == "/UserPage") {
+    document.addEventListener("DOMContentLoaded", getSearchResultUser);
+}
+
 function getSearchResult(event, endpoint) {
 
     const keywords = document.getElementById("input-narrow-search").value;
     const sourceLanguage = document.getElementById("select-from-language").value;
     const targetLanguage = document.getElementById("select-to-language").value;
     const matchAndOr = document.getElementById("select-or-and").value; 
+    const slugElement = document.getElementById("p-slug");
+    const slug = slugElement ? slugElement.textContent : null;
 
     const data = {
         Keywords : keywords,
         SourceLanguage : sourceLanguage,
         TargetLanguage : targetLanguage,
-        MatchAndOr : matchAndOr
-     }
+        MatchAndOr: matchAndOr
+    }
+
+    if (slug) {
+        data.Slug = slug
+    }
+
+    console.log(`Slug is ${slug}`);
 
     fetch(endpoint, {
         method: "POST",
@@ -57,9 +69,15 @@ function getSearchResultOwn(event) {
     getSearchResult(event, `/api/Search/SearchLsOwn`);
 }
 function getSearchResultFavorite(event) {
-    console.log("getSearchResultOwn has been called");
+    console.log("getSearchResultFavorite has been called");
     getSearchResult(event, `/api/Search/SearchLsFavorite`);
 }
+
+function getSearchResultUser(event) {
+    console.log("getSearchResultUser has been called");
+    getSearchResult(event, `/api/Search/SearchLsUser`);
+}
+
 
 function showLearningSets(sets) {
     const divLearningSets = document.getElementById("div-learning-sets");
@@ -111,5 +129,9 @@ function clearSearchParameters(event) {
     }
     else if (window.location.pathname == "/FavoriteLS") {
         getSearchResultFavorite();
+    }
+
+    else if (window.location.pathname == "/UserPage") {
+        getSearchResultUser();
     }
  }

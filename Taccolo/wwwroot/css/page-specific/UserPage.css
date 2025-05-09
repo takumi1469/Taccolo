@@ -1,15 +1,22 @@
 ﻿body {
 }
 
+.no-display{
+    display:none;
+}
+
 .h2-instruction {
     margin: 0;
+}
+
+.h2-title{
+    margin:0;
 }
 
 .div-mypage-item {
     display: flex;
     flex-direction: row;
     width: 40%;
-    min-height: 2.5vw;
     margin-top: 1.5vw;
 }
 
@@ -21,3 +28,5 @@
 .p-mypage-value, .p-mypage-key, .p-language {
     margin: 0;
 }
+
+

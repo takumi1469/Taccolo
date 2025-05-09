@@ -237,6 +237,51 @@ namespace Taccolo.Controllers
             return Ok(MatchingSets);
         }
 
+        [HttpPost("SearchLsUser")]
+        [IgnoreAntiforgeryToken]
+        [AllowAnonymous]
+        public async Task<IActionResult> SearchLsUser([FromBody] SearchQueryDto searchQuery)
+        {
+            _logger.LogInformation("***SearchLsUser has been called***");
+
+            string slug = "";
+            string userId = "default-id";
+            if (searchQuery.Slug is not null)
+            {
+                slug = searchQuery.Slug;
+            }
+
+            ApplicationUser user = _context.Users.FirstOrDefault(u=> u.PublicSlug == slug);
+            if(user is not null)
+            {
+                userId = user.Id;
+                _logger.LogInformation($"***userId = {userId} ***");
+            }
+
+            Parameters parameters = new Parameters
+           (
+               keywords: searchQuery.Keywords,
+               sourceLanguage: searchQuery.SourceLanguage,
+               targetLanguage: searchQuery.TargetLanguage,
+               matchAndOr: searchQuery.MatchAndOr
+           );
+
+            var MatchingSets = Search(parameters, userId).Select(ls => new
+            {
+                ls.Title,
+                ls.Id,
+                ls.Input,
+                ls.Translation,
+                ls.SourceLanguage,
+                ls.TargetLanguage,
+                UserName = ls.User.UserName,
+                ls.Date,
+                ls.Description
+            }).ToList();
+
+            return Ok(MatchingSets);
+        }
+
         public class Parameters
         {
             public string? Keywords { get; set; }
