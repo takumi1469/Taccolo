@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
+//Comment to enable pushing
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add settings about logging configuration
