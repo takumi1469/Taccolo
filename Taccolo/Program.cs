@@ -6,6 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add settings about logging configuration
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
+
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -62,8 +68,8 @@ app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapRazorPages();
 app.UseRouting();
+app.MapRazorPages();
 app.MapControllers();
 
 app.Run();

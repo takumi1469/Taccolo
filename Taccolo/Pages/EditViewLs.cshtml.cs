@@ -133,7 +133,7 @@ namespace Taccolo.Pages
         public async Task<IActionResult> OnPostUserPage()
         {
             LsToDisplay = await _context.LearningSets
-   .FirstOrDefaultAsync(ls => ls.Id == LsId);
+                 .FirstOrDefaultAsync(ls => ls.Id == LsId);
 
             _logger.LogInformation($"***LsId is {LsId}***");
 

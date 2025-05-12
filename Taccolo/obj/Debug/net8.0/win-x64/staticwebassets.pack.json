@@ -1,0 +1,353 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\just-header-layout.css",
+      "PackagePath": "staticwebassets\\css\\just-header-layout.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\login-register-layout.css",
+      "PackagePath": "staticwebassets\\css\\login-register-layout.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\EditViewLs.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\EditViewLs.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\Flashcard.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\Flashcard.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\MakeNewLs.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\MakeNewLs.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\OwnLs.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\OwnLs.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\UserPage.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\UserPage.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\top.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\top.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\top-layout.css",
+      "PackagePath": "staticwebassets\\css\\top-layout.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\login.svg",
+      "PackagePath": "staticwebassets\\icons\\login.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\logout.svg",
+      "PackagePath": "staticwebassets\\icons\\logout.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\minus.svg",
+      "PackagePath": "staticwebassets\\icons\\minus.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\minus3.svg",
+      "PackagePath": "staticwebassets\\icons\\minus3.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\plus.svg",
+      "PackagePath": "staticwebassets\\icons\\plus.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\plus2.svg",
+      "PackagePath": "staticwebassets\\icons\\plus2.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\plus3.svg",
+      "PackagePath": "staticwebassets\\icons\\plus3.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\search2.svg",
+      "PackagePath": "staticwebassets\\icons\\search2.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\star.svg",
+      "PackagePath": "staticwebassets\\icons\\star.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\edit-view-ls.js",
+      "PackagePath": "staticwebassets\\js\\edit-view-ls.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\flashcard.js",
+      "PackagePath": "staticwebassets\\js\\flashcard.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\make-new-ls.js",
+      "PackagePath": "staticwebassets\\js\\make-new-ls.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\register.js",
+      "PackagePath": "staticwebassets\\js\\register.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\js\\search.js",
+      "PackagePath": "staticwebassets\\js\\search.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\win-x64\\staticwebassets\\msbuild.Taccolo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\win-x64\\staticwebassets\\msbuild.build.Taccolo.props",
+      "PackagePath": "build\\Taccolo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\win-x64\\staticwebassets\\msbuild.buildMultiTargeting.Taccolo.props",
+      "PackagePath": "buildMultiTargeting\\Taccolo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\win-x64\\staticwebassets\\msbuild.buildTransitive.Taccolo.props",
+      "PackagePath": "buildTransitive\\Taccolo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,108 @@
+﻿body {
+    font-family: Nunito;
+    font-size: 1.3vw;
+    margin: 0;
+}
+
+.div-each-page{
+    display:flex;
+    justify-content:center;
+}
+
+a {
+    text-decoration: none; /* Remove underline for the link */
+    cursor: pointer; /* Set pointer cursor for the link */
+    color: black;
+}
+
+.icon {
+    width: 2.5vw;
+}
+
+.div-top {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 80px;
+}
+
+.div-in-header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.div-logo {
+    margin: 0 0 0 2vw;
+    flex: 2;
+}
+
+.div-search {
+    flex: 3;
+}
+
+.input-search {
+    width: 30vw;
+    height: 2.5vw;
+    border-radius: 100px;
+    margin: 0; /* Reset any browser-specific margin */
+    vertical-align: middle; /* Aligns the input field inline with the image */
+    font-size: 1.2vw;
+}
+
+.input-search-button {
+    margin: 0; /* Reset any browser-specific margin */
+    vertical-align: middle; /* Aligns the button with the text input */
+}
+
+.div-login {
+    flex: 1;
+    padding-top: 1vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div-logout {
+    flex: 1;
+    padding-top: 1vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.a-login, .a-logout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Remove underline for the link */
+    cursor: pointer; /* Set pointer cursor for the link */
+}
+
+.label-icon {
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.div-level2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-navigation {
+    display: flex;
+    width: 13%;
+}
+
+.ul-side-menu {
+    list-style: none;
+    padding-left: 2vw;
+}
+
+.li-menu-item {
+    margin: 0 0 1.5vw 0;
+}
