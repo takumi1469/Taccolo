@@ -80,6 +80,7 @@ try
 }
 catch(Exception ex)
 {
-    File.WriteAllText("startup-error.txt", ex.ToString());
+    Directory.CreateDirectory(@"D:\home\LogFiles");
+    File.WriteAllText(@"D:\home\LogFiles\startup-error.txt", ex.ToString());
     throw;
 }
