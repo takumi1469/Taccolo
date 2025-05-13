@@ -35,8 +35,8 @@ jobs:
       #     Set-Content -Path nuget.config -Value $content
       #   shell: pwsh
 
-      # - name: Restore dependencies
-      #   run: dotnet restore Taccolo.sln --configfile Taccolo/nuget.config
+      - name: Restore dependencies
+        run: dotnet restore Taccolo.sln --configfile Taccolo/nuget.config
 
       - name: Build with dotnet
         run: dotnet build Taccolo.sln --configuration Release --no-restore
