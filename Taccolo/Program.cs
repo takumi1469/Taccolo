@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
-//Comment to enable pushing 1
+//Comment to enable pushing 2
 
 var builder = WebApplication.CreateBuilder(args);
 
