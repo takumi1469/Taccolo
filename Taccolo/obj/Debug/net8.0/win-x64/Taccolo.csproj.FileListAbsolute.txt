@@ -1,3 +1,4 @@
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\nuget.config
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\web.config
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\appsettings.Development.json
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\appsettings.json
@@ -246,11 +247,14 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Tacco
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\Microsoft.Data.SqlClient.SNI.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\e_sqlite3.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\LibreTranslate.TakumiCustom.Net.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\LibreTranslate.TakumiCustom.Net.pdb
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.csproj.AssemblyReference.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.GeneratedMSBuildEditorConfig.editorconfig
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.AssemblyInfoInputs.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.AssemblyInfo.cs
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.csproj.CoreCompileInputs.cache
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.MvcApplicationPartsAssemblyInfo.cs
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.MvcApplicationPartsAssemblyInfo.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.RazorAssemblyInfo.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.RazorAssemblyInfo.cs
@@ -269,7 +273,3 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Tacco
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.pdb
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.genruntimeconfig.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\ref\Taccolo.dll
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\nuget.config
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\LibreTranslate.TakumiCustom.Net.dll
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\LibreTranslate.TakumiCustom.Net.pdb
-C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.MvcApplicationPartsAssemblyInfo.cs
