@@ -30,10 +30,10 @@ jobs:
 
       - name: Replace token in nuget.config
         run: |
-        $content = Get-Content nuget.config
-        $content = $content -replace '%GITHUB_TOKEN%', '${{ secrets.GITHUB_TOKEN }}'
-        Set-Content -Path nuget.config -Value $content
-        shell: pwsh
+          $content = Get-Content nuget.config
+          $content = $content -replace '%GITHUB_TOKEN%', '${{ secrets.GITHUB_TOKEN }}'
+          Set-Content -Path nuget.config -Value $content
+          shell: pwsh
 
 
       - name: Build with dotnet
