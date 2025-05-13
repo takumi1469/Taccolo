@@ -33,7 +33,7 @@ jobs:
           $content = Get-Content  Taccolo/nuget.config
           $content = $content -replace '%GITHUB_TOKEN%', '${{ secrets.GITHUB_TOKEN }}'
           Set-Content -Path nuget.config -Value $content
-          shell: pwsh
+        shell: pwsh
 
 
       - name: Build with dotnet
