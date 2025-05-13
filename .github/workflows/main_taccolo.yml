@@ -34,7 +34,7 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish Taccolo/Taccolo.csproj -c Release -o publish
-        working-directory: ./Taccolo
+        # working-directory: ./Taccolo
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4

@@ -272,3 +272,4 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Tacco
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\nuget.config
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\LibreTranslate.TakumiCustom.Net.dll
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\LibreTranslate.TakumiCustom.Net.pdb
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.MvcApplicationPartsAssemblyInfo.cs
