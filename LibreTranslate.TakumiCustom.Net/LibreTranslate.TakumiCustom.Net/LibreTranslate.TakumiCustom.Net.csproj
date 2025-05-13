@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard1.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Authors>sigaloid</Authors>
+        <Description>Translation library using LibreTranslate for .Net, customed by Takumi Saito</Description>
+        <Company />
+        <Copyright>sigaloid</Copyright>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageProjectUrl>https://github.com/sigaloid/LibreTranslate.Net</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/sigaloid/LibreTranslate.Net</RepositoryUrl>
+        <RepositoryType>c#</RepositoryType>
+        <PackageReleaseNotes>Removed Timeout = System.Threading.Timeout.InfiniteTimeSpan</PackageReleaseNotes>
+        <Version>1.0.1</Version>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+        <PackageId>LibreTranslate.TakumiCustom.Net</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\LICENSE">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
+
+</Project>
