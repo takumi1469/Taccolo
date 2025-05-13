@@ -41,7 +41,7 @@ namespace Taccolo.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
-            _logger.LogInformation("***Logging test***");
+            _logger.LogInformation("***Logging Test 1***");
             _logger.LogInformation("LsId is: " + LsId.ToString());
 
             if (LsId == null || LsId == Guid.Empty )
@@ -70,12 +70,21 @@ namespace Taccolo.Pages
                 if (LsToDisplay?.UserId != null)
                     Username = _context.Users.FirstOrDefault(us => us.Id == LsToDisplay.UserId)?.UserName;
 
-                if (user != null && user.Id == LsToDisplay.UserId)
-                    IsOwner = true; // otherwise default is false
-
-                if (_context.FavoriteSets.Any(fav => fav.UserId == user.Id && fav.LsId == LsId))
+                _logger.LogInformation("***Logging Test 2: Before populating IsOwner*** -> passed");
+                if (user != null)
                 {
-                    IsFavorite = true;
+                    if(user.Id == LsToDisplay.UserId)
+                    {
+                        IsOwner = true; // otherwise default is false
+                        _logger.LogInformation("***Logging Test 3: After populating IsOwner******");
+                    }
+
+                    if (_context.FavoriteSets.Any(fav => fav.UserId == user.Id && fav.LsId == LsId))
+                    {
+                        _logger.LogInformation("***Logging Test 4: Before determining IsFavorite***");
+                        IsFavorite = true;
+                        _logger.LogInformation("***Logging Test 5: After determining IsFavorite***");
+                    }
                 }
 
                 // Reorder WordMeaningPair accorging to Order
@@ -83,6 +92,8 @@ namespace Taccolo.Pages
                 
                 // Prepare CommentWithUsernames for Razor Page to show username
                 var comments = await _context.Comments.Where(c => c.LsId == LsId).ToListAsync();
+
+                _logger.LogInformation("***Logging Test 6: Before making CommentWithUsernames***");
 
                 // Fetch usernames and map them
                 CommentWithUsernames = comments.Select(c => new CommentWithUsername
@@ -111,8 +122,6 @@ namespace Taccolo.Pages
                     RequestId = r.RequestId
                 }).ToList();
 
-                // Determine 
-
                 return Page();
             }
         }
@@ -137,7 +146,7 @@ namespace Taccolo.Pages
 
             _logger.LogInformation($"***LsId is {LsId}***");
 
-            ApplicationUser user = _context.Users.FirstOrDefault(u => u.Id == LsToDisplay.UserId);
+            ApplicationUser? user = _context.Users.FirstOrDefault(u => u.Id == LsToDisplay.UserId);
             string slugToPass = user?.PublicSlug;
 
             _logger.LogInformation($"***slugToPass is {slugToPass}***");
@@ -147,17 +156,6 @@ namespace Taccolo.Pages
             else
                 return RedirectToPage("Error");
 
-
-            //LsToDisplay = await _context.LearningSets
-            //   .Include(ls => ls.User)
-            //   .FirstOrDefaultAsync(ls => ls.Id == LsId);
-
-            //_logger.LogInformation($"***LsId is {LsId}***" );
-               
-            //if (LsToDisplay is not null)
-            //    return RedirectToPage("Flashcard", new { slug = LsToDisplay.User.PublicSlug });
-            //else
-            //    return RedirectToPage("Error");
         }
 
         public class CommentWithUsername()
