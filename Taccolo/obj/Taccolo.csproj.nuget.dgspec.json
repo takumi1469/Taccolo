@@ -4,6 +4,68 @@
     "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\Taccolo.csproj": {}
   },
   "projects": {
+    "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net.csproj": {
+      "version": "1.0.1",
+      "restore": {
+        "projectUniqueName": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net.csproj",
+        "projectName": "LibreTranslate.TakumiCustom.Net",
+        "projectPath": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard1.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\LibreTranslate.Net-main(Takumi)\\LibreTranslate.Net-main(Takumi)\\LibreTranslate.Net\\bin\\Release": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/takumi1469/index.json": {}
+        },
+        "frameworks": {
+          "netstandard1.1": {
+            "targetAlias": "netstandard1.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard1.1": {
+          "targetAlias": "netstandard1.1",
+          "dependencies": {
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[1.6.1, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\Taccolo.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,7 +94,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net.csproj": {
+                "projectPath": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

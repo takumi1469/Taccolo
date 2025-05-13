@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Etyj3kJW7KmgQ/13twcBqHJnJH6kJ87W+AEbyCgVjhhVnbHm61epHhRaHdTzkad1eWbtj4eb01DrWM3/X9zygQ==",
+  "dgSpecHash": "kpBc8NSNvmgFNz4mfMXEuA04VQjBl3NK+ngiQK1yhKOm2XzoMPbsLpJGuVr2YCvhijztJvciv5LM2RYw8DHG3w==",
   "success": true,
   "projectFilePath": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\Taccolo.csproj",
   "expectedPackageFiles": [
@@ -56,7 +56,6 @@
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\libretranslate.takumicustom.net\\1.0.1\\libretranslate.takumicustom.net.1.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
@@ -296,7 +295,8 @@
     "C:\\Users\\PC\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\PC\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\libretranslate.takumicustom.net\\1.0.1\\libretranslate.takumicustom.net.1.0.1.nupkg.sha512"
   ],
   "logs": []
 }

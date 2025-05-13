@@ -36,4 +36,8 @@
     <Folder Include="Properties\ServiceDependencies\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LibreTranslate.TakumiCustom.Net\LibreTranslate.TakumiCustom.Net\LibreTranslate.TakumiCustom.Net.csproj" />
+  </ItemGroup>
+
 </Project>

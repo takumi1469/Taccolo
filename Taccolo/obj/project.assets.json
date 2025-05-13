@@ -640,19 +640,6 @@
           }
         }
       },
-      "LibreTranslate.TakumiCustom.Net/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/LibreTranslate.Net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/LibreTranslate.Net.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -4695,6 +4682,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "LibreTranslate.TakumiCustom.Net/1.0.1": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.1",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/LibreTranslate.TakumiCustom.Net.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibreTranslate.TakumiCustom.Net.dll": {}
+        }
       }
     },
     "net8.0/win-x64": {
@@ -5334,19 +5335,6 @@
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
           }
-        }
-      },
-      "LibreTranslate.TakumiCustom.Net/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.1/LibreTranslate.Net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/LibreTranslate.Net.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -9424,6 +9412,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "LibreTranslate.TakumiCustom.Net/1.0.1": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.1",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/LibreTranslate.TakumiCustom.Net.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibreTranslate.TakumiCustom.Net.dll": {}
+        }
       }
     }
   },
@@ -10214,18 +10216,6 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
-      ]
-    },
-    "LibreTranslate.TakumiCustom.Net/1.0.1": {
-      "sha512": "oireILgsM7NLrsGJHMZG0Ww4hQgKdzi9K/sQgLN4v0Z0I/jGep5d+qoATc2HNLi6Y5VqYOPR7tj4Kcyy6tiJ0A==",
-      "type": "package",
-      "path": "libretranslate.takumicustom.net/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        "LICENSE",
-        "lib/netstandard1.1/LibreTranslate.Net.dll",
-        "libretranslate.takumicustom.net.1.0.1.nupkg.sha512",
-        "libretranslate.takumicustom.net.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -18916,6 +18906,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "LibreTranslate.TakumiCustom.Net/1.0.1": {
+      "type": "project",
+      "path": "../LibreTranslate.TakumiCustom.Net/LibreTranslate.TakumiCustom.Net/LibreTranslate.TakumiCustom.Net.csproj",
+      "msbuildProject": "../LibreTranslate.TakumiCustom.Net/LibreTranslate.TakumiCustom.Net/LibreTranslate.TakumiCustom.Net.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -18967,7 +18962,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net.csproj": {
+              "projectPath": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net\\LibreTranslate.TakumiCustom.Net.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
