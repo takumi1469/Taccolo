@@ -28,6 +28,14 @@ jobs:
       - name: Authenticate to private NuGet source
         run: dotnet nuget add source "https://nuget.pkg.github.com/takumi1469/index.json" --name "github" --username takumi1469 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
 
+      - name: Replace token in nuget.config
+        run: |
+        $content = Get-Content nuget.config
+        $content = $content -replace '%GITHUB_TOKEN%', '${{ secrets.GITHUB_TOKEN }}'
+        Set-Content -Path nuget.config -Value $content
+        shell: pwsh
+
+
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
