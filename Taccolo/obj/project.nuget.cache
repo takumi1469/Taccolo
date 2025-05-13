@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FZlL40ecTmGChkHhiZQF+saSo6puWQKiBfpe1ioOrijxq1xcmELr/FYLD3m7+6QX4iG05nXFSqCsahvT+wqj3A==",
+  "dgSpecHash": "Etyj3kJW7KmgQ/13twcBqHJnJH6kJ87W+AEbyCgVjhhVnbHm61epHhRaHdTzkad1eWbtj4eb01DrWM3/X9zygQ==",
   "success": true,
   "projectFilePath": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\Taccolo.csproj",
   "expectedPackageFiles": [
@@ -56,7 +56,7 @@
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\libretranslate.net\\1.0.1\\libretranslate.net.1.0.1.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\libretranslate.takumicustom.net\\1.0.1\\libretranslate.takumicustom.net.1.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

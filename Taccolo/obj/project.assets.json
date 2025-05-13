@@ -640,7 +640,7 @@
           }
         }
       },
-      "LibreTranslate.Net/1.0.1": {
+      "LibreTranslate.TakumiCustom.Net/1.0.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -5336,7 +5336,7 @@
           }
         }
       },
-      "LibreTranslate.Net/1.0.1": {
+      "LibreTranslate.TakumiCustom.Net/1.0.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -10216,16 +10216,16 @@
         "logo.png"
       ]
     },
-    "LibreTranslate.Net/1.0.1": {
-      "sha512": "ZZbn9UeUWVEQypU0AbW5cBNji1xU2mFCx0AEMaQ1/Q20cs+7L8FfyzP3kCaUVSiQ0TUxyuKajAXoKGF/v+NI4g==",
+    "LibreTranslate.TakumiCustom.Net/1.0.1": {
+      "sha512": "oireILgsM7NLrsGJHMZG0Ww4hQgKdzi9K/sQgLN4v0Z0I/jGep5d+qoATc2HNLi6Y5VqYOPR7tj4Kcyy6tiJ0A==",
       "type": "package",
-      "path": "libretranslate.net/1.0.1",
+      "path": "libretranslate.takumicustom.net/1.0.1",
       "files": [
         ".nupkg.metadata",
         "LICENSE",
         "lib/netstandard1.1/LibreTranslate.Net.dll",
-        "libretranslate.net.1.0.1.nupkg.sha512",
-        "libretranslate.net.nuspec"
+        "libretranslate.takumicustom.net.1.0.1.nupkg.sha512",
+        "libretranslate.takumicustom.net.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -18920,7 +18920,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "LibreTranslate.Net >= 1.0.1",
+      "LibreTranslate.TakumiCustom.Net >= 1.0.1",
       "Microsoft.AspNetCore.Authentication.Cookies >= 2.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.10",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.10",
@@ -18985,7 +18985,7 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "LibreTranslate.Net": {
+          "LibreTranslate.TakumiCustom.Net": {
             "target": "Package",
             "version": "[1.0.1, )"
           },

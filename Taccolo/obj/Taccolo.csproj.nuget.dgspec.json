@@ -50,7 +50,7 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "LibreTranslate.Net": {
+            "LibreTranslate.TakumiCustom.Net": {
               "target": "Package",
               "version": "[1.0.1, )"
             },
