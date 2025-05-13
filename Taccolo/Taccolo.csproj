@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <!--<PackageReference Include="LibreTranslate.Net" Version="1.0.1" />-->
-    <PackageReference Include="LibreTranslate.TakumiCustom.Net" Version="1.0.1" />
+    <!--<PackageReference Include="LibreTranslate.TakumiCustom.Net" Version="1.0.1" />-->
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.10" />
