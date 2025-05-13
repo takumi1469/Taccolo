@@ -3,14 +3,28 @@ using Taccolo.Pages.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Hosting;
 
-//Comment to enable pushing 2
+//Comment to enable pushing 3
 
 try
 {
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((context, config) =>
+            {
+                // ŠÂ‹«•Ï”‚©‚çÝ’è‚ð“Ç‚Ýž‚Þ
+                config.AddEnvironmentVariables();
+            })
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
+
+
     //var logPath = @"D:\home\LogFiles\startup-error.txt";
     //File.AppendAllText(logPath, DateTime.Now + " *****STARTING*****...\n");
-    //Console.WriteLine("*****STARTING *****");
+    Console.WriteLine("*****STARTING *****");
 
     var builder = WebApplication.CreateBuilder(args);
 

@@ -33,7 +33,7 @@ jobs:
         run: pwd
 
       - name: dotnet publish
-        run: dotnet publish Taccolo/Taccolo.csproj -c Release -o publish
+        run: dotnet publish Taccolo/Taccolo.csproj -c Release -r win-x86 -o ./publish
         # working-directory: ./Taccolo
 
       - name: Upload artifact for deployment job
