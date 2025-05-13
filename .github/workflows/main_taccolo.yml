@@ -31,7 +31,7 @@ jobs:
       - name: Replace token in nuget.config
         run: |
           $content = Get-Content  Taccolo/nuget.config
-          $content = $content -replace '%GITHUB_TOKEN%', '${{ secrets.GITHUB_TOKEN }}'
+          $content = $content -replace '%GITHUB_TOKEN%', '${{ secrets.GH_PAT }}'
           Set-Content -Path nuget.config -Value $content
         shell: pwsh
 
