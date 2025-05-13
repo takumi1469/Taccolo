@@ -9,6 +9,8 @@ on:
       - main
   workflow_dispatch:
 
+
+
 jobs:
   build:
     runs-on: windows-latest
@@ -22,6 +24,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0'
+
+      - name: Add NuGet source
+        run: dotnet nuget add source "https://api.nuget.org/v3/index.json" --name "nuget.org"
+
+      - name: Authenticate to private NuGet source
+        run: dotnet nuget add source "https://nuget.pkg.github.com/takumi1469/index.json" --name "github" --username takumi1469 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
