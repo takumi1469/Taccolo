@@ -188,9 +188,19 @@ function switchToViewBySave(originalText, translatedText) {
 
     // Replace SAVE and CANCEL buttons with the EDIT button
     const divButtons = document.getElementById("div-buttons");
-    divButtons.innerHTML = `
-        <button class="button-edit" id="button-edit">EDIT</button>
-    `;
+    divButtons.innerHTML = "";
+    //divButtons.innerHTML = `
+    //    <button class="button-edit" id="button-edit">EDIT</button>
+    //`;
+
+    const editButton = document.createElement("button");
+    editButton.className = "button-edit";
+    editButton.id = "button-edit";
+    editButton.textContent = "EDIT";
+    editButton.addEventListener("click", switchToEdit);
+
+    // Append it
+    divButtons.appendChild(editButton);
 
     // Attach the event listener to the new Edit button
     const editButton = document.getElementById("button-edit");
