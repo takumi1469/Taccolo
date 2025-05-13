@@ -1,0 +1,207 @@
+﻿body {
+    font-family: Nunito;
+    font-size: 1.3vw;
+    margin: 0;
+}
+
+a {
+    text-decoration: none; /* Remove underline for the link */
+    cursor: pointer; /* Set pointer cursor for the link */
+    color: black;
+}
+
+.a-explicit-link{
+    text-decoration:underline;
+    color:blue;
+}
+
+.icon {
+    width: 2.5vw;
+}
+
+.p-password-guide{
+    font-size:1vw;
+    color:#3207bc;
+}
+
+.div-top {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    background-color: white;
+    height: 80px;
+}
+
+.form-floating{
+    display:flex;
+    flex-direction:column;
+/*    align-items:center;*/
+}
+
+.form-label{
+    font-size:1vw;
+}
+
+.div-in-header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.div-level2 {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center
+}
+
+.h1-title{
+    margin:0;
+}
+
+h2 {
+    margin: 0;
+}
+
+.h3-register-here{
+    margin:0 0 1vw 0;
+    color:blue;
+}
+
+.a-register-from-here{
+    color:blue;
+}
+
+.form-control {
+    width: 20vw;
+    height: 3vw;
+    border-radius: 10px;
+    font-family: Nunito;
+    font-size: 1.3vw;
+}
+
+.div-navigation {
+    display: flex;
+    width: 13%;
+}
+
+.ul-side-menu {
+    list-style: none;
+    padding-left: 2vw;
+}
+
+.li-menu-item {
+    margin: 0 0 1.5vw 0;
+}
+
+.button-submit{
+    width:5vw;
+    height:2.5vw;
+    font-size:1.3vw;
+}
+
+.form-floating{
+    margin-bottom:1vw;
+}
+
+.text-danger{
+    color:red;
+}
+
+/*for MyPage*/
+.h2-instruction {
+    margin: 0;
+}
+.div-mypage-item {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    min-height:2.5vw;
+    margin-top:1.5vw;
+}
+
+.div-mypage-key{
+    margin-right:1vw;
+    width:30%;
+}
+
+.p-mypage-value,.p-mypage-key,.p-language{
+    margin:0;
+}
+
+
+/*form Register page*/
+.div-slug-check{
+    display:flex;
+    flex-direction:row;
+}
+
+.button-check-slug{
+    background-color:#EEDDEE;
+    font-size:1.3vw;
+    font-family:Nunito;
+    margin-left: 1vw;
+}
+
+
+
+
+
+
+/*for MyPageEdit*/
+.p-note {
+    margin: 0;
+}
+
+.form-mypageedit {
+    width: 40%;
+}
+
+.div-mypageedit-item {
+    margin-top: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 2.5vw;
+}
+
+.div-mypageedit-key {
+    margin-right: 1vw;
+    width: 30%;
+}
+
+.p-mypageedit-value, .p-mypageedit-key {
+    margin: 0;
+}
+
+.select-multiple{
+    height:2vw;
+}
+
+.input-mypageedit {
+    height: 2vw;
+}
+
+.textarea-bio {
+    height: 20vw;
+}
+
+.select-multiple, .input-mypageedit, .textarea-bio {
+    font-size: 1.1vw;
+    border-radius: 5px;
+    width: 25vw;
+}
+
+.div-buttons{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    margin: 1vw;
+}
+
+.button-edit{
+    margin-right:1.5vw;
+}

@@ -29,8 +29,12 @@ jobs:
       - name: Build with dotnet
         run: dotnet build Taccolo.sln --configuration Release --no-restore
 
+      - name: Check current directory
+        run: pwd
+
       - name: dotnet publish
         run: dotnet publish Taccolo/Taccolo.csproj -c Release -o publish
+        working-directory: ./Taccolo
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
