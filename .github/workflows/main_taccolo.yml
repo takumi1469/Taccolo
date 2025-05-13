@@ -29,7 +29,7 @@ jobs:
       #   run: dotnet nuget add source "https://api.nuget.org/v3/index.json" --name "nuget.org"
 
       - name: Add NuGet source
-        run: dotnet nuget update source "https://api.nuget.org/v3/index.json" --name "nuget.org"
+        run: dotnet nuget update source "https://api.nuget.org/v3/index.json"
 
 
       - name: Authenticate to private NuGet source
