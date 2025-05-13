@@ -35,9 +35,11 @@ jobs:
           Set-Content -Path nuget.config -Value $content
         shell: pwsh
 
+      - name: Restore dependencies
+        run: dotnet restore Taccolo.sln --configfile Taccolo/nuget.config
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build Taccolo.sln --configuration Release --no-restore
 
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
