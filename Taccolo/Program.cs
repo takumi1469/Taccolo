@@ -82,5 +82,9 @@ catch(Exception ex)
 {
     Directory.CreateDirectory(@"D:\home\LogFiles");
     File.WriteAllText(@"D:\home\LogFiles\startup-error.txt", ex.ToString());
+
+    Console.WriteLine($"Error: {ex.Message}");
+    Console.WriteLine(ex.StackTrace);
+
     throw;
 }
