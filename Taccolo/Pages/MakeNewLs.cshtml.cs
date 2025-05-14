@@ -34,7 +34,11 @@ namespace Taccolo.Pages
         public (LanguageCode, string) SourceLanguage { get; set; }
         public (LanguageCode, string) TargetLanguage { get; set; }
 
-        public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
+
+        //public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
+
+        public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://20.61.114.39:5000");
+
         public string Result { get; set; }
 
         private readonly UserManager<ApplicationUser> _userManager;
