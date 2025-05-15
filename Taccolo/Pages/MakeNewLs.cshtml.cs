@@ -92,7 +92,7 @@ namespace Taccolo.Pages
                 string toTranslate = await azureTranslator.AzTranslate(SourceLanguage.Item2, TargetLanguage.Item2, InputText);
                 Result = toTranslate;
 
-                //TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, date, UserId);
+                // TempLearningSet = new LearningSet(Title, InputText, Result, SourceChoice, TargetChoice, date, UserId);
                 TempLearningSet = new LearningSet
                     (title: Title,
                     input: InputText,
@@ -102,13 +102,13 @@ namespace Taccolo.Pages
                     date: dateCreation,
                     userId: UserId) ;
 
-                //Tokenize Japanese
+                // Tokenize Japanese
                 if(SourceChoice == "Japanese")
                 {
                     InputText = await Tokenizer.TokenizeJapanese(InputText);
                 }
 
-                //look up individual words by LibreTranslate
+                // look up individual words by LibreTranslate
                 string cleanedInput = Regex.Replace(InputText, @"[^\w\s']", "");
                 string[] wordsArray = cleanedInput.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 List<string> allWords = new List<string>(wordsArray);
