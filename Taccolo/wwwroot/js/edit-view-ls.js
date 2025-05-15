@@ -203,7 +203,7 @@ function switchToViewBySave(originalText, translatedText) {
     divButtons.appendChild(editButton);
 
     // Attach the event listener to the new Edit button
-    editButton = document.getElementById("button-edit");
+    //editButton = document.getElementById("button-edit");
     editButton.addEventListener("click", switchToEdit);
 
     switchToViewWmpBySave();
