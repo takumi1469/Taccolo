@@ -5,6 +5,15 @@ namespace Taccolo
 {
     public class Tokenizer
     {
+        private static string apiUrl;
+        private readonly IConfiguration _configuration;
+
+        public Tokenizer(IConfiguration configuration)
+        {
+            apiUrl = configuration["MeCab:URL"];
+        }
+
+
         public static string TokenizeJapaneseOriginal(string input)
         {
             var psi = new ProcessStartInfo
@@ -31,12 +40,13 @@ namespace Taccolo
             return output;
         }
 
-        public async static Task<string> TokenizeJapanese(string input)
+        public async Task<string> TokenizeJapanese(string input)
         {
             using HttpClient client = new HttpClient();
-            string apiUrl = Environment.GetEnvironmentVariable("MECAB_API_URL");
 
-            string json = System.Text.Json.JsonSerializer.Serialize(input);
+            var requestObject = new { text = input };
+
+            string json = System.Text.Json.JsonSerializer.Serialize(requestObject);
 
             // turn the json into HttpHontent
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
@@ -56,6 +66,7 @@ namespace Taccolo
             catch (Exception e)
             {
                 Console.WriteLine("Error: " + e.Message);
+                Console.WriteLine("apiUrl is " + apiUrl);
                 return "error";
             }
         }

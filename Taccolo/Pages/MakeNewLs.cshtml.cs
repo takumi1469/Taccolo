@@ -35,11 +35,11 @@ namespace Taccolo.Pages
         public (LanguageCode, string) SourceLanguage { get; set; }
         public (LanguageCode, string) TargetLanguage { get; set; }
 
-        //public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
+        public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
 
-        private string LibreTranslateUrl = Environment.GetEnvironmentVariable("LIBRE_TRANSLATE_URL");
+        //private string LibreTranslateUrl = Environment.GetEnvironmentVariable("LIBRE_TRANSLATE_URL");
 
-        public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("LibreTranslateUrl");
+        //public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("LibreTranslateUrl");
 
         public string Result { get; set; }
 
@@ -105,7 +105,8 @@ namespace Taccolo.Pages
                 // Tokenize Japanese
                 if(SourceChoice == "Japanese")
                 {
-                    InputText = await Tokenizer.TokenizeJapanese(InputText);
+                    Tokenizer tokenizer = new Tokenizer(_configuration);
+                    InputText = await tokenizer.TokenizeJapanese(InputText);
                 }
 
                 // look up individual words by LibreTranslate
