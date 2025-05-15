@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text;
+using System.Text.Json;
 
 namespace Taccolo
 {
@@ -11,6 +12,11 @@ namespace Taccolo
         public Tokenizer(IConfiguration configuration)
         {
             apiUrl = configuration["MeCab:URL"];
+        }
+
+        public class TokenResponse
+        {
+            public string tokens { get; set; }
         }
 
 
@@ -55,13 +61,14 @@ namespace Taccolo
             {
                 // send POST request to Flask-MeCab API
                 HttpResponseMessage response = await client.PostAsync(apiUrl, httpContent);
-
                 response.EnsureSuccessStatusCode();
 
-                // receive response
-                string responseBody = await response.Content.ReadAsStringAsync();
+                string responseJson = await response.Content.ReadAsStringAsync();
 
-                return responseBody;
+                // deserialize the JSON into an instance of TokenResponse
+                TokenResponse result = JsonSerializer.Deserialize<TokenResponse>(responseJson);
+                
+                return result?.tokens ?? "No tokens";
             }
             catch (Exception e)
             {
