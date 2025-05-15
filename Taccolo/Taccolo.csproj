@@ -40,4 +40,10 @@
     <ProjectReference Include="..\LibreTranslate.TakumiCustom.Net\LibreTranslate.TakumiCustom.Net\LibreTranslate.TakumiCustom.Net.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Tokenizer\tokenizer.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
 </Project>

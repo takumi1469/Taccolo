@@ -3,6 +3,7 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Tacco
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\appsettings.Development.json
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\appsettings.json
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\appsettings.Production.json
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\Tokenizer\tokenizer.py
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\Taccolo.staticwebassets.runtime.json
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\Taccolo.exe
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\Taccolo.deps.json
