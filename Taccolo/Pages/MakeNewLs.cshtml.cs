@@ -35,9 +35,9 @@ namespace Taccolo.Pages
         public (LanguageCode, string) SourceLanguage { get; set; }
         public (LanguageCode, string) TargetLanguage { get; set; }
 
-        public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
+        private static string LibreTranslateUrl;
 
-        //private string LibreTranslateUrl = Environment.GetEnvironmentVariable("LIBRE_TRANSLATE_URL");
+        //public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
 
         //public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("LibreTranslateUrl");
 
@@ -46,17 +46,19 @@ namespace Taccolo.Pages
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
+        private readonly ILogger<MakeNewLsModel> _logger;
 
-        public MakeNewLsModel(AppDbContext context, UserManager<ApplicationUser> userManager, IConfiguration configuration)
+        public MakeNewLsModel(AppDbContext context, UserManager<ApplicationUser> userManager, IConfiguration configuration, ILogger<MakeNewLsModel> logger)
         {
             _context = context; //"context" comes from DI
             _userManager = userManager; //"userManager" comes from DI
             _configuration = configuration;
+            _logger = logger;   
         }
 
-        public async Task<string> LookupLibreTranslate(string word)
+        public async Task<string> LookupLibreTranslate(LibreTranslate.Net.LibreTranslate myLibreTranslate, string word)
         {
-            string meaning = await MyLibreTranslate.TranslateAsync(new Translate()
+            string meaning = await myLibreTranslate.TranslateAsync(new Translate()
             {
                 ApiKey = "",
                 Source = SourceLanguage.Item1,
@@ -65,6 +67,9 @@ namespace Taccolo.Pages
             });
             return meaning;
         }
+
+
+
         public async Task OnGetAsync()
         {
             ApplicationUser? user = await _userManager.GetUserAsync(User); //Gets user information from DI
@@ -72,6 +77,8 @@ namespace Taccolo.Pages
 
         public async Task<IActionResult> OnPostProcessAsync()
         {
+            _logger.LogError("*******OnPostProcess is called*******");
+
             string dateCreation = DateTime.Now.ToString("MMMM d, yyyy", CultureInfo.InvariantCulture);
             if (SourceChoice == "not-chosen" || TargetChoice == "not-chosen")
             {
@@ -110,19 +117,31 @@ namespace Taccolo.Pages
                 }
 
                 // look up individual words by LibreTranslate
+                LibreTranslateUrl = _configuration["LibreTranslate:URL"];
+                LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate(LibreTranslateUrl);
+
+                _logger.LogInformation("**********LibreTranslate URL is " + LibreTranslateUrl + "***************");
+                
                 string cleanedInput = Regex.Replace(InputText, @"[^\w\s']", "");
                 string[] wordsArray = cleanedInput.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 List<string> allWords = new List<string>(wordsArray);
 
                 int tempOrder = 1;
-                foreach (string word in allWords)
+                try
                 {
-                    Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(word));
+                    foreach (string word in allWords)
+                    {
+                        Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(MyLibreTranslate, word));
 
-                    WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id, 
-                        word, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
-                    TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
-                    tempOrder++;
+                        WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id,
+                            word, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
+                        TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
+                        tempOrder++;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
                 }
 
                 // TempData might be causing cookie bloating that makes the site inaccessible
