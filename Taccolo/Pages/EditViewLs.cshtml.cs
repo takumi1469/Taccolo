@@ -22,6 +22,8 @@ namespace Taccolo.Pages
         public Guid? LsId { get; set; }
         public string Username { get; set; }
         public LearningSet? LsToDisplay { get; set; }
+
+        public List<Comment> Comments { get; set; } = new List<Comment>();
         public List<CommentWithUsername> CommentWithUsernames { get; set; } = new List<CommentWithUsername>();
         public List<HelpReplyWithUsername> HelpReplyWithUsernames { get; set; } = new List<HelpReplyWithUsername>();
         public List<HelpRequest> CurrentHelpRequests { get; set; }
@@ -91,12 +93,12 @@ namespace Taccolo.Pages
                     LsToDisplay.WordMeaningPairs = LsToDisplay.WordMeaningPairs.OrderBy(wmp => wmp.Order).ToList();
                 
                 // Prepare CommentWithUsernames for Razor Page to show username
-                var comments = await _context.Comments.Where(c => c.LsId == LsId).ToListAsync();
+                Comments = await _context.Comments.Where(c => c.LsId == LsId).ToListAsync();
 
                 _logger.LogInformation("***Logging Test 6: Before making CommentWithUsernames***");
 
                 // Fetch usernames and map them
-                CommentWithUsernames = comments.Select(c => new CommentWithUsername
+                CommentWithUsernames = Comments.Select(c => new CommentWithUsername
                 {
                     Body = c.Body,
                     Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName)

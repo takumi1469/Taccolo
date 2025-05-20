@@ -9,12 +9,28 @@
       "PackagePath": "staticwebassets\\css\\login-register-layout.css"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\About.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\About.css"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\EditViewLs.css",
       "PackagePath": "staticwebassets\\css\\page-specific\\EditViewLs.css"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\FAQ.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\FAQ.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\Favorite.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\Favorite.css"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\Flashcard.css",
       "PackagePath": "staticwebassets\\css\\page-specific\\Flashcard.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\HowToUse.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\HowToUse.css"
     },
     {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\MakeNewLs.css",
@@ -23,6 +39,14 @@
     {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\OwnLs.css",
       "PackagePath": "staticwebassets\\css\\page-specific\\OwnLs.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\SearchLs.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\SearchLs.css"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\StaticPages.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\StaticPages.css"
     },
     {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\UserPage.css",

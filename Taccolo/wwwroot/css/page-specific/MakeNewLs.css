@@ -2,6 +2,10 @@
     width:94%;
 }
 
+.li-make-new{
+    font-weight:bold;
+}
+
 .div-video {
     display: flex;
     flex-direction: column;

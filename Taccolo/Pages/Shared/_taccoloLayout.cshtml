@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>taccolo top</title>
+    <title>@ViewData["Title"] - Taccolo</title>
     <link rel="stylesheet" href="~/css/top-layout.css?v=1.0" />
     @RenderSection("Styles", required: false)
 
@@ -59,20 +59,20 @@
         <div class="div-navigation">
             <nav>
                 <ul class="ul-side-menu">
-                    <li class="li-menu-item">How to Use</li>
-                    <li class="li-menu-item"><a href="/MakeNewLS">Make New <br>Learning Sets</a></li>
+                    <li class="li-menu-item li-how-to-use"><a href="/HowToUse">How to Use</a></li>
+                    <li class="li-menu-item li-make-new"><a href="/MakeNewLS">Make New <br>Learning Sets</a></li>
                     @if (User.Identity?.IsAuthenticated == true)
                     {
-                        <li class="li-menu-item"><a href="/OwnLS">Own Learning Sets</a></li>
-                        <li class="li-menu-item"><a href="/FavoriteLS">Favorite <br>Learning Sets</a></li>
+                        <li class="li-menu-item li-own"><a href="/OwnLS">Own Learning Sets</a></li>
+                        <li class="li-menu-item li-favorite"><a href="/FavoriteLS">Favorite <br>Learning Sets</a></li>
                     }
                     else
                     {
-                        <li class="li-menu-item"><a href="/Identity/Account/Login">Own Learning Sets</a></li>
-                        <li class="li-menu-item"><a href="/Identity/Account/Login">Favorite <br>Learning Sets</li>
+                        <li class="li-menu-item li-own"><a href="/Identity/Account/Login">Own Learning Sets</a></li>
+                        <li class="li-menu-item li-favorite"><a href="/Identity/Account/Login">Favorite <br>Learning Sets</li>
                     }
-                    <li class="li-menu-item">FAQ</li>
-                    <li class="li-menu-item">About</li>
+                    <li class="li-menu-item li-faq"><a href="/FAQ">FAQ</a></li>
+                    <li class="li-menu-item li-about"><a href="/About">About</a></li>
                 </ul>
             </nav>
         </div>

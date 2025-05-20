@@ -42,19 +42,16 @@ namespace Taccolo
             {
                 throw new Exception($"Python error: {error}");
             }
-
             return output;
         }
 
         public async Task<string> TokenizeJapanese(string input)
         {
             using HttpClient client = new HttpClient();
-
             var requestObject = new { text = input };
-
             string json = System.Text.Json.JsonSerializer.Serialize(requestObject);
 
-            // turn the json into HttpHontent
+            // turn the json into HttpContent
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
             try

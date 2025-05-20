@@ -1,0 +1,36 @@
+﻿@page
+@model Taccolo.Pages.AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+@{
+    Layout = "_taccoloLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/StaticPages.css" />
+    <link rel="stylesheet" href="/css/page-specific/About.css" />
+}
+
+<div class="div-main">
+    <div class="div-about">
+        <h1 class="h1-title h1-title-about">
+            About Taccolo
+        </h1>
+        <p class="p-about-taccolo">
+            Taccolo is a language learning assistance tool developed by Takumi Saito. The core function of Taccolo is making
+            "Learning Set", LS for short. Learning Set is has Original Text, Translation, and List of Words. Take some favorite text,
+            make an LS with it. I believe this structure of LS is great as a learning material.
+            You can always come back to your LS, edit your own LS and do word quiz using Flashcards function.
+            Another cool thing about Taccolo is you can interact with other users through Comment section and Help Request section of each LS.
+            If there is something you don't understand in your LS, you can ask for help from native speakers or more advanced learners.
+        </p>
+
+        <h1 class="h1-title-developer">
+            About Developer
+        </h1>
+        <p class="p-about-developer">
+            Takumi Saito is from Japan, now based in Prague. He is from a small town in Japan that you don't know, so please don't ask him where in Japan he is from.
+            He made Taccolo with a web application framework called ASP.NET Core. Code of Taccolo is freely available on his GitHub repository.
+        </p>
+    </div>
+</div>

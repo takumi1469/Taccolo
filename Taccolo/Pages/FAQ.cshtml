@@ -1,0 +1,47 @@
+﻿@page
+@model Taccolo.Pages.FAQModel
+@{
+    ViewData["Title"] = "FAQ";
+}
+@{
+    Layout = "_taccoloLayout";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/page-specific/StaticPages.css" />
+    <link rel="stylesheet" href="/css/page-specific/FAQ.css" />
+}
+
+<div class="div-main">
+    <div class="div-faq">
+        <h1 class="h1-title h1-title-faq">
+            Frequently Asked Questions
+        </h1>
+        <h2 class="h2-each-question">
+            Taccolo has been just made and there are FAQs already?
+        </h2>
+        <p class="p-each-answer">
+            Yes, there are Frequently Asked Questions already. People always ask me, hey Takumi, why did you come to Prague? Why did you leave Japan? What's the meaning of life? So frequently.
+        </p>
+        <h2 class="h2-each-question">
+            Oh, so this FAQ section is not just about Taccolo?
+        </h2>
+        <p class="p-each-answer">
+            Hahaha I'm kidding, of course this FAQ section is about Taccolo. I wrote posts on LinkedIn about why I came to Prague, you can read them if you are interested.
+        </p>
+        <h2 class="h2-each-question">
+            How was Taccolo made?
+        </h2>
+        <p class="p-each-answer">
+            Taccolo was made with a web application framework called ASP.NET Core. It is hosted on Azure services (Azure App Service, Azure Database for PostgreSQL flexible server),
+            and Azure Virtual Machine of Ubuntu). The developer Takumi Saito made this on his own but with support from many kind people.
+        </p>
+        <h2 class="h2-each-question">
+            How does Taccolo make Learning Sets?
+        </h2>
+        <p class="p-each-answer">
+            Taccolo makes Learning Sets by using two translator solutions: Azure Translator and LibreTranslate. Azure Translator is for translating the whole Original Text,
+            and LibreTranslate is for making the List of Words (by separating the Original Text to individual words and looking up meaning of each word).
+        </p>
+
+  </div>
+</div>

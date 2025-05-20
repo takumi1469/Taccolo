@@ -160,7 +160,7 @@
                     @foreach (EditViewLsModel.CommentWithUsername comment in Model.CommentWithUsernames)
                     {
                         <div class="div-each-comment">
-                            <p class="p-comment-username">@comment.Username<span class="span-date-time">(@comment.Date)</span></p>
+                            <p class="p-comment-username"><strong><a href="/"></a>@comment.Username</strong><span class="span-date-time">(@comment.Date)</span></p>
                             <p class="p-comment">@comment.Body</p>
                         </div>
                     }
