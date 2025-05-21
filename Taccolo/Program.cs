@@ -51,6 +51,16 @@ try
         options.Cookie.IsEssential = true; // Makes the session cookie essential
     });
 
+    builder.Services.ConfigureApplicationCookie(options =>
+    {
+        options.ExpireTimeSpan = TimeSpan.FromDays(30); // Valid for 30 days
+        options.SlidingExpiration = true;               // Extends whenever you access
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = true;              // for GDPR
+        options.Cookie.SameSite = SameSiteMode.Lax;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    });
+
     // Configure Authentication middleware
     builder.Services.ConfigureApplicationCookie(options =>
     {

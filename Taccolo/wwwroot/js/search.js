@@ -87,7 +87,7 @@ function showLearningSets(sets) {
         const divEachLs = document.createElement("div");
         divEachLs.className = "div-each-ls";
 
-        const firstWords = ls.input.split(/\s+/).slice(0, 10).join(" ");
+        const firstWords = ls.input.split(/\s+/).slice(0, 20).join(" ");
         const title = ls.title ? ls.title : "(No title)";
         const date = ls.date ? ls.date : "(No date)";
         const username = ls.userName ? ls.userName : "(No user)";
