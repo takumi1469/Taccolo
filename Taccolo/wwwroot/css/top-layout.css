@@ -50,9 +50,11 @@ a {
     padding: 0 1vw 0 1vw;
 }
 
-.input-search-button {
+.button-search-global {
     margin: 0; /* Reset any browser-specific margin */
     vertical-align: middle; /* Aligns the button with the text input */
+    border: none;
+    background-color: white;
 }
 
 .div-login {

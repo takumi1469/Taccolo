@@ -10,6 +10,7 @@ using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using System.Configuration;
+using Taccolo.Pages.Shared;
 
 namespace Taccolo.Pages
 {

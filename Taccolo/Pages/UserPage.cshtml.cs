@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Taccolo.Areas.Identity.Pages.Account;
 using Taccolo.Pages.Data;
+using Taccolo.Pages.Shared;
 
 namespace Taccolo.Pages
 {

@@ -15,6 +15,14 @@ else if (window.location.pathname == "/UserPage") {
     document.addEventListener("DOMContentLoaded", getSearchResultUser);
 }
 
+// For global search, search Learning Sets in top page by the given query parameter
+window.addEventListener('DOMContentLoaded', () => {
+    const keyword = document.getElementById('input-global-search')?.value;
+    if (keyword) {
+        getSearchResultTop(event);
+    }
+});
+
 function getSearchResult(event, endpoint) {
 
     const keywords = document.getElementById("input-narrow-search").value;

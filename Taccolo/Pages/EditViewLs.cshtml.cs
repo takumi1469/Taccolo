@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using static Taccolo.Pages.EditViewLsModel;
 using Taccolo.Controllers;
+using Taccolo.Pages.Shared;
 
 namespace Taccolo.Pages
 {

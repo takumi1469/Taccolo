@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Taccolo.Pages.Data;
+using Taccolo.Pages.Shared;
 
 namespace Taccolo.Pages
 {

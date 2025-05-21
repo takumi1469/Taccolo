@@ -21,7 +21,7 @@
             <label for="video-url" class="label-video-url">Please paste the URL of the video</label>
             <div class="div-video-url">
                 <input class="input-video-url" type="text" id="video-url" />
-                <button class="button-use-video" onclick="embedVideo()">Use this video</button>
+                <button class="button-use-video button-and-select" onclick="embedVideo()">Use this video</button>
             </div>
             <div class="div-video-container">
                 <iframe id="video-frame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none;"></iframe>
@@ -37,7 +37,7 @@
             <div class="language-selection div-margin-bottom">
                 <div class="choose-language">
                     <label for="from-language">From this language:</label>
-                    <select id="from-language" asp-for="SourceChoice" required>
+                    <select class="button-and-select" id="from-language" asp-for="SourceChoice" required>
                         <option value="not-chosen">(select one)</option>
                         @{
                             for (int i = 0; i < Languages.LanguageList.Count(); i++)
@@ -49,7 +49,7 @@
                 </div>
                 <div class="choose-language">
                     <label for="to-language">To this language:</label>
-                    <select id="to-language" asp-for="TargetChoice" required>
+                    <select class="button-and-select" id="to-language" asp-for="TargetChoice" required>
                         <option value="not-chosen">(select one)</option>
                         @{
                             for (int i = 0; i < Languages.LanguageList.Count(); i++)
@@ -68,7 +68,7 @@
                 <label for="input-text" class="input-text">Input Text</label>
                 <textarea class="big-input input-text" type="text" id="input-text" asp-for="InputText" required></textarea>
             </div>
-            <button type="submit" asp-page-handler="Process">SUBMIT</button>
+            <button class="button-and-select" type="submit" asp-page-handler="Process">SUBMIT</button>
             <span>(This may take 10-30 seconds for long text)</span>
         </form>
     </div>
@@ -79,13 +79,13 @@
             if (User.Identity?.IsAuthenticated == true)
             {
                 <form method="post">
-                    <button class="button-save" asp-page-handler="Save" type="submit">Save this Learning Set</button>
+                    <button class="button-save button-and-select" asp-page-handler="Save" type="submit">Save this Learning Set</button>
                 </form>
             }
             else
             {
                 <a href="/Identity/Account/Login">
-                    <button class="button-save-login">Save this Learning Set(go to login)</button>
+                    <button class="button-save-login button-and-select">Save this Learning Set(go to login)</button>
                 </a>
             }
         }

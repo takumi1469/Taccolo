@@ -21,9 +21,9 @@
                 </a>
             </div>
             <div class="div-search div-in-header">
-                <form class="form-search" method="get" action="/search">
-                    <input type="text" class="input-global-search input-search" id="input-global-search" name="input-global-search" placeholder=" Enter keyword to search Learning Sets anywhere" />
-                    <input type="image" src="~/icons/search2.svg" class="input-search-button icon" alt="search" id="search" />
+                <form class="form-search" method="post" asp-page-handler="Search" asp-page="/Index">
+                    <input type="text" class="input-search" id="input-search" name="SearchKeyword" placeholder=" Enter keyword to search Learning Sets anywhere" />
+                    <button class="button-search-global" type="submit"><img src="~/icons/search2.svg" class="img-search-button icon" alt="search"/></button>
                 </form>
             </div>
             <div class="div-login div-in-header">
@@ -78,6 +78,11 @@
         </div>
         <div class="div-each-page">
             @RenderBody()
+        </div>
+    </div>
+    <div class="div-level3">
+        <div class="div-inner-footer">
+
         </div>
     </div>
 </body>

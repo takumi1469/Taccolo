@@ -36,12 +36,19 @@ h1, h2, h3, h4{
     margin-bottom:0.8vw;
 }
 
-button, select {
+.button-and-select {
     height: 1.8vw;
     font-size: 1.1vw;
     font-family: Nunito;
-    cursor:pointer;
+    cursor: pointer;
 }
+
+/*button,select {
+    height: 1.8vw;
+    font-size: 1.1vw;
+    font-family: Nunito;
+    cursor: pointer;
+}*/
 
 .input-text{
     display: block;
