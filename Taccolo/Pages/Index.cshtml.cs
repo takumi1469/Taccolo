@@ -15,8 +15,8 @@ namespace Taccolo.Pages
         private readonly SignInManager<ApplicationUser> _signInManager;
         public List<LearningSet> AllLearningSets { get; set; } = new List<LearningSet>();
 
-        [BindProperty(SupportsGet = true)]
-        public string? SearchKeyword { get; set; }
+        [FromQuery]
+        public string? Keyword { get; set; }
 
         public IndexModel(UserManager<ApplicationUser> userManager, AppDbContext context, ILogger<EditViewLsModel> logger, SignInManager<ApplicationUser> signInManager)
         {
@@ -28,18 +28,17 @@ namespace Taccolo.Pages
 
         public async Task OnGetAsync()
         {
-            AllLearningSets = _context.LearningSets.Include(ls => ls.User).ToList();
-            AllLearningSets.Reverse();
         }
 
-        public async Task OnPostSearch()
-        {
-            if (!string.IsNullOrEmpty(SearchKeyword))
-            {
-                Console.WriteLine("***OnPostSearch is called***");
-                RedirectToPage("Index", new { keyword = SearchKeyword });
-            }
-        }
+        //public IActionResult OnPostSearch()
+        //{
+        //    if (!string.IsNullOrEmpty(Keyword))
+        //    {
+        //        _logger.LogInformation($"***OnPostSearch is called, Keyword is {Keyword}***");
+        //        return RedirectToPage("Index", new { keyword = Keyword });
+        //    }
+        //    return Page();
+        //}
 
         public async Task<IActionResult> OnGetLogoutAsync()
         {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LhMEclZ1oWBTFj/qYPZi26EdrZYvuJpzzEjVVmZG29s=",
+  "Hash": "qT5n1lZxPLFEgXQBT95XwLNrVO2UllwwtVSoUJa0Jvw=",
   "Source": "Taccolo",
   "BasePath": "_content/Taccolo",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\page-specific\\About.css"
+    },
+    {
+      "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\Contact.css",
+      "SourceId": "Taccolo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\",
+      "BasePath": "_content/Taccolo",
+      "RelativePath": "css/page-specific/Contact.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\page-specific\\Contact.css"
     },
     {
       "Identity": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\EditViewLs.css",

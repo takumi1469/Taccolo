@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\page-specific\\About.css"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\Contact.css",
+      "PackagePath": "staticwebassets\\css\\page-specific\\Contact.css"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\css\\page-specific\\EditViewLs.css",
       "PackagePath": "staticwebassets\\css\\page-specific\\EditViewLs.css"
     },
