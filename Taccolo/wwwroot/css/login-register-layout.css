@@ -4,6 +4,14 @@
     margin: 0;
 }
 
+.no-display{
+    display:none;
+}
+
+.a-go-top{
+    color:#3207bc;
+}
+
 a {
     text-decoration: none; /* Remove underline for the link */
     cursor: pointer; /* Set pointer cursor for the link */

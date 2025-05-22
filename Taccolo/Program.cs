@@ -8,8 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 try
 {
-    //var logPath = @"D:\home\LogFiles\startup-error.txt";
-    //File.AppendAllText(logPath, DateTime.Now + " *****STARTING******...\n");
     Console.WriteLine("*****STARTING *****");
 
     var builder = WebApplication.CreateBuilder(args);

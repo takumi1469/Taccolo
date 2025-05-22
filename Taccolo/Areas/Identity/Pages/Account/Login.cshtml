@@ -18,6 +18,7 @@
                 </div>
                 <h3 class="h3-register-here">
                     <a class="a-register-from-here" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">*Or register as a new user from here</a>
+
                 </h3>
                 <div class="form-floating mb-3">
                     <label asp-for="Input.Email" class="form-label">Email</label>
@@ -30,8 +31,8 @@
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="checkbox mb-3">
-                    <label asp-for="Input.RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                    <label class="no-display" asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input no-display" asp-for="Input.RememberMe" />
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                     </label>
                 </div>
@@ -43,7 +44,10 @@
                         <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                     </p>
                     <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                        <a class="a-go-top" href="/">Go back to top</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" class="no-display" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
                     </p>
                 </div>
             </form>
