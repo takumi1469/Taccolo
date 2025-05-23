@@ -81,6 +81,7 @@ namespace Taccolo.Pages
             _logger.LogError("*******OnPostProcess is called*******");
 
             string dateCreation = DateTime.Now.ToString("MMMM d, yyyy", CultureInfo.InvariantCulture);
+            DateTime dateCreationForOrder = DateTime.UtcNow;
             if (SourceChoice == "not-chosen" || TargetChoice == "not-chosen")
             {
                 WarningMessage = "Please select both Source Language and Target Language";
@@ -108,7 +109,8 @@ namespace Taccolo.Pages
                     sourceLanguage: SourceChoice,
                     targetLanguage: TargetChoice,
                     date: dateCreation,
-                    userId: UserId) ;
+                    userId: UserId,
+                    dateForOrder: dateCreationForOrder) ;
 
                 // Tokenize Japanese
                 if(SourceChoice == "Japanese")
