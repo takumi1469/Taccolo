@@ -62,8 +62,8 @@ namespace Taccolo.Controllers
                     .ToList();
             }
 
-           // allSets.Reverse();
-            allSets.OrderByDescending(ls => ls.DateForOrder ?? DateTime.MinValue).ToList();
+            allSets.Reverse();
+            allSets = allSets.OrderByDescending(ls => ls.DateForOrder ?? DateTime.MinValue).ToList();
 
             if (Keywords is not null)
             {
