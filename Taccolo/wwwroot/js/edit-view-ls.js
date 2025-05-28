@@ -618,7 +618,7 @@ function addComment(event) {
                 console.log("Comment saved successfully TESTComment:", result);
                 mySlug = result.slug;
                 newDivComment.innerHTML = `
-    <p class="p-comment-username"><a class="a-to-user-page" href="/UserPage?slug=${mySlug}"><strong>${username}<strong></a>
+    <p class="p-comment-username"><a class="a-to-user-page" href="/UserPage?slug=${mySlug}"><strong>${username}</strong></a>
     <span class="span-date-time">(${dateTime})</span></p>
     <p class="p-comment">${comment}</p>
     `;
