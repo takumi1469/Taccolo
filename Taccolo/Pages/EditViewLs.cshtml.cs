@@ -25,8 +25,8 @@ namespace Taccolo.Pages
         public LearningSet? LsToDisplay { get; set; }
 
         public List<Comment> Comments { get; set; } = new List<Comment>();
-        public List<CommentWithUsername> CommentWithUsernames { get; set; } = new List<CommentWithUsername>();
-        public List<HelpReplyWithUsername> HelpReplyWithUsernames { get; set; } = new List<HelpReplyWithUsername>();
+        public List<CommentWithUsernameSlug> CommentWithUsernameSlugs { get; set; } = new List<CommentWithUsernameSlug>();
+        public List<HelpReplyWithUsernameSlug> HelpReplyWithUsernameSlugs { get; set; } = new List<HelpReplyWithUsernameSlug>();
         public List<HelpRequest> CurrentHelpRequests { get; set; }
 
         public bool IsOwner { get; set; } = false;
@@ -99,12 +99,15 @@ namespace Taccolo.Pages
                 _logger.LogInformation("***Logging Test 6: Before making CommentWithUsernames***");
 
                 // Fetch usernames and map them
-                CommentWithUsernames = Comments.Select(c => new CommentWithUsername
+                CommentWithUsernameSlugs = Comments.Select(c => new CommentWithUsernameSlug
                 {
                     Body = c.Body,
                     Username = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.UserName)
                                  .FirstOrDefault() ?? "Unknown",
+                    Slug = _context.Users.Where(u => u.Id == c.UserId).Select(u => u.PublicSlug)
+                                 .FirstOrDefault() ?? "Unknown",
                     Date = c.Date,
+                    
                 }).ToList();
 
                 // Now prepare HelpRequests
@@ -116,10 +119,12 @@ namespace Taccolo.Pages
                     helpReplys.AddRange(newReplys);
                 }
 
-                HelpReplyWithUsernames = helpReplys.Select(r => new HelpReplyWithUsername
+                HelpReplyWithUsernameSlugs = helpReplys.Select(r => new HelpReplyWithUsernameSlug
                 {
                     Body = r.Body,
                     Username = _context.Users.Where(u => u.Id == r.UserId).Select(u => u.UserName)
+                                 .FirstOrDefault() ?? "Unknown",
+                    Slug = _context.Users.Where(u => u.Id == r.UserId).Select(u => u.PublicSlug)
                                  .FirstOrDefault() ?? "Unknown",
                     Date = r.Date,
                     RequestId = r.RequestId
@@ -161,19 +166,21 @@ namespace Taccolo.Pages
 
         }
 
-        public class CommentWithUsername()
+        public class CommentWithUsernameSlug()
         {
             public string Body { get; set; }
             public string Username { get; set; }
             public string? Date { get; set; }
+            public string Slug {  get; set; }
         }
 
-        public class HelpReplyWithUsername()
+        public class HelpReplyWithUsernameSlug()
         {
             public string Body { get; set; }
             public string Username { get; set; }
             public string? Date { get; set; }
             public Guid RequestId { get; set; }
+            public string Slug { get; set; }
         }
     }
 }

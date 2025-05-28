@@ -28,18 +28,25 @@ namespace Taccolo.Controllers
         [HttpPost("AddComment")]
         [IgnoreAntiforgeryToken]
         [AllowAnonymous]
-        public IActionResult AddComment([FromBody] CommentDto updatedData)
+        public async Task<IActionResult> AddComment([FromBody] CommentDto updatedData)
         {
             _logger.LogInformation("***AddComment Endpoint triggered***");
             
             string userId = _userManager.GetUserId(User);
+            var currentUser = await _userManager.GetUserAsync(User);
+            string userSlug = "";
+            if (currentUser != null)
+            {
+                userSlug = currentUser.PublicSlug;
+            }
+
             Comment newComment = new Comment(updatedData.Body, updatedData.LsId, userId, updatedData.Date);
 
             _context.Comments.Add(newComment);
 
             _context.SaveChanges();
 
-            return new JsonResult(new { success = true, message = "LearningSet updated successfully" });
+            return new JsonResult(new { success = true, message = "LearningSet updated successfully", slug = userSlug});
         }
     }
 }

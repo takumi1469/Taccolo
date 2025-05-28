@@ -27,10 +27,16 @@ namespace Taccolo.Controllers
         [HttpPost("AddHelpReply")]
         [IgnoreAntiforgeryToken]
         [AllowAnonymous]
-        public IActionResult AddHelpReply([FromBody] HelpReplyDto updatedData)
+        public async Task<IActionResult> AddHelpReply([FromBody] HelpReplyDto updatedData)
         {
             _logger.LogInformation("***AddHelpRequest Endpoint triggered***");
             string? userId = _userManager.GetUserId(User);
+            var currentUser = await _userManager.GetUserAsync(User);
+            string userSlug = "";
+            if (currentUser != null)
+            {
+                userSlug = currentUser.PublicSlug;
+            }
 
             HelpReply newHelpReply = new HelpReply(updatedData.Body, userId, updatedData.RequestId, updatedData.Date);
 
@@ -38,7 +44,7 @@ namespace Taccolo.Controllers
 
             _context.SaveChanges();
 
-            return new JsonResult(new { success = true, message = "LearningSet updated successfully" });
+            return new JsonResult(new { success = true, message = "LearningSet updated successfully", slug = userSlug });
 
         }
     }

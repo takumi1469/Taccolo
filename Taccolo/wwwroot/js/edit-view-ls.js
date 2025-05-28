@@ -591,13 +591,8 @@ function addComment(event) {
     newDivComment.className = "div-each-comment";
     if (comment == "") { }
     else {
-        newDivComment.innerHTML = `
-    <p class="p-comment-username">${username} <span class="span-date-time">(${dateTime})</span></p>
-    <p class="p-comment">${comment}</p>
-    `;
-        button.insertAdjacentElement("afterend", newDivComment);
-        document.getElementById("p-no-comment")?.remove(); //will not happen if p-no-comment doesn't exist
-
+        
+        let mySlug = "";
         // Ajax request to save comments to database
         // Prepare the data to send
         const data = {
@@ -607,7 +602,6 @@ function addComment(event) {
         };
 
         fetch(`/api/Comment/AddComment`, {
-
             method: "POST",
             headers: {
                 "Content-Type": "application/json" // Let the server know we're sending JSON
@@ -622,14 +616,20 @@ function addComment(event) {
             })
             .then(result => {
                 console.log("Comment saved successfully TESTComment:", result);
+                mySlug = result.slug;
+                newDivComment.innerHTML = `
+    <p class="p-comment-username"><a class="a-to-user-page" href="/UserPage?slug=${mySlug}"><strong>${username}<strong></a>
+    <span class="span-date-time">(${dateTime})</span></p>
+    <p class="p-comment">${comment}</p>
+    `;
             })
             .catch(error => {
                 console.error("Error saving the learning set:", error);
                 alert("An error occurred while saving the learning set.");
             });
+        button.insertAdjacentElement("afterend", newDivComment);
+        document.getElementById("p-no-comment")?.remove(); //will not happen if p-no-comment doesn't exist
     }
-
-    document.getElementById("textarea-comment").value = "";
 }
 
 function addHelpRequest(event) {
@@ -645,6 +645,7 @@ function addHelpRequest(event) {
     else {
         // Ajax request to save comments to database and receive RequestId
         // Prepare the data to send
+
         const data = {
             Body: helpRequest,
             LsId: lsId
@@ -667,6 +668,7 @@ function addHelpRequest(event) {
             .then(result => {
                 console.log("Comment saved successfully TESTHelpRequest:", result);
                 currentRequestId = result.requestId;
+                mySlug = result.slug;
                 console.log("Request ID is " + currentRequestId); 
                 newDivHelpRequest.innerHTML = `
             <h4 class="h4-help-request">${helpRequest}</h4>
@@ -730,12 +732,7 @@ function addHelpReply(event) {
     newDivHelpReply.className = "div-each-help-reply";
     if (helpReply == "") { }
     else {
-        newDivHelpReply.innerHTML = `
-            <p class="p-help-reply-username">${username} <span class="span-date-time">(${dateTime})</span></p>
-            <p class="p-help-reply">${helpReply}</p>
-          `;
-
-        button.insertAdjacentElement("afterend", newDivHelpReply);
+        let mySlug ="";
 
         // Ajax request to save comments to database
         // Prepare the data to send
@@ -760,11 +757,19 @@ function addHelpReply(event) {
             })
             .then(result => {
                 console.log("Comment saved successfully TESTHelpReply:", result);
+                mySlug = result.slug;
+                newDivHelpReply.innerHTML = `
+            <p class="p-help-reply-username"><a class="a-to-user-page" href="/UserPage?slug=${mySlug}"><strong>${username}</strong></a>
+            <span class="span-date-time">(${dateTime})</span></p>
+            <p class="p-help-reply">${helpReply}</p>
+          `;
             })
             .catch(error => {
                 console.error("Error saving the learning set:", error);
                 alert("An error occurred while saving the learning set.");
             });
+
+        button.insertAdjacentElement("afterend", newDivHelpReply);
     }
     replyTextArea.value = "";
 }

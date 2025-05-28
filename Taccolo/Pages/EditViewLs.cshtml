@@ -157,10 +157,15 @@
 
                 @if (Model.LsToDisplay?.Comments != null)
                 {
-                    @foreach (EditViewLsModel.CommentWithUsername comment in Model.CommentWithUsernames)
+                    @foreach (EditViewLsModel.CommentWithUsernameSlug comment in Model.CommentWithUsernameSlugs)
                     {
                         <div class="div-each-comment">
-                            <p class="p-comment-username"><strong><a href="/"></a>@comment.Username</strong><span class="span-date-time">(@comment.Date)</span></p>
+                            <p class="p-comment-username">
+                                <a class="a-to-user-page" href="/UserPage?slug=@comment.Slug"><strong>@comment.Username</strong></a>
+
+                        <span class="span-date-time">(@comment.Date)</span>
+
+                        </p>
                             <p class="p-comment">@comment.Body</p>
                         </div>
                     }
@@ -194,14 +199,14 @@
                             {
                                 <a class="a-redirect-login" href="/Identity/Account/Login"><button class="button-help-reply button-comment-help">Reply</button></a>
                             }
-                            @if (Model.HelpReplyWithUsernames != null)
+                            @if (Model.HelpReplyWithUsernameSlugs != null)
                             {
-                                @foreach (EditViewLsModel.HelpReplyWithUsername helpReply in Model.HelpReplyWithUsernames)
+                                @foreach (EditViewLsModel.HelpReplyWithUsernameSlug helpReply in Model.HelpReplyWithUsernameSlugs)
                                 {
                                     @if (helpReply.RequestId == helpRequest.Id)
                                     {
                                         <div class="div-each-help-reply">
-                                            <p class="p-help-reply-username">@helpReply.Username<span class="span-date-time">(@helpReply.Date)</span></p>
+                                            <p class="p-help-reply-username"><a class="a-to-user-page" href="/UserPage?slug=@helpReply.Slug"><strong>@helpReply.Username</strong></a><span class="span-date-time">(@helpReply.Date)</span></p>
                                             <p class="p-help-reply">@helpReply.Body</p>
                                         </div>
                                     }
