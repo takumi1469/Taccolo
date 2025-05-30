@@ -274,3 +274,9 @@ C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Tacco
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.pdb
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\Taccolo.genruntimeconfig.cache
 C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\obj\Debug\net8.0\win-x64\ref\Taccolo.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\GenerativeAI.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\Microsoft.Extensions.Primitives.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\System.Diagnostics.DiagnosticSource.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\System.IO.Pipelines.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\System.Text.Encodings.Web.dll
+C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\bin\Debug\net8.0\win-x64\System.Text.Json.dll

@@ -11,6 +11,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using System.Configuration;
 using Taccolo.Pages.Shared;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using GenerativeAI;
+using GenerativeAI.Types;
 
 namespace Taccolo.Pages
 {
@@ -130,12 +133,41 @@ namespace Taccolo.Pages
                 List<string> allWords = new List<string>(wordsArray);
 
                 int tempOrder = 1;
+                string geminiKey = _configuration["GoogleGemini:ApiKey"];
+                var googleAI = new GoogleAi(geminiKey);
+                var googleModel = googleAI.CreateGenerativeModel("models/gemini-2.0-flash");
+
                 try
                 {
                     foreach (string word in allWords)
                     {
                         string wordLower = word.ToLower();
-                        Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(MyLibreTranslate, wordLower));
+                        Meaning NewMeaning = new Meaning();
+
+                        if (SourceChoice == "Japanese" || SourceChoice == "Urdu" || TargetChoice == "Japanese" || TargetChoice == "Urdu")
+                        {
+                            var googleResponse = await googleModel.GenerateContentAsync($@"
+Give me JSON response about {TargetLanguage} translation of the {SourceLanguage} word {wordLower} in the following format:
+{{
+    ""alternatives"": [
+        ""<alternative_meaning_1>"",
+        ""<alternative_meaning_2>"",
+        ""<alternative_meaning_3>""
+    ],
+    ""translatedText"": ""<main_meaning>""
+}}.
+Give me exactly three alternatives and one main meaning.");
+                            string responseJson = googleResponse.Text().Trim().Remove(0, 7).TrimEnd('`');
+
+                            _logger.LogInformation(responseJson);
+                            
+                            NewMeaning = JsonSerializer.Deserialize<Meaning>(responseJson);
+
+                        }
+                        else
+                        {
+                            NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(MyLibreTranslate, wordLower));
+                        }
 
                         WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id,
                             wordLower, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
