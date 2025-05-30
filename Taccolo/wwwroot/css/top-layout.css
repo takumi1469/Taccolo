@@ -109,3 +109,8 @@ a {
 .li-menu-item {
     margin: 0 0 1.5vw 0;
 }
+
+.div-footer{
+    height: 15vw;
+    background-color:#5555FF
+}

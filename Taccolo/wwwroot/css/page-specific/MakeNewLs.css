@@ -112,8 +112,13 @@ h1, h2, h3, h4{
     font-size:2vw;
 }
 
-.ul-alternatives{
+.p-note-lower{
     margin:0;
+    font-size:1vw;
+}
+
+.ul-alternatives {
+    margin: 0;
 }
 
 .p-word-meaning{

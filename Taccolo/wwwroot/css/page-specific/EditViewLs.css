@@ -97,6 +97,11 @@ textarea{
     width: 1.5vw;
 }
 
+.p-note-lower {
+    margin: 0;
+    font-size: 1vw;
+}
+
 .div-each-alt{
     display:flex;
     flex-direction:row;

@@ -134,10 +134,11 @@ namespace Taccolo.Pages
                 {
                     foreach (string word in allWords)
                     {
-                        Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(MyLibreTranslate, word));
+                        string wordLower = word.ToLower();
+                        Meaning NewMeaning = JsonSerializer.Deserialize<Meaning>(await LookupLibreTranslate(MyLibreTranslate, wordLower));
 
                         WordMeaningPair NewWordMeaningPair = new WordMeaningPair(TempLearningSet.Id,
-                            word, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
+                            wordLower, NewMeaning.translatedText, NewMeaning.Alternatives, tempOrder);
                         TempLearningSet.WordMeaningPairs.Add(NewWordMeaningPair);
                         tempOrder++;
                     }

@@ -78,6 +78,7 @@
             </div>
             <div class="div-glossary div-output-column" id="div-glossary">
                 <h2>List of Words</h2>
+                <p class="p-note-lower">All words are changed to lower case, please edit as needed</p>
                 @foreach (WordMeaningPair pair in Model.LsToDisplay?.WordMeaningPairs)
                 {
                     <div class="div-wmp">
@@ -162,9 +163,7 @@
                         <div class="div-each-comment">
                             <p class="p-comment-username">
                                 <a class="a-to-user-page" href="/UserPage?slug=@comment.Slug"><strong>@comment.Username</strong></a>
-
                         <span class="span-date-time">(@comment.Date)</span>
-
                         </p>
                             <p class="p-comment">@comment.Body</p>
                         </div>
