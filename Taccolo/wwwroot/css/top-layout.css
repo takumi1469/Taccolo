@@ -10,7 +10,7 @@ a {
     color:black;
 }
 
-.icon {
+.icon,.img-icon {
     width: 2.5vw;
 }
 
@@ -110,7 +110,33 @@ a {
     margin: 0 0 1.5vw 0;
 }
 
-.div-footer{
+.div-level3 {
     height: 15vw;
-    background-color:#5555FF
+    background-color: #99EEFF;
+    justify-content:center;
+    display:flex;
+    margin-top:5vw;
+}
+
+.div-footer {
+    width: 50vw;
+    justify-content: center;
+    align-content:center;
+    align-items:center;
+    display: flex;
+    flex-direction:column;
+}
+
+.a-libre{
+    text-decoration:underline;
+}
+
+.div-icons {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-icon {
+    margin: 0 2vw 0 0
 }

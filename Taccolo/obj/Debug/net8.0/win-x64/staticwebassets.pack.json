@@ -93,6 +93,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\github.svg",
+      "PackagePath": "staticwebassets\\icons\\github.svg"
+    },
+    {
+      "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\linkedin.png",
+      "PackagePath": "staticwebassets\\icons\\linkedin.png"
+    },
+    {
       "Id": "C:\\TakumiPersonal\\Uni\\Bachelor Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\wwwroot\\icons\\login.svg",
       "PackagePath": "staticwebassets\\icons\\login.svg"
     },
