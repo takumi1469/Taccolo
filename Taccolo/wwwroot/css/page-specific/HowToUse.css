@@ -9,3 +9,8 @@
 .li-how-to-use {
     font-weight: bold;
 }
+
+iframe {
+    width: 40vw;
+    height: 22.5vw;
+}
