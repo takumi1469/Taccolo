@@ -8,3 +8,11 @@
 .li-faq {
     font-weight: bold;
 }
+
+.p-each-answer{
+    margin: 1vw 0 2vw 0;
+}
+
+.h2-each-question{
+    margin:0;
+}
