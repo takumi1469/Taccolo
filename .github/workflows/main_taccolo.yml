@@ -36,11 +36,11 @@ jobs:
         run: dotnet publish Taccolo/Taccolo.csproj -c Release -r win-x86 -o ./publish
         # working-directory: ./Taccolo
 
-      # - name: Upload artifact for deployment job
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: .net-app
-      #     path: publish
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: .net-app
+          path: publish
 
   deploy:
     runs-on: windows-latest
@@ -53,11 +53,11 @@ jobs:
       contents: read
 
     steps:
-      # - name: Download artifact from build job
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: .net-app
-      #     path: deploy
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: .net-app
+          path: deploy
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -72,7 +72,7 @@ jobs:
         with:
           app-name: 'Taccolo'
           slot-name: 'Production'
-          package: ./publish
+          package: deploy
 
 
 
