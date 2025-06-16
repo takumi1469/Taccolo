@@ -72,7 +72,7 @@ jobs:
         with:
           app-name: 'Taccolo'
           slot-name: 'Production'
-          package: deploy
+          package: ./publish
 
 
 
