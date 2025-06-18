@@ -1,3 +1,8 @@
 .vs/
 Taccolo/appsettings.Development.json
 Taccolo/appsettings.Production.json
+bin/
+obj/
+*.user
+*.suo
+*.cache
