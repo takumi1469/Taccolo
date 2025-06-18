@@ -1,0 +1,172 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy ASP.Net Core app to Azure Web App - Taccolo (ChatGPT recommendation, build succeeds)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0'
+
+      - name: Restore dependencies
+        run: dotnet restore Taccolo.sln --configfile Taccolo/nuget.config
+
+      - name: Build with dotnet
+        run: dotnet build Taccolo.sln --configuration Release --no-restore
+
+      - name: Check current directory
+        run: pwd
+
+      - name: dotnet publish
+        run: dotnet publish Taccolo/Taccolo.csproj -c Release -r win-x86 -o ./publish
+        # working-directory: ./Taccolo
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: .net-app
+          path: publish
+
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: .net-app
+          path: deploy
+
+      # - name: Login to Azure
+      #   uses: azure/login@v2
+      #   with:
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      #     # client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7C16AC088F364BAB95E040D6755EAE4A }}
+      #     # tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_07DEB8A37D7F4CE4A340876D1EC618D0 }}
+      #     # subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C895A65D54E54415A1A063B6676CF0B2 }}
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'Taccolo'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
+          package: deploy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: Build and deploy ASP.Net Core app to Azure Web App - Taccolo (Original)
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch:
+
+# jobs:
+#   build:
+#     runs-on: windows-latest
+#     permissions:
+#       contents: read #This is required for actions/checkout
+
+#     steps:
+#       - uses: actions/checkout@v4
+
+#       - name: Set up .NET Core
+#         uses: actions/setup-dotnet@v4
+#         with:
+#           dotnet-version: '8.0'
+
+#       - name: Restore dependencies
+#         run: dotnet restore Taccolo.sln --configfile Taccolo/nuget.config
+
+#       - name: Build with dotnet
+#         run: dotnet build Taccolo.sln --configuration Release --no-restore
+
+#       - name: dotnet publish
+#         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+
+#       - name: Upload artifact for deployment job
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: .net-app
+#           path: ${{env.DOTNET_ROOT}}/myapp
+
+#   deploy:
+#     runs-on: windows-latest
+#     needs: build
+#     environment:
+#       name: 'Production'
+#       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+#     permissions:
+#       id-token: write #This is required for requesting the JWT
+#       contents: read #This is required for actions/checkout
+
+#     steps:
+#       - name: Download artifact from build job
+#         uses: actions/download-artifact@v4
+#         with:
+#           name: .net-app
+      
+#       - name: Login to Azure
+#         uses: azure/login@v2
+#         with:
+#           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7C16AC088F364BAB95E040D6755EAE4A }}
+#           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_07DEB8A37D7F4CE4A340876D1EC618D0 }}
+#           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C895A65D54E54415A1A063B6676CF0B2 }}
+
+#       - name: Deploy to Azure Web App
+#         id: deploy-to-webapp
+#         uses: azure/webapps-deploy@v3
+#         with:
+#           app-name: 'Taccolo'
+#           slot-name: 'Production'
+#           package: .
+          
