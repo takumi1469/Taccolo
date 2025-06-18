@@ -17,147 +17,147 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Taccolo
 build_property.RootNamespace = Taccolo
-build_property.ProjectDir = C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo\
+build_property.ProjectDir = C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\fresh-repo\Taccolo\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\TaccoloGitRepo\Taccolo
+build_property.MSBuildProjectDirectory = C:\TakumiPersonal\Uni\Bachelor Thesis\ActualProject\Taccolo\fresh-repo\Taccolo
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/ChangePassword.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/ChangePasswordComplete.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/ChangePasswordComplete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDaGFuZ2VQYXNzd29yZENvbXBsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/ForgotPasswordReset.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/ForgotPasswordReset.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZFJlc2V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/MyPage.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/MyPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNeVBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/MyPageEdit.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/MyPageEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNeVBhZ2VFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/RegistrationComplete.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/RegistrationComplete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RyYXRpb25Db21wbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/About.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Contact.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/EditViewLs.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/EditViewLs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFZpZXdMcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Error.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/FAQ.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/FAQ.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRkFRLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/FavoriteLS.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/FavoriteLS.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmF2b3JpdGVMUy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Flashcard.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Flashcard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxhc2hjYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/HowToUse.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/HowToUse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG93VG9Vc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Index.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/MakeNewLs.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/MakeNewLs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFrZU5ld0xzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/OwnLS.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/OwnLS.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3duTFMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Privacy.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Shared/_JustHeaderLayout.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Shared/_JustHeaderLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9KdXN0SGVhZGVyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Shared/_LoginRegisterLayout.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Shared/_LoginRegisterLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblJlZ2lzdGVyTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Shared/_taccoloLayout.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Shared/_taccoloLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF90YWNjb2xvTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/UserPage.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/UserPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/_ViewImports.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/TaccoloGitRepo/Taccolo/Pages/_ViewStart.cshtml]
+[C:/TakumiPersonal/Uni/Bachelor Thesis/ActualProject/Taccolo/fresh-repo/Taccolo/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
