@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="Taccolo" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\TakumiPersonal\\Uni\\Bachelor\ Thesis\\ActualProject\\Taccolo\\TaccoloGitRepo\\Taccolo\\obj\\Release\\net8\.0\\win-x64\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>
