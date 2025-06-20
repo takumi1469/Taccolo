@@ -37,7 +37,7 @@ h1, h2, h3, h4{
 }
 
 .button-and-select {
-    height: 1.8vw;
+    /*height: 1.8vw;*/
     font-size: 1.1vw;
     font-family: Nunito;
     cursor: pointer;

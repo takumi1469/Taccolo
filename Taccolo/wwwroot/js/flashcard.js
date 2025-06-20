@@ -90,7 +90,7 @@ function checkCorrectOrWrong(event) {
         correctAnswer++;
         radio.parentElement.style.color = "blue";
         radio.parentElement.style.fontWeight = "bold";
-        result.textContent = "Correct!";
+        result.textContent = "Correct!😊";
         result.style.fontSize = "2vw";
         result.style.color = "blue";
     }
@@ -108,7 +108,7 @@ function checkCorrectOrWrong(event) {
                 r.parentElement.style.fontWeight = "bold";
             }
         });
-        result.textContent = "Wrong";
+        result.textContent = "Wrong😖";
         result.style.fontSize = "2vw";
         result.style.color = "red";
     }
@@ -122,7 +122,7 @@ function goNext(event) {
 }
 
 function endOfQuestions() {
-    result.textContent = `Result - correct:${correctAnswer}, wrong:${wrongAnswer}, skipped:${questions.length - correctAnswer - wrongAnswer} in ${questions.length} questions`;
+    result.textContent = `Result - 😊correct: ${correctAnswer}  😖wrong: ${wrongAnswer}  👻skipped: ${questions.length - correctAnswer - wrongAnswer} in ${questions.length} questions`;
     result.style.fontSize = "2vw";
     result.style.color = "blue";
 

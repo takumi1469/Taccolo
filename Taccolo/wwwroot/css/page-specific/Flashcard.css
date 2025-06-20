@@ -37,15 +37,16 @@ button {
 
 .div-question {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .div-left-card {
-    width: 40vw;
+    /*width: 40vw;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size:7vw;
+    height:8vw;
 }
 
 .span-word{
@@ -53,11 +54,12 @@ button {
 }
 
 .div-right-choices {
-    width: 40vw;
+    /*width: 40vw;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size:2vw;
+    font-size: 2vw;
+    margin: 2vw 0 0 8vw;
 }
 
 .label-choice{
@@ -67,12 +69,11 @@ button {
 .div-next-button{
     display:flex;
     flex-direction:row;
-    justify-content:center;
-
+    /*justify-content:center;*/
 }
 
 .button-next{
-    margin:2vw 0 0 20vw;
+    margin:2vw 0 0 35vw;
 }
 
 .button-finish{
