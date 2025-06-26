@@ -1,6 +1,6 @@
-*🏷️ Project Overview
+# 🏷️ Project Overview
 
-    Taccoloって何？
+## Taccoloって何？
 
     なぜ作った？
 
