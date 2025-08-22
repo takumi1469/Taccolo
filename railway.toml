@@ -1,0 +1,7 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "./Taccolo/Dockerfile"
+
+[deploy]
+startCommand = "dotnet Taccolo.dll"
+restartPolicyType = "never"

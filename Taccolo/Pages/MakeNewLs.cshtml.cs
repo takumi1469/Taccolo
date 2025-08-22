@@ -72,8 +72,6 @@ namespace Taccolo.Pages
             return meaning;
         }
 
-
-
         public async Task OnGetAsync()
         {
             ApplicationUser? user = await _userManager.GetUserAsync(User); //Gets user information from DI

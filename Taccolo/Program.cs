@@ -66,6 +66,10 @@ try
         options.AccessDeniedPath = "/Account/AccessDenied";
     });
 
+    //// For deploying to Railway
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "8081";
+    builder.WebHost.UseUrls($"http://*:{port}");
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
@@ -77,7 +81,7 @@ try
     }
 
     app.UseSession();
-    app.UseHttpsRedirection();
+    //app.UseHttpsRedirection();
     app.UseStaticFiles();
 
     // Add Authentication and Authorization to the pipeline

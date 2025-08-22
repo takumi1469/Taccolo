@@ -1,6 +1,7 @@
 .vs/
 Taccolo/appsettings.Development.json
 Taccolo/appsettings.Production.json
+Taccolo/appsettings.Docker.json
 Taccolo/bin/
 Taccolo/obj/
 *.user
