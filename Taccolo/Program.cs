@@ -66,9 +66,9 @@ try
         options.AccessDeniedPath = "/Account/AccessDenied";
     });
 
-    //// For deploying to Railway
-    var port = Environment.GetEnvironmentVariable("PORT") ?? "8081";
-    builder.WebHost.UseUrls($"http://*:{port}");
+    ////// For deploying to Railway
+    //var port = Environment.GetEnvironmentVariable("PORT") ?? "8081";
+    //builder.WebHost.UseUrls($"http://*:{port}");
 
     var app = builder.Build();
 
