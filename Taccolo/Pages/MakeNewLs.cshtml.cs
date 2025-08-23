@@ -39,11 +39,11 @@ namespace Taccolo.Pages
         public (LanguageCode, string) SourceLanguage { get; set; }
         public (LanguageCode, string) TargetLanguage { get; set; }
 
-        private static string LibreTranslateUrl;
+        //private static string LibreTranslateUrl;
 
         //public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("http://127.0.0.1:5000");
 
-        public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("LibreTranslateUrl");
+        //public LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate("LibreTranslateUrl");
 
         public string Result { get; set; }
 
@@ -121,7 +121,7 @@ namespace Taccolo.Pages
                 }
 
                 // look up individual words by LibreTranslate
-                LibreTranslateUrl = _configuration["LibreTranslate:URL"];
+                string LibreTranslateUrl = _configuration["LibreTranslate:URL"];
                 LibreTranslate.Net.LibreTranslate MyLibreTranslate = new LibreTranslate.Net.LibreTranslate(LibreTranslateUrl);
 
                 _logger.LogInformation("**********LibreTranslate URL is " + LibreTranslateUrl + "***************");
